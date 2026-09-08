@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <path d="M 10 28 A 18 18 0 1 0 28 10" fill="none" stroke="#FF6B6B" stroke-width="4" stroke-linecap="round"/><polygon points="28,4 35,12 21,12" fill="#FF6B6B"/><line x1="28" y1="22" x2="28" y2="34" stroke="#FF6B6B" stroke-width="3.5" stroke-linecap="round"/><circle cx="28" cy="40" r="2.2" fill="#FF6B6B"/>
+</svg>
