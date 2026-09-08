@@ -4,6 +4,74 @@
   "extMap": {
     "_folder": "folder",
     "_unknown": "unknown",
+    "png": "image",
+    "jpg": "image",
+    "jpeg": "image",
+    "gif": "image",
+    "bmp": "image",
+    "webp": "image",
+    "avif": "image",
+    "heic": "image",
+    "heif": "image",
+    "tiff": "image",
+    "tif": "image",
+    "ico": "image",
+    "svg": "svg",
+    "mp4": "video",
+    "mov": "video",
+    "avi": "video",
+    "mkv": "video",
+    "webm": "video",
+    "flv": "video",
+    "wmv": "video",
+    "m4v": "video",
+    "mp3": "audio",
+    "wav": "audio",
+    "flac": "audio",
+    "ogg": "audio",
+    "m4a": "audio",
+    "aac": "audio",
+    "wma": "audio",
+    "ttf": "font",
+    "otf": "font",
+    "woff": "font",
+    "woff2": "font",
+    "eot": "font",
+    "zip": "archive",
+    "rar": "archive",
+    "7z": "archive",
+    "tar": "archive",
+    "gz": "archive",
+    "bz2": "archive",
+    "xz": "archive",
+    "tgz": "archive",
+    "jar": "jar",
+    "war": "jar",
+    "ear": "jar",
+    "apk": "jar",
+    "aab": "jar",
+    "pdf": "pdf",
+    "doc": "doc",
+    "docx": "doc",
+    "rtf": "doc",
+    "odt": "doc",
+    "xls": "sheet",
+    "xlsx": "sheet",
+    "csv": "sheet",
+    "tsv": "sheet",
+    "ods": "sheet",
+    "ppt": "slide",
+    "pptx": "slide",
+    "odp": "slide",
+    "sh": "shell",
+    "bash": "shell",
+    "zsh": "shell",
+    "ksh": "shell",
+    "bat": "bat",
+    "cmd": "bat",
+    "ps1": "powershell",
+    "psm1": "powershell",
+    "psd1": "powershell",
     "java": "java",
     "kt": "kotlin",
     "kts": "kotlin",
@@ -47,6 +115,40 @@
     "mli": "ocaml",
     "dart": "dart",
     "swift": "swift",
+    "lisp": "lisp",
+    "lsp": "lisp",
+    "cl": "lisp",
+    "vb": "vb",
+    "vbs": "vb",
+    "pas": "pascal",
+    "dpr": "pascal",
+    "pp": "pascal",
+    "ada": "ada",
+    "adb": "ada",
+    "ads": "ada",
+    "f": "fortran",
+    "f77": "fortran",
+    "f90": "fortran",
+    "f95": "fortran",
+    "f03": "fortran",
+    "for": "fortran",
+    "cob": "cobol",
+    "cbl": "cobol",
+    "tcl": "tcl",
+    "v": "verilog",
+    "sv": "verilog",
+    "vh": "verilog",
+    "svh": "verilog",
+    "sql": "sql",
+    "sqlite": "sqlite",
+    "sqlite3": "sqlite",
+    "db": "sqlite",
+    "db3": "sqlite",
+    "proto": "protobuf",
+    "graphql": "graphql",
+    "gql": "graphql",
+    "coffee": "coffeescript",
+    "ls": "livescript",
     "js": "javascript",
     "mjs": "javascript",
     "cjs": "javascript",
@@ -68,8 +170,22 @@
     "xml": "xml",
     "xsl": "xml",
     "xslt": "xml",
-    "graphql": "graphql",
-    "gql": "graphql",
+    "haml": "haml",
+    "slim": "slim",
+    "pug": "pug",
+    "jade": "pug",
+    "ejs": "ejs",
+    "ect": "ejs",
+    "hbs": "handlebars",
+    "handlebars": "handlebars",
+    "mustache": "handlebars",
+    "twig": "twig",
+    "jinja": "jinja",
+    "jinja2": "jinja",
+    "j2": "jinja",
+    "blade.php": "blade",
+    "bladephp": "blade",
+    "liquid": "liquid",
     "json": "json",
     "jsonc": "json",
     "json5": "json",
@@ -81,7 +197,34 @@
     "conf": "ini",
     "properties": "properties",
     "env": "env",
-    "sql": "sql",
+    "plist": "plist",
+    "vim": "vim",
+    "el": "emacs",
+    "diff": "diff",
+    "patch": "diff",
+    "cmake": "cmake",
+    "cargo": "cargo",
+    "cargo.toml": "cargo",
+    "pipfile": "pipfile",
+    "pyproject": "pyproject",
+    "webpack": "webpack",
+    "vite": "vite",
+    "rollup": "rollup",
+    "esbuild": "esbuild",
+    "babel": "babel",
+    "eslint": "eslint",
+    "prettier": "prettier",
+    "stylelint": "stylelint",
+    "jest": "jest",
+    "vitest": "vitest",
+    "cypress": "cypress",
+    "playwright": "playwright",
+    "puppeteer": "puppeteer",
+    "tf": "terraform",
+    "tfvars": "terraform",
+    "hcl": "terraform",
+    "bicep": "bicep",
+    "nix": "nix",
     "md": "markdown",
     "mdx": "markdown",
     "markdown": "markdown",
@@ -90,64 +233,6 @@
     "rst": "rst",
     "adoc": "asciidoc",
     "asciidoc": "asciidoc",
-    "pdf": "pdf",
-    "doc": "doc",
-    "docx": "doc",
-    "rtf": "doc",
-    "odt": "doc",
-    "xls": "sheet",
-    "xlsx": "sheet",
-    "csv": "sheet",
-    "tsv": "sheet",
-    "ods": "sheet",
-    "ppt": "slide",
-    "pptx": "slide",
-    "odp": "slide",
-    "png": "image",
-    "jpg": "image",
-    "jpeg": "image",
-    "gif": "image",
-    "bmp": "image",
-    "webp": "image",
-    "avif": "image",
-    "heic": "image",
-    "tiff": "image",
-    "tif": "image",
-    "ico": "image",
-    "svg": "svg",
-    "mp4": "video",
-    "mov": "video",
-    "avi": "video",
-    "mkv": "video",
-    "webm": "video",
-    "flv": "video",
-    "wmv": "video",
-    "m4v": "video",
-    "mp3": "audio",
-    "wav": "audio",
-    "flac": "audio",
-    "ogg": "audio",
-    "m4a": "audio",
-    "aac": "audio",
-    "wma": "audio",
-    "ttf": "font",
-    "otf": "font",
-    "woff": "font",
-    "woff2": "font",
-    "eot": "font",
-    "zip": "archive",
-    "rar": "archive",
-    "7z": "archive",
-    "tar": "archive",
-    "gz": "archive",
-    "bz2": "archive",
-    "xz": "archive",
-    "tgz": "archive",
-    "jar": "jar",
-    "war": "jar",
-    "ear": "jar",
-    "apk": "jar",
-    "aab": "jar",
     "exe": "binary",
     "dll": "binary",
     "so": "binary",
@@ -156,19 +241,6 @@
     "class": "binary",
     "o": "binary",
     "a": "binary",
-    "sh": "shell",
-    "bash": "shell",
-    "zsh": "shell",
-    "ksh": "shell",
-    "bat": "bat",
-    "cmd": "bat",
-    "ps1": "powershell",
-    "psm1": "powershell",
-    "psd1": "powershell",
-    "vim": "vim",
-    "el": "emacs",
-    "diff": "diff",
-    "patch": "diff",
     "__filename_docker": "docker",
     "__filename_shell": "shell",
     "__filename_ruby": "ruby",
@@ -184,474 +256,14 @@
     {
       "type": "folder",
       "label": null,
+      "shape": "folder",
       "palette": "gold",
       "exts": []
     },
     {
-      "type": "java",
-      "label": "JV",
-      "palette": "green",
-      "exts": [
-        "java"
-      ]
-    },
-    {
-      "type": "kotlin",
-      "label": "Kt",
-      "palette": "green",
-      "exts": [
-        "kt",
-        "kts"
-      ]
-    },
-    {
-      "type": "scala",
-      "label": "Sc",
-      "palette": "red",
-      "exts": [
-        "scala",
-        "sbt"
-      ]
-    },
-    {
-      "type": "groovy",
-      "label": "Gy",
-      "palette": "blue",
-      "exts": [
-        "groovy"
-      ]
-    },
-    {
-      "type": "c",
-      "label": "C",
-      "palette": "gray",
-      "exts": [
-        "c",
-        "h"
-      ]
-    },
-    {
-      "type": "cpp",
-      "label": "C+",
-      "palette": "purple",
-      "exts": [
-        "cpp",
-        "cc",
-        "cxx",
-        "hpp",
-        "hxx"
-      ]
-    },
-    {
-      "type": "csharp",
-      "label": "C#",
-      "palette": "purple",
-      "exts": [
-        "cs"
-      ]
-    },
-    {
-      "type": "go",
-      "label": "Go",
-      "palette": "cyan",
-      "exts": [
-        "go"
-      ]
-    },
-    {
-      "type": "rust",
-      "label": "Rs",
-      "palette": "red",
-      "exts": [
-        "rs"
-      ]
-    },
-    {
-      "type": "ruby",
-      "label": "Rb",
-      "palette": "red",
-      "exts": [
-        "rb"
-      ]
-    },
-    {
-      "type": "python",
-      "label": "Py",
-      "palette": "light",
-      "exts": [
-        "py",
-        "pyi",
-        "pyc",
-        "pyd",
-        "pyo"
-      ]
-    },
-    {
-      "type": "php",
-      "label": "PHP",
-      "palette": "light",
-      "exts": [
-        "php",
-        "php5",
-        "phtml"
-      ]
-    },
-    {
-      "type": "perl",
-      "label": "Pl",
-      "palette": "blue",
-      "exts": [
-        "pl",
-        "pm"
-      ]
-    },
-    {
-      "type": "lua",
-      "label": "Lu",
-      "palette": "blue",
-      "exts": [
-        "lua"
-      ]
-    },
-    {
-      "type": "erlang",
-      "label": "Er",
-      "palette": "red",
-      "exts": [
-        "erl",
-        "hrl"
-      ]
-    },
-    {
-      "type": "elixir",
-      "label": "Ex",
-      "palette": "purple",
-      "exts": [
-        "ex",
-        "exs"
-      ]
-    },
-    {
-      "type": "haskell",
-      "label": "Hs",
-      "palette": "light",
-      "exts": [
-        "hs"
-      ]
-    },
-    {
-      "type": "clojure",
-      "label": "Cl",
-      "palette": "teal",
-      "exts": [
-        "clj",
-        "cljs",
-        "cljc"
-      ]
-    },
-    {
-      "type": "fsharp",
-      "label": "F#",
-      "palette": "blue",
-      "exts": [
-        "fs",
-        "fsx",
-        "fsi"
-      ]
-    },
-    {
-      "type": "ocaml",
-      "label": "Ml",
-      "palette": "orange",
-      "exts": [
-        "ml",
-        "mli"
-      ]
-    },
-    {
-      "type": "dart",
-      "label": "Dt",
-      "palette": "light",
-      "exts": [
-        "dart"
-      ]
-    },
-    {
-      "type": "swift",
-      "label": "Sw",
-      "palette": "red",
-      "exts": [
-        "swift"
-      ]
-    },
-    {
-      "type": "javascript",
-      "label": "JS",
-      "palette": "yellow",
-      "exts": [
-        "js",
-        "mjs",
-        "cjs"
-      ]
-    },
-    {
-      "type": "typescript",
-      "label": "TS",
-      "palette": "blue",
-      "exts": [
-        "ts",
-        "mts",
-        "cts"
-      ]
-    },
-    {
-      "type": "jsx",
-      "label": "JSX",
-      "palette": "yellow",
-      "exts": [
-        "jsx"
-      ]
-    },
-    {
-      "type": "tsx",
-      "label": "TSX",
-      "palette": "blue",
-      "exts": [
-        "tsx"
-      ]
-    },
-    {
-      "type": "vue",
-      "label": "V",
-      "palette": "green",
-      "exts": [
-        "vue"
-      ]
-    },
-    {
-      "type": "svelte",
-      "label": "Sv",
-      "palette": "red",
-      "exts": [
-        "svelte"
-      ]
-    },
-    {
-      "type": "html",
-      "label": "<>",
-      "palette": "yellow",
-      "exts": [
-        "html",
-        "htm",
-        "xhtml"
-      ]
-    },
-    {
-      "type": "css",
-      "label": "#",
-      "palette": "blue",
-      "exts": [
-        "css"
-      ]
-    },
-    {
-      "type": "scss",
-      "label": "Sc",
-      "palette": "blue",
-      "exts": [
-        "scss"
-      ]
-    },
-    {
-      "type": "sass",
-      "label": "Sa",
-      "palette": "blue",
-      "exts": [
-        "sass"
-      ]
-    },
-    {
-      "type": "less",
-      "label": "Ls",
-      "palette": "blue",
-      "exts": [
-        "less"
-      ]
-    },
-    {
-      "type": "stylus",
-      "label": "St",
-      "palette": "green",
-      "exts": [
-        "styl"
-      ]
-    },
-    {
-      "type": "xml",
-      "label": "X",
-      "palette": "orange",
-      "exts": [
-        "xml",
-        "xsl",
-        "xslt"
-      ]
-    },
-    {
-      "type": "graphql",
-      "label": "GQ",
-      "palette": "purple",
-      "exts": [
-        "graphql",
-        "gql"
-      ]
-    },
-    {
-      "type": "json",
-      "label": "{}",
-      "palette": "yellow",
-      "exts": [
-        "json",
-        "jsonc",
-        "json5"
-      ]
-    },
-    {
-      "type": "yaml",
-      "label": "Y",
-      "palette": "cyan",
-      "exts": [
-        "yml",
-        "yaml"
-      ]
-    },
-    {
-      "type": "toml",
-      "label": "Tl",
-      "palette": "cyan",
-      "exts": [
-        "toml"
-      ]
-    },
-    {
-      "type": "ini",
-      "label": "I",
-      "palette": "cyan",
-      "exts": [
-        "ini",
-        "cfg",
-        "conf"
-      ]
-    },
-    {
-      "type": "properties",
-      "label": "P",
-      "palette": "cyan",
-      "exts": [
-        "properties"
-      ]
-    },
-    {
-      "type": "env",
-      "label": "E",
-      "palette": "yellow",
-      "exts": [
-        "env"
-      ]
-    },
-    {
-      "type": "config",
-      "label": "*",
-      "palette": "cyan",
-      "exts": []
-    },
-    {
-      "type": "sql",
-      "label": "SQL",
-      "palette": "purple",
-      "exts": [
-        "sql"
-      ]
-    },
-    {
-      "type": "markdown",
-      "label": "M.",
-      "palette": "gray",
-      "exts": [
-        "md",
-        "mdx",
-        "markdown"
-      ]
-    },
-    {
-      "type": "text",
-      "label": "TXT",
-      "palette": "yellow",
-      "exts": [
-        "txt",
-        "log"
-      ]
-    },
-    {
-      "type": "rst",
-      "label": "R",
-      "palette": "gray",
-      "exts": [
-        "rst"
-      ]
-    },
-    {
-      "type": "asciidoc",
-      "label": "Ad",
-      "palette": "blue",
-      "exts": [
-        "adoc",
-        "asciidoc"
-      ]
-    },
-    {
-      "type": "pdf",
-      "label": "PDF",
-      "palette": "red",
-      "exts": [
-        "pdf"
-      ]
-    },
-    {
-      "type": "doc",
-      "label": "W",
-      "palette": "blue",
-      "exts": [
-        "doc",
-        "docx",
-        "rtf",
-        "odt"
-      ]
-    },
-    {
-      "type": "sheet",
-      "label": "X",
-      "palette": "teal",
-      "exts": [
-        "xls",
-        "xlsx",
-        "csv",
-        "tsv",
-        "ods"
-      ]
-    },
-    {
-      "type": "slide",
-      "label": "P",
-      "palette": "orange",
-      "exts": [
-        "ppt",
-        "pptx",
-        "odp"
-      ]
-    },
-    {
       "type": "image",
-      "label": "IMG",
+      "label": null,
+      "shape": "image",
       "palette": "purple",
       "exts": [
         "png",
@@ -662,6 +274,7 @@
         "webp",
         "avif",
         "heic",
+        "heif",
         "tiff",
         "tif",
         "ico"
@@ -669,7 +282,8 @@
     },
     {
       "type": "svg",
-      "label": "SVG",
+      "label": null,
+      "shape": "image",
       "palette": "purple",
       "exts": [
         "svg"
@@ -677,7 +291,8 @@
     },
     {
       "type": "video",
-      "label": "VID",
+      "label": null,
+      "shape": "video",
       "palette": "red",
       "exts": [
         "mp4",
@@ -692,7 +307,8 @@
     },
     {
       "type": "audio",
-      "label": "AUD",
+      "label": null,
+      "shape": "audio",
       "palette": "red",
       "exts": [
         "mp3",
@@ -706,7 +322,8 @@
     },
     {
       "type": "font",
-      "label": "Aa",
+      "label": null,
+      "shape": "font",
       "palette": "gray",
       "exts": [
         "ttf",
@@ -718,7 +335,8 @@
     },
     {
       "type": "archive",
-      "label": "ZIP",
+      "label": null,
+      "shape": "archive",
       "palette": "gray",
       "exts": [
         "zip",
@@ -733,7 +351,8 @@
     },
     {
       "type": "jar",
-      "label": "JAR",
+      "label": null,
+      "shape": "jar",
       "palette": "orange",
       "exts": [
         "jar",
@@ -744,8 +363,1026 @@
       ]
     },
     {
+      "type": "pdf",
+      "label": null,
+      "shape": "pdf",
+      "palette": "red",
+      "exts": [
+        "pdf"
+      ]
+    },
+    {
+      "type": "doc",
+      "label": null,
+      "shape": "doc",
+      "palette": "blue",
+      "exts": [
+        "doc",
+        "docx",
+        "rtf",
+        "odt"
+      ]
+    },
+    {
+      "type": "sheet",
+      "label": null,
+      "shape": "sheet",
+      "palette": "teal",
+      "exts": [
+        "xls",
+        "xlsx",
+        "csv",
+        "tsv",
+        "ods"
+      ]
+    },
+    {
+      "type": "slide",
+      "label": null,
+      "shape": "slide",
+      "palette": "orange",
+      "exts": [
+        "ppt",
+        "pptx",
+        "odp"
+      ]
+    },
+    {
+      "type": "docker",
+      "label": null,
+      "shape": "docker",
+      "palette": "cyan",
+      "exts": []
+    },
+    {
+      "type": "shell",
+      "label": null,
+      "shape": "shell",
+      "palette": "gray",
+      "exts": [
+        "sh",
+        "bash",
+        "zsh",
+        "ksh"
+      ]
+    },
+    {
+      "type": "bat",
+      "label": null,
+      "shape": "shell",
+      "palette": "gray",
+      "exts": [
+        "bat",
+        "cmd"
+      ]
+    },
+    {
+      "type": "powershell",
+      "label": null,
+      "shape": "shell",
+      "palette": "blue",
+      "exts": [
+        "ps1",
+        "psm1",
+        "psd1"
+      ]
+    },
+    {
+      "type": "git",
+      "label": null,
+      "shape": "git",
+      "palette": "red",
+      "exts": []
+    },
+    {
+      "type": "license",
+      "label": null,
+      "shape": "license",
+      "palette": "gray",
+      "exts": []
+    },
+    {
+      "type": "readme",
+      "label": null,
+      "shape": "readme",
+      "palette": "gray",
+      "exts": []
+    },
+    {
+      "type": "lock",
+      "label": null,
+      "shape": "lock",
+      "palette": "gray",
+      "exts": []
+    },
+    {
+      "type": "java",
+      "label": "JV",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "java"
+      ]
+    },
+    {
+      "type": "kotlin",
+      "label": "Kt",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "kt",
+        "kts"
+      ]
+    },
+    {
+      "type": "scala",
+      "label": "Sc",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "scala",
+        "sbt"
+      ]
+    },
+    {
+      "type": "groovy",
+      "label": "Gy",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "groovy"
+      ]
+    },
+    {
+      "type": "c",
+      "label": "C",
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "c",
+        "h"
+      ]
+    },
+    {
+      "type": "cpp",
+      "label": "C+",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "cpp",
+        "cc",
+        "cxx",
+        "hpp",
+        "hxx"
+      ]
+    },
+    {
+      "type": "csharp",
+      "label": "C#",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "cs"
+      ]
+    },
+    {
+      "type": "go",
+      "label": "Go",
+      "shape": null,
+      "palette": "cyan",
+      "exts": [
+        "go"
+      ]
+    },
+    {
+      "type": "rust",
+      "label": "Rs",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "rs"
+      ]
+    },
+    {
+      "type": "ruby",
+      "label": "Rb",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "rb"
+      ]
+    },
+    {
+      "type": "python",
+      "label": "Py",
+      "shape": null,
+      "palette": "light",
+      "exts": [
+        "py",
+        "pyi",
+        "pyc",
+        "pyd",
+        "pyo"
+      ]
+    },
+    {
+      "type": "php",
+      "label": "PHP",
+      "shape": null,
+      "palette": "light",
+      "exts": [
+        "php",
+        "php5",
+        "phtml"
+      ]
+    },
+    {
+      "type": "perl",
+      "label": "Pl",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "pl",
+        "pm"
+      ]
+    },
+    {
+      "type": "lua",
+      "label": "Lu",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "lua"
+      ]
+    },
+    {
+      "type": "erlang",
+      "label": "Er",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "erl",
+        "hrl"
+      ]
+    },
+    {
+      "type": "elixir",
+      "label": "Ex",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "ex",
+        "exs"
+      ]
+    },
+    {
+      "type": "haskell",
+      "label": "Hs",
+      "shape": null,
+      "palette": "light",
+      "exts": [
+        "hs"
+      ]
+    },
+    {
+      "type": "clojure",
+      "label": "Cl",
+      "shape": null,
+      "palette": "teal",
+      "exts": [
+        "clj",
+        "cljs",
+        "cljc"
+      ]
+    },
+    {
+      "type": "fsharp",
+      "label": "F#",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "fs",
+        "fsx",
+        "fsi"
+      ]
+    },
+    {
+      "type": "ocaml",
+      "label": "Ml",
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "ml",
+        "mli"
+      ]
+    },
+    {
+      "type": "dart",
+      "label": "Dt",
+      "shape": null,
+      "palette": "light",
+      "exts": [
+        "dart"
+      ]
+    },
+    {
+      "type": "swift",
+      "label": "Sw",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "swift"
+      ]
+    },
+    {
+      "type": "lisp",
+      "label": "Lp",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "lisp",
+        "lsp",
+        "cl"
+      ]
+    },
+    {
+      "type": "vb",
+      "label": "VB",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "vb",
+        "vbs"
+      ]
+    },
+    {
+      "type": "pascal",
+      "label": "Pa",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "pas",
+        "dpr",
+        "pp"
+      ]
+    },
+    {
+      "type": "ada",
+      "label": "Ad",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "ada",
+        "adb",
+        "ads"
+      ]
+    },
+    {
+      "type": "fortran",
+      "label": "Ft",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "f",
+        "f77",
+        "f90",
+        "f95",
+        "f03",
+        "for"
+      ]
+    },
+    {
+      "type": "cobol",
+      "label": "Cb",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "cob",
+        "cbl"
+      ]
+    },
+    {
+      "type": "tcl",
+      "label": "Tc",
+      "shape": null,
+      "palette": "cyan",
+      "exts": [
+        "tcl"
+      ]
+    },
+    {
+      "type": "verilog",
+      "label": "Vg",
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "v",
+        "sv",
+        "vh",
+        "svh"
+      ]
+    },
+    {
+      "type": "sql",
+      "label": "SQL",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "sql"
+      ]
+    },
+    {
+      "type": "sqlite",
+      "label": "SL",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "sqlite",
+        "sqlite3",
+        "db",
+        "db3"
+      ]
+    },
+    {
+      "type": "protobuf",
+      "label": "P#",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "proto"
+      ]
+    },
+    {
+      "type": "graphql",
+      "label": "GQ",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "graphql",
+        "gql"
+      ]
+    },
+    {
+      "type": "coffeescript",
+      "label": "Cf",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "coffee"
+      ]
+    },
+    {
+      "type": "livescript",
+      "label": "LS",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "ls"
+      ]
+    },
+    {
+      "type": "javascript",
+      "label": "JS",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "js",
+        "mjs",
+        "cjs"
+      ]
+    },
+    {
+      "type": "typescript",
+      "label": "TS",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "ts",
+        "mts",
+        "cts"
+      ]
+    },
+    {
+      "type": "jsx",
+      "label": "JSX",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "jsx"
+      ]
+    },
+    {
+      "type": "tsx",
+      "label": "TSX",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "tsx"
+      ]
+    },
+    {
+      "type": "vue",
+      "label": "V",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "vue"
+      ]
+    },
+    {
+      "type": "svelte",
+      "label": "Sv",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "svelte"
+      ]
+    },
+    {
+      "type": "html",
+      "label": "<>",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "html",
+        "htm",
+        "xhtml"
+      ]
+    },
+    {
+      "type": "css",
+      "label": "#",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "css"
+      ]
+    },
+    {
+      "type": "scss",
+      "label": "Sc",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "scss"
+      ]
+    },
+    {
+      "type": "sass",
+      "label": "Sa",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "sass"
+      ]
+    },
+    {
+      "type": "less",
+      "label": "Ls",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "less"
+      ]
+    },
+    {
+      "type": "stylus",
+      "label": "St",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "styl"
+      ]
+    },
+    {
+      "type": "xml",
+      "label": "X",
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "xml",
+        "xsl",
+        "xslt"
+      ]
+    },
+    {
+      "type": "haml",
+      "label": "Hm",
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "haml"
+      ]
+    },
+    {
+      "type": "slim",
+      "label": "Sl",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "slim"
+      ]
+    },
+    {
+      "type": "pug",
+      "label": "Pg",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "pug",
+        "jade"
+      ]
+    },
+    {
+      "type": "ejs",
+      "label": "EJ",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "ejs",
+        "ect"
+      ]
+    },
+    {
+      "type": "handlebars",
+      "label": "Hb",
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "hbs",
+        "handlebars",
+        "mustache"
+      ]
+    },
+    {
+      "type": "twig",
+      "label": "Tw",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "twig"
+      ]
+    },
+    {
+      "type": "jinja",
+      "label": "Jn",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "jinja",
+        "jinja2",
+        "j2"
+      ]
+    },
+    {
+      "type": "blade",
+      "label": "Bl",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "blade.php",
+        "bladephp"
+      ]
+    },
+    {
+      "type": "liquid",
+      "label": "Lq",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "liquid"
+      ]
+    },
+    {
+      "type": "json",
+      "label": "{}",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "json",
+        "jsonc",
+        "json5"
+      ]
+    },
+    {
+      "type": "yaml",
+      "label": "Y",
+      "shape": null,
+      "palette": "cyan",
+      "exts": [
+        "yml",
+        "yaml"
+      ]
+    },
+    {
+      "type": "toml",
+      "label": "Tl",
+      "shape": null,
+      "palette": "cyan",
+      "exts": [
+        "toml"
+      ]
+    },
+    {
+      "type": "ini",
+      "label": "I",
+      "shape": null,
+      "palette": "cyan",
+      "exts": [
+        "ini",
+        "cfg",
+        "conf"
+      ]
+    },
+    {
+      "type": "properties",
+      "label": "P",
+      "shape": null,
+      "palette": "cyan",
+      "exts": [
+        "properties"
+      ]
+    },
+    {
+      "type": "env",
+      "label": "E",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "env"
+      ]
+    },
+    {
+      "type": "plist",
+      "label": "Ps",
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "plist"
+      ]
+    },
+    {
+      "type": "config",
+      "label": "*",
+      "shape": null,
+      "palette": "cyan",
+      "exts": []
+    },
+    {
+      "type": "vim",
+      "label": "Vm",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "vim"
+      ]
+    },
+    {
+      "type": "emacs",
+      "label": "El",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "el"
+      ]
+    },
+    {
+      "type": "diff",
+      "label": "±",
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "diff",
+        "patch"
+      ]
+    },
+    {
+      "type": "cmake",
+      "label": "CM",
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "cmake"
+      ]
+    },
+    {
+      "type": "cargo",
+      "label": "Cg",
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "cargo",
+        "cargo.toml"
+      ]
+    },
+    {
+      "type": "pipfile",
+      "label": "Py",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "pipfile"
+      ]
+    },
+    {
+      "type": "pyproject",
+      "label": "Py",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "pyproject"
+      ]
+    },
+    {
+      "type": "webpack",
+      "label": "Wp",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "webpack"
+      ]
+    },
+    {
+      "type": "vite",
+      "label": "Vi",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "vite"
+      ]
+    },
+    {
+      "type": "rollup",
+      "label": "Rp",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "rollup"
+      ]
+    },
+    {
+      "type": "esbuild",
+      "label": "Eb",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "esbuild"
+      ]
+    },
+    {
+      "type": "babel",
+      "label": "Bb",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "babel"
+      ]
+    },
+    {
+      "type": "eslint",
+      "label": "Es",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "eslint"
+      ]
+    },
+    {
+      "type": "prettier",
+      "label": "Pt",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "prettier"
+      ]
+    },
+    {
+      "type": "stylelint",
+      "label": "Sn",
+      "shape": null,
+      "palette": "teal",
+      "exts": [
+        "stylelint"
+      ]
+    },
+    {
+      "type": "jest",
+      "label": "Jt",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "jest"
+      ]
+    },
+    {
+      "type": "vitest",
+      "label": "Vs",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "vitest"
+      ]
+    },
+    {
+      "type": "cypress",
+      "label": "Cy",
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "cypress"
+      ]
+    },
+    {
+      "type": "playwright",
+      "label": "Pw",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "playwright"
+      ]
+    },
+    {
+      "type": "puppeteer",
+      "label": "Pu",
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "puppeteer"
+      ]
+    },
+    {
+      "type": "terraform",
+      "label": "Tf",
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "tf",
+        "tfvars",
+        "hcl"
+      ]
+    },
+    {
+      "type": "bicep",
+      "label": "Bi",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "bicep"
+      ]
+    },
+    {
+      "type": "nix",
+      "label": "Nx",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "nix"
+      ]
+    },
+    {
+      "type": "markdown",
+      "label": "M.",
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "md",
+        "mdx",
+        "markdown"
+      ]
+    },
+    {
+      "type": "text",
+      "label": "TXT",
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "txt",
+        "log"
+      ]
+    },
+    {
+      "type": "rst",
+      "label": "R",
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "rst"
+      ]
+    },
+    {
+      "type": "asciidoc",
+      "label": "Ad",
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "adoc",
+        "asciidoc"
+      ]
+    },
+    {
       "type": "binary",
       "label": "BIN",
+      "shape": null,
       "palette": "gray",
       "exts": [
         "exe",
@@ -759,93 +1396,9 @@
       ]
     },
     {
-      "type": "shell",
-      "label": ">_",
-      "palette": "gray",
-      "exts": [
-        "sh",
-        "bash",
-        "zsh",
-        "ksh"
-      ]
-    },
-    {
-      "type": "bat",
-      "label": "B",
-      "palette": "gray",
-      "exts": [
-        "bat",
-        "cmd"
-      ]
-    },
-    {
-      "type": "powershell",
-      "label": "P$",
-      "palette": "blue",
-      "exts": [
-        "ps1",
-        "psm1",
-        "psd1"
-      ]
-    },
-    {
-      "type": "vim",
-      "label": "Vm",
-      "palette": "green",
-      "exts": [
-        "vim"
-      ]
-    },
-    {
-      "type": "emacs",
-      "label": "El",
-      "palette": "purple",
-      "exts": [
-        "el"
-      ]
-    },
-    {
-      "type": "docker",
-      "label": "DK",
-      "palette": "cyan",
-      "exts": []
-    },
-    {
-      "type": "git",
-      "label": "GIT",
-      "palette": "red",
-      "exts": []
-    },
-    {
-      "type": "diff",
-      "label": "±",
-      "palette": "gray",
-      "exts": [
-        "diff",
-        "patch"
-      ]
-    },
-    {
-      "type": "license",
-      "label": "©",
-      "palette": "gray",
-      "exts": []
-    },
-    {
-      "type": "readme",
-      "label": "i",
-      "palette": "gray",
-      "exts": []
-    },
-    {
-      "type": "lock",
-      "label": "L",
-      "palette": "gray",
-      "exts": []
-    },
-    {
       "type": "unknown",
       "label": "?",
+      "shape": null,
       "palette": "dimGray",
       "exts": []
     }

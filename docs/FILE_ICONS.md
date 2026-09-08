@@ -16,51 +16,92 @@
 - 前端可以按 `getIconByExt(ext)` 直接拿,不需要先查编号表
 - 4 状态后缀固定: `file-java.svg` / `file-java-hover.svg` / `file-java-active.svg` / `file-java-disabled.svg`
 
-## 2. 加载与缓存
+## 2. 视觉差异(每类有专属形状)
 
-### 2.1 前端标准做法
+**不是所有文件类型都用同一个"文档基线 + 字符"模板**,各类型有对应视觉:
+
+| 类型 | 视觉 |
+|---|---|
+| `folder` | 文件夹形状 |
+| `image` / `svg` | 矩形 + 太阳 + 山峰 |
+| `video` | 胶片孔 + 播放三角 |
+| `audio` | 5 条声波 + 音符 |
+| `font` | "A" 大字 + "a" 小字 |
+| `archive` | 堆叠 3 层 + 扎带 |
+| `jar` | 椭圆盖 + 罐身 |
+| `pdf` | 文档基线 + PDF 大字 |
+| `doc` | 文档基线 + 角标 W |
+| `sheet` | 文档基线 + 表格网格 |
+| `slide` | 矩形屏幕 + 播放三角 |
+| `docker` | 鲸鱼 + 集装箱 |
+| `shell` / `bat` / `powershell` | 终端窗口 + `$` + 命令 |
+| `git` | 3 节点 + 分支连接 |
+| `license` | 卷轴 + © |
+| `readme` | 打开的书本 + i 标识 |
+| `lock` | 锁钩 + 锁身 |
+| 代码/配置/数据 | 文档基线 + 字符标签 |
+
+## 3. 加载与缓存
+
+### 3.1 前端标准做法
 
 ```js
-// 启动时一次性拉映射,后续纯本地查询
 import iconMap from '/icons/file-icon-map.json';
 
 function getIconByPath(filePath, kind) {
     if (kind === 'folder') return `icons/file-folder.svg`;
     const name = filePath.split(/[\\/]/).pop().toLowerCase();
-    // 优先按完整文件名匹配(Dockerfile / LICENSE 等)
+    // 完整文件名优先(Dockerfile / LICENSE / package-lock.json 等)
     for (const [key, type] of Object.entries(iconMap.extMap)) {
         if (key.startsWith('__filename_') && name === key.replace('__filename_', '')) {
             return `icons/file-${type}.svg`;
         }
     }
-    // 再按扩展名查
+    // 扩展名兜底
     const ext = name.includes('.') ? name.split('.').pop() : '';
     const type = iconMap.extMap[ext] || iconMap.extMap._unknown;
     return `icons/file-${type}.svg`;
 }
 ```
 
-### 2.2 HTTP 缓存建议
+### 3.2 HTTP 缓存建议
 
-- `icons/file-icon-map.json` → `Cache-Control: max-age=86400, immutable`(启动时拉一次)
+- `icons/file-icon-map.json` → `Cache-Control: max-age=86400`(启动时拉一次)
 - `icons/file-{type}.svg` → `Cache-Control: public, max-age=2592000, immutable`(永不变)
 - 4 状态后缀是不同 URL,各自独立缓存
 - 文件名稳定 = 内容稳定,可以直接走磁盘缓存
 
-## 3. 添加新文件类型
+## 4. 添加新文件类型
 
 1. 编辑 `scripts/generate-file-type-icons.cjs` 的 `FILE_TYPES` 数组
 2. `node scripts/generate-file-type-icons.cjs`
 3. 自动产生 4 态 SVG + 更新 `icons/file-icon-map.json` + 更新本规范
-4. 提交 PR,审核命名 + 配色 + 字符标签
+4. 提交 PR,审核命名 + 配色 + 字符标签 / 视觉
 
-配色选自 `icons/README.md` 配色矩阵,字符标签由 5x7 位图字体生成(`scripts/generate-file-type-icons.cjs` 内置)。
+## 5. 已有文件类型
 
-## 4. 已有文件类型
-
-| 类别 | 类型 | 字符 | 配色 | 扩展名 / 文件名 |
+| 类别 | 类型 | 视觉/标签 | 配色 | 扩展名 / 文件名 |
 |---|---|---|---|---|
-| 目录 | `file-folder.svg` | `-` | gold | (目录) |
+| 目录 | `file-folder.svg` | `folder` | gold | (完整文件名或扩展名匹配) |
+| 专门视觉(多媒体/容器/工具) | `file-image.svg` | `image` | purple | png, jpg, jpeg, gif, bmp, webp, avif, heic, heif, tiff, tif, ico |
+| 专门视觉(多媒体/容器/工具) | `file-svg.svg` | `image` | purple | svg |
+| 专门视觉(多媒体/容器/工具) | `file-video.svg` | `video` | red | mp4, mov, avi, mkv, webm, flv, wmv, m4v |
+| 专门视觉(多媒体/容器/工具) | `file-audio.svg` | `audio` | red | mp3, wav, flac, ogg, m4a, aac, wma |
+| 专门视觉(多媒体/容器/工具) | `file-font.svg` | `font` | gray | ttf, otf, woff, woff2, eot |
+| 专门视觉(多媒体/容器/工具) | `file-archive.svg` | `archive` | gray | zip, rar, 7z, tar, gz, bz2, xz, tgz |
+| 专门视觉(多媒体/容器/工具) | `file-jar.svg` | `jar` | orange | jar, war, ear, apk, aab |
+| 专门视觉(多媒体/容器/工具) | `file-pdf.svg` | `pdf` | red | pdf |
+| 专门视觉(多媒体/容器/工具) | `file-doc.svg` | `doc` | blue | doc, docx, rtf, odt |
+| 专门视觉(多媒体/容器/工具) | `file-sheet.svg` | `sheet` | teal | xls, xlsx, csv, tsv, ods |
+| 专门视觉(多媒体/容器/工具) | `file-slide.svg` | `slide` | orange | ppt, pptx, odp |
+| 专门视觉(多媒体/容器/工具) | `file-docker.svg` | `docker` | cyan | (完整文件名或扩展名匹配) |
+| 专门视觉(多媒体/容器/工具) | `file-shell.svg` | `shell` | gray | sh, bash, zsh, ksh |
+| 专门视觉(多媒体/容器/工具) | `file-bat.svg` | `shell` | gray | bat, cmd |
+| 专门视觉(多媒体/容器/工具) | `file-powershell.svg` | `shell` | blue | ps1, psm1, psd1 |
+| 专门视觉(多媒体/容器/工具) | `file-git.svg` | `git` | red | (完整文件名或扩展名匹配) |
+| 专门视觉(多媒体/容器/工具) | `file-license.svg` | `license` | gray | (完整文件名或扩展名匹配) |
+| 专门视觉(多媒体/容器/工具) | `file-readme.svg` | `readme` | gray | (完整文件名或扩展名匹配) |
+| 专门视觉(多媒体/容器/工具) | `file-lock.svg` | `lock` | gray | (完整文件名或扩展名匹配) |
 | 后端 / 系统语言 | `file-java.svg` | `JV` | green | java |
 | 后端 / 系统语言 | `file-kotlin.svg` | `Kt` | green | kt, kts |
 | 后端 / 系统语言 | `file-scala.svg` | `Sc` | red | scala, sbt |
@@ -82,6 +123,17 @@ function getIconByPath(filePath, kind) {
 | 后端 / 系统语言 | `file-ocaml.svg` | `Ml` | orange | ml, mli |
 | 后端 / 系统语言 | `file-dart.svg` | `Dt` | light | dart |
 | 后端 / 系统语言 | `file-swift.svg` | `Sw` | red | swift |
+| 后端 / 系统语言 | `file-lisp.svg` | `Lp` | purple | lisp, lsp, cl |
+| 后端 / 系统语言 | `file-vb.svg` | `VB` | blue | vb, vbs |
+| 后端 / 系统语言 | `file-pascal.svg` | `Pa` | red | pas, dpr, pp |
+| 后端 / 系统语言 | `file-ada.svg` | `Ad` | blue | ada, adb, ads |
+| 后端 / 系统语言 | `file-fortran.svg` | `Ft` | purple | f, f77, f90, f95, f03, for |
+| 后端 / 系统语言 | `file-cobol.svg` | `Cb` | blue | cob, cbl |
+| 后端 / 系统语言 | `file-tcl.svg` | `Tc` | cyan | tcl |
+| 后端 / 系统语言 | `file-verilog.svg` | `Vg` | orange | v, sv, vh, svh |
+| 前端 / 脚本 | `file-graphql.svg` | `GQ` | purple | graphql, gql |
+| 前端 / 脚本 | `file-coffeescript.svg` | `Cf` | yellow | coffee |
+| 前端 / 脚本 | `file-livescript.svg` | `LS` | blue | ls |
 | 前端 / 脚本 | `file-javascript.svg` | `JS` | yellow | js, mjs, cjs |
 | 前端 / 脚本 | `file-typescript.svg` | `TS` | blue | ts, mts, cts |
 | 前端 / 脚本 | `file-jsx.svg` | `JSX` | yellow | jsx |
@@ -95,69 +147,96 @@ function getIconByPath(filePath, kind) {
 | 前端 / 脚本 | `file-less.svg` | `Ls` | blue | less |
 | 前端 / 脚本 | `file-stylus.svg` | `St` | green | styl |
 | 前端 / 脚本 | `file-xml.svg` | `X` | orange | xml, xsl, xslt |
-| 前端 / 脚本 | `file-graphql.svg` | `GQ` | purple | graphql, gql |
+| 模板 / 视图 | `file-haml.svg` | `Hm` | orange | haml |
+| 模板 / 视图 | `file-slim.svg` | `Sl` | green | slim |
+| 模板 / 视图 | `file-pug.svg` | `Pg` | red | pug, jade |
+| 模板 / 视图 | `file-ejs.svg` | `EJ` | yellow | ejs, ect |
+| 模板 / 视图 | `file-handlebars.svg` | `Hb` | orange | hbs, handlebars, mustache |
+| 模板 / 视图 | `file-twig.svg` | `Tw` | green | twig |
+| 模板 / 视图 | `file-jinja.svg` | `Jn` | red | jinja, jinja2, j2 |
+| 模板 / 视图 | `file-blade.svg` | `Bl` | red | blade.php, bladephp |
+| 模板 / 视图 | `file-liquid.svg` | `Lq` | green | liquid |
+| 配置 / 数据 | `file-sql.svg` | `SQL` | purple | sql |
+| 配置 / 数据 | `file-sqlite.svg` | `SL` | blue | sqlite, sqlite3, db, db3 |
 | 配置 / 数据 | `file-json.svg` | `{}` | yellow | json, jsonc, json5 |
 | 配置 / 数据 | `file-yaml.svg` | `Y` | cyan | yml, yaml |
 | 配置 / 数据 | `file-toml.svg` | `Tl` | cyan | toml |
 | 配置 / 数据 | `file-ini.svg` | `I` | cyan | ini, cfg, conf |
 | 配置 / 数据 | `file-properties.svg` | `P` | cyan | properties |
 | 配置 / 数据 | `file-env.svg` | `E` | yellow | env |
-| 配置 / 数据 | `file-config.svg` | `*` | cyan | .editorconfig, .eslintrc 等 |
-| 配置 / 数据 | `file-sql.svg` | `SQL` | purple | sql |
-| 文档 | `file-markdown.svg` | `M.` | gray | md, mdx, markdown |
-| 文档 | `file-text.svg` | `TXT` | yellow | txt, log |
-| 文档 | `file-rst.svg` | `R` | gray | rst |
-| 文档 | `file-asciidoc.svg` | `Ad` | blue | adoc, asciidoc |
-| 文档 | `file-pdf.svg` | `PDF` | red | pdf |
-| 文档 | `file-doc.svg` | `W` | blue | doc, docx, rtf, odt |
-| 文档 | `file-sheet.svg` | `X` | teal | xls, xlsx, csv, tsv, ods |
-| 文档 | `file-slide.svg` | `P` | orange | ppt, pptx, odp |
-| 多媒体 | `file-image.svg` | `IMG` | purple | png, jpg, jpeg, gif, bmp, webp, avif, heic, tiff, tif, ico |
-| 多媒体 | `file-svg.svg` | `SVG` | purple | svg |
-| 多媒体 | `file-video.svg` | `VID` | red | mp4, mov, avi, mkv, webm, flv, wmv, m4v |
-| 多媒体 | `file-audio.svg` | `AUD` | red | mp3, wav, flac, ogg, m4a, aac, wma |
-| 多媒体 | `file-font.svg` | `Aa` | gray | ttf, otf, woff, woff2, eot |
-| 归档 / 二进制 | `file-archive.svg` | `ZIP` | gray | zip, rar, 7z, tar, gz, bz2, xz, tgz |
-| 归档 / 二进制 | `file-jar.svg` | `JAR` | orange | jar, war, ear, apk, aab |
-| 归档 / 二进制 | `file-binary.svg` | `BIN` | gray | exe, dll, so, dylib, bin, class, o, a |
-| 脚本 / 运维 | `file-shell.svg` | `>_` | gray | sh, bash, zsh, ksh |
-| 脚本 / 运维 | `file-bat.svg` | `B` | gray | bat, cmd |
-| 脚本 / 运维 | `file-powershell.svg` | `P$` | blue | ps1, psm1, psd1 |
-| 脚本 / 运维 | `file-vim.svg` | `Vm` | green | vim |
-| 脚本 / 运维 | `file-emacs.svg` | `El` | purple | el |
-| 脚本 / 运维 | `file-docker.svg` | `DK` | cyan | Dockerfile, .dockerignore |
-| 脚本 / 运维 | `file-git.svg` | `GIT` | red | .gitignore, .gitattributes |
-| 脚本 / 运维 | `file-diff.svg` | `±` | gray | diff, patch |
-| 元数据 / 占位 | `file-license.svg` | `©` | gray | LICENSE, license.md |
-| 元数据 / 占位 | `file-readme.svg` | `i` | gray | README, readme.* |
-| 元数据 / 占位 | `file-lock.svg` | `L` | gray | package-lock.json, *.lock |
+| 配置 / 数据 | `file-plist.svg` | `Ps` | gray | plist |
+| 配置 / 数据 | `file-config.svg` | `*` | cyan | (查不到扩展名时) |
+| 接口 / 协议 | `file-protobuf.svg` | `P#` | purple | proto |
+| 接口 / 协议 | `file-graphql.svg` | `GQ` | purple | graphql, gql |
+| 构建 / 工具 | `file-vim.svg` | `Vm` | green | vim |
+| 构建 / 工具 | `file-emacs.svg` | `El` | purple | el |
+| 构建 / 工具 | `file-diff.svg` | `±` | gray | diff, patch |
+| 构建 / 工具 | `file-cmake.svg` | `CM` | gray | cmake |
+| 构建 / 工具 | `file-cargo.svg` | `Cg` | orange | cargo, cargo.toml |
+| 构建 / 工具 | `file-pipfile.svg` | `Py` | blue | pipfile |
+| 构建 / 工具 | `file-pyproject.svg` | `Py` | blue | pyproject |
+| 构建 / 工具 | `file-webpack.svg` | `Wp` | blue | webpack |
+| 构建 / 工具 | `file-vite.svg` | `Vi` | purple | vite |
+| 构建 / 工具 | `file-rollup.svg` | `Rp` | red | rollup |
+| 构建 / 工具 | `file-esbuild.svg` | `Eb` | yellow | esbuild |
+| 构建 / 工具 | `file-babel.svg` | `Bb` | yellow | babel |
+| 构建 / 工具 | `file-eslint.svg` | `Es` | purple | eslint |
+| 构建 / 工具 | `file-prettier.svg` | `Pt` | blue | prettier |
+| 构建 / 工具 | `file-stylelint.svg` | `Sn` | teal | stylelint |
+| 构建 / 工具 | `file-jest.svg` | `Jt` | red | jest |
+| 构建 / 工具 | `file-vitest.svg` | `Vs` | green | vitest |
+| 构建 / 工具 | `file-cypress.svg` | `Cy` | green | cypress |
+| 构建 / 工具 | `file-playwright.svg` | `Pw` | purple | playwright |
+| 构建 / 工具 | `file-puppeteer.svg` | `Pu` | red | puppeteer |
+| 构建 / 工具 | `file-terraform.svg` | `Tf` | purple | tf, tfvars, hcl |
+| 构建 / 工具 | `file-bicep.svg` | `Bi` | blue | bicep |
+| 构建 / 工具 | `file-nix.svg` | `Nx` | blue | nix |
+| 元数据 / 占位 | `file-markdown.svg` | `M.` | gray | md, mdx, markdown |
+| 元数据 / 占位 | `file-text.svg` | `TXT` | yellow | txt, log |
+| 元数据 / 占位 | `file-rst.svg` | `R` | gray | rst |
+| 元数据 / 占位 | `file-asciidoc.svg` | `Ad` | blue | adoc, asciidoc |
+| 元数据 / 占位 | `file-binary.svg` | `BIN` | gray | exe, dll, so, dylib, bin, class, o, a |
 | 元数据 / 占位 | `file-unknown.svg` | `?` | dimGray | (查不到扩展名时) |
 
-## 5. 扩展名速查(按字母)
+## 6. 扩展名速查(按字母)
 
 - `7z` → `archive`
 - `a` → `binary`
 - `aab` → `jar`
 - `aac` → `audio`
+- `ada` → `ada`
+- `adb` → `ada`
 - `adoc` → `asciidoc`
+- `ads` → `ada`
 - `apk` → `jar`
 - `asciidoc` → `asciidoc`
 - `avi` → `video`
 - `avif` → `image`
+- `babel` → `babel`
 - `bash` → `shell`
 - `bat` → `bat`
+- `bicep` → `bicep`
 - `bin` → `binary`
+- `blade.php` → `blade`
+- `bladephp` → `blade`
 - `bmp` → `image`
 - `bz2` → `archive`
 - `c` → `c`
+- `cargo` → `cargo`
+- `cargo.toml` → `cargo`
+- `cbl` → `cobol`
 - `cc` → `cpp`
 - `cfg` → `ini`
 - `cjs` → `javascript`
+- `cl` → `lisp`
 - `class` → `binary`
 - `clj` → `clojure`
 - `cljc` → `clojure`
 - `cljs` → `clojure`
+- `cmake` → `cmake`
 - `cmd` → `bat`
+- `cob` → `cobol`
+- `coffee` → `coffeescript`
 - `conf` → `ini`
 - `cpp` → `cpp`
 - `cs` → `csharp`
@@ -165,22 +244,36 @@ function getIconByPath(filePath, kind) {
 - `csv` → `sheet`
 - `cts` → `typescript`
 - `cxx` → `cpp`
+- `cypress` → `cypress`
 - `dart` → `dart`
+- `db` → `sqlite`
+- `db3` → `sqlite`
 - `diff` → `diff`
 - `dll` → `binary`
 - `doc` → `doc`
 - `docx` → `doc`
+- `dpr` → `pascal`
 - `dylib` → `binary`
 - `ear` → `jar`
+- `ect` → `ejs`
+- `ejs` → `ejs`
 - `el` → `emacs`
 - `env` → `env`
 - `eot` → `font`
 - `erl` → `erlang`
+- `esbuild` → `esbuild`
+- `eslint` → `eslint`
 - `ex` → `elixir`
 - `exe` → `binary`
 - `exs` → `elixir`
+- `f` → `fortran`
+- `f03` → `fortran`
+- `f77` → `fortran`
+- `f90` → `fortran`
+- `f95` → `fortran`
 - `flac` → `audio`
 - `flv` → `video`
+- `for` → `fortran`
 - `fs` → `fsharp`
 - `fsi` → `fsharp`
 - `fsx` → `fsharp`
@@ -191,7 +284,12 @@ function getIconByPath(filePath, kind) {
 - `groovy` → `groovy`
 - `gz` → `archive`
 - `h` → `c`
+- `haml` → `haml`
+- `handlebars` → `handlebars`
+- `hbs` → `handlebars`
+- `hcl` → `terraform`
 - `heic` → `image`
+- `heif` → `image`
 - `hpp` → `cpp`
 - `hrl` → `erlang`
 - `hs` → `haskell`
@@ -200,8 +298,13 @@ function getIconByPath(filePath, kind) {
 - `hxx` → `cpp`
 - `ico` → `image`
 - `ini` → `ini`
+- `j2` → `jinja`
+- `jade` → `pug`
 - `jar` → `jar`
 - `java` → `java`
+- `jest` → `jest`
+- `jinja` → `jinja`
+- `jinja2` → `jinja`
 - `jpeg` → `image`
 - `jpg` → `image`
 - `js` → `javascript`
@@ -213,7 +316,11 @@ function getIconByPath(filePath, kind) {
 - `kt` → `kotlin`
 - `kts` → `kotlin`
 - `less` → `less`
+- `liquid` → `liquid`
+- `lisp` → `lisp`
 - `log` → `text`
+- `ls` → `livescript`
+- `lsp` → `lisp`
 - `lua` → `lua`
 - `m4a` → `audio`
 - `m4v` → `video`
@@ -228,33 +335,46 @@ function getIconByPath(filePath, kind) {
 - `mp3` → `audio`
 - `mp4` → `video`
 - `mts` → `typescript`
+- `mustache` → `handlebars`
+- `nix` → `nix`
 - `o` → `binary`
 - `odp` → `slide`
 - `ods` → `sheet`
 - `odt` → `doc`
 - `ogg` → `audio`
 - `otf` → `font`
+- `pas` → `pascal`
 - `patch` → `diff`
 - `pdf` → `pdf`
 - `php` → `php`
 - `php5` → `php`
 - `phtml` → `php`
+- `pipfile` → `pipfile`
 - `pl` → `perl`
+- `playwright` → `playwright`
+- `plist` → `plist`
 - `pm` → `perl`
 - `png` → `image`
+- `pp` → `pascal`
 - `ppt` → `slide`
 - `pptx` → `slide`
+- `prettier` → `prettier`
 - `properties` → `properties`
+- `proto` → `protobuf`
 - `ps1` → `powershell`
 - `psd1` → `powershell`
 - `psm1` → `powershell`
+- `pug` → `pug`
+- `puppeteer` → `puppeteer`
 - `py` → `python`
 - `pyc` → `python`
 - `pyd` → `python`
 - `pyi` → `python`
 - `pyo` → `python`
+- `pyproject` → `pyproject`
 - `rar` → `archive`
 - `rb` → `ruby`
+- `rollup` → `rollup`
 - `rs` → `rust`
 - `rst` → `rst`
 - `rtf` → `doc`
@@ -263,13 +383,22 @@ function getIconByPath(filePath, kind) {
 - `scala` → `scala`
 - `scss` → `scss`
 - `sh` → `shell`
+- `slim` → `slim`
 - `so` → `binary`
 - `sql` → `sql`
+- `sqlite` → `sqlite`
+- `sqlite3` → `sqlite`
 - `styl` → `stylus`
+- `stylelint` → `stylelint`
+- `sv` → `verilog`
 - `svelte` → `svelte`
 - `svg` → `svg`
+- `svh` → `verilog`
 - `swift` → `swift`
 - `tar` → `archive`
+- `tcl` → `tcl`
+- `tf` → `terraform`
+- `tfvars` → `terraform`
 - `tgz` → `archive`
 - `tif` → `image`
 - `tiff` → `image`
@@ -278,13 +407,21 @@ function getIconByPath(filePath, kind) {
 - `tsv` → `sheet`
 - `tsx` → `tsx`
 - `ttf` → `font`
+- `twig` → `twig`
 - `txt` → `text`
+- `v` → `verilog`
+- `vb` → `vb`
+- `vbs` → `vb`
+- `vh` → `verilog`
 - `vim` → `vim`
+- `vite` → `vite`
+- `vitest` → `vitest`
 - `vue` → `vue`
 - `war` → `jar`
 - `wav` → `audio`
 - `webm` → `video`
 - `webp` → `image`
+- `webpack` → `webpack`
 - `wma` → `audio`
 - `wmv` → `video`
 - `woff` → `font`
@@ -301,25 +438,25 @@ function getIconByPath(filePath, kind) {
 - `zip` → `archive`
 - `zsh` → `shell`
 
-## 6. 完整文件名匹配(优先级最高)
+## 7. 完整文件名匹配(优先级最高)
 
-- 完整文件名匹配 → `file-docker.svg`
-- 完整文件名匹配 → `file-shell.svg`
-- 完整文件名匹配 → `file-ruby.svg`
-- 完整文件名匹配 → `file-ruby.svg`
-- 完整文件名匹配 → `file-ruby.svg`
-- 完整文件名匹配 → `file-config.svg`
-- 完整文件名匹配 → `file-ruby.svg`
-- 完整文件名匹配 → `file-license.svg`
-- 完整文件名匹配 → `file-readme.svg`
-- 完整文件名匹配 → `file-lock.svg`
-- 完整文件名匹配 → `file-json.svg`
-- 完整文件名匹配 → `file-env.svg`
-- 完整文件名匹配 → `file-git.svg`
-- 完整文件名匹配 → `file-docker.svg`
-- 完整文件名匹配 → `file-config.svg`
+- 完整文件名 `n === 'dockerfile'...` → `file-docker.svg`
+- 完整文件名 `n === 'makefile' || n === 'gnumakefile'...` → `file-shell.svg`
+- 完整文件名 `n === 'rakefile'...` → `file-ruby.svg`
+- 完整文件名 `n === 'gemfile'...` → `file-ruby.svg`
+- 完整文件名 `n === 'podfile'...` → `file-ruby.svg`
+- 完整文件名 `n === 'procfile'...` → `file-config.svg`
+- 完整文件名 `n === 'vagrantfile'...` → `file-ruby.svg`
+- 完整文件名 `n === 'license' || n === 'license.md' || n === 'li...` → `file-license.svg`
+- 完整文件名 `n === 'readme' || /^readme\./i.test(n)...` → `file-readme.svg`
+- 完整文件名 `n === 'package-lock.json' || n === 'yarn.lock' || ...` → `file-lock.svg`
+- 完整文件名 `n === 'tsconfig.json' || n === 'jsconfig.json'...` → `file-json.svg`
+- 完整文件名 `n.startsWith('.env')...` → `file-env.svg`
+- 完整文件名 `n === '.gitignore' || n === '.gitattributes' || n ...` → `file-git.svg`
+- 完整文件名 `n === '.dockerignore'...` → `file-docker.svg`
+- 完整文件名 `n === '.editorconfig' || n === '.eslintrc' || n ==...` → `file-config.svg`
 
-## 7. 4 状态
+## 8. 4 状态
 
 | 状态 | 触发 | 视觉 |
 |---|---|---|
@@ -328,9 +465,8 @@ function getIconByPath(filePath, kind) {
 | `active` | 鼠标按下 | 同色深一档 |
 | `disabled` | 不可用 | 统一灰 `#868E96` |
 
-## 8. 风格一致性
+## 9. 风格一致性
 
 - viewBox 统一 `0 0 56 56`,源文件 `width="56" height="56"`
-- 文档基线:角折 + 3 横线(沿用 `09-file.svg`)
-- 字符标签用 5x7 位图字体(避免 `<text>` 字体依赖)
 - 不用 `<script>` / `<foreignObject>` / 外链 `href` / `url()` / `onload` / `onclick`
+- 专门形状优先纯几何(矩形/圆形/直线),必要时用 `<text>` 表达字符(只在 PDF/font 视觉使用)
