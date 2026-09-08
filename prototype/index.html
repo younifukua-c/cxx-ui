@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cxx-ui 图标库原型</title>
+<style>
+/* cxx-ui 原型页样式,跟 cxx-repodock 暗色主题保持一致。
+   严格自包含:不引外部资源,不依赖第三方库,任何 clone 仓库后直接打开就能用。 */
+:root {
+    --bg-0: #1e1e1e;
+    --bg-1: #252525;
+    --bg-2: #2a2a2a;
+    --bg-3: #333333;
+    --fg-0: #d4d4d4;
+    --fg-1: #cccccc;
+    --fg-2: #858585;
+    --accent: #4ec9b0;
+    --err: #f48771;
+    --search-bg: #2a2a2a;
+    --search-border: #3a3a3a;
+    --card-bg: #252525;
+    --card-border: #2f2f2f;
+}
+* { box-sizing: border-box; }
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-0);
+    color: var(--fg-0);
+    font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    min-height: 100vh;
+}
+header {
+    padding: 28px 32px 20px;
+    border-bottom: 1px solid var(--bg-3);
+    background: var(--bg-1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+header h1 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--fg-0);
+}
+header .desc {
+    margin: 0;
+    color: var(--fg-2);
+    font-size: 13px;
+}
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+.search {
+    flex: 1 1 280px;
+    position: relative;
+}
+.search input {
+    width: 100%;
+    padding: 8px 12px 8px 32px;
+    border: 1px solid var(--search-border);
+    border-radius: 4px;
+    background: var(--search-bg);
+    color: var(--fg-0);
+    font: 13px/1.5 inherit;
+    outline: none;
+}
+.search input::placeholder { color: var(--fg-2); }
+.search input:focus { border-color: var(--accent); }
+.search::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--fg-2);
+    border-radius: 50%;
+    transform: translateY(-65%);
+}
+.search::after {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    width: 6px;
+    height: 2px;
+    background: var(--fg-2);
+    transform: translateY(2px) rotate(45deg);
+}
+.summary {
+    color: var(--fg-2);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+.state-toggle {
+    display: inline-flex;
+    background: var(--bg-2);
+    border-radius: 4px;
+    padding: 2px;
+}
+.state-toggle button {
+    padding: 4px 10px;
+    border: 0;
+    background: transparent;
+    color: var(--fg-2);
+    font: 12px inherit;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.state-toggle button.active {
+    background: var(--bg-3);
+    color: var(--fg-0);
+}
+main {
+    padding: 20px 32px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+}
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 14px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: border-color 0.1s;
+}
+.card:hover { border-color: var(--bg-3); }
+.card-states {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    background: var(--bg-0);
+    border-radius: 4px;
+    padding: 10px 6px;
+}
+.card-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.card-state img {
+    width: var(--icon-size, 24px);
+    height: var(--icon-size, 24px);
+    object-fit: contain;
+}
+.card-state .label {
+    font-size: 10px;
+    color: var(--fg-2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.card-name {
+    font: 12px/1.4 ui-monospace, "Cascadia Code", "Consolas", "Liberation Mono", monospace;
+    color: var(--fg-0);
+    word-break: break-all;
+    cursor: pointer;
+    user-select: all;
+}
+.card-name:hover { color: var(--accent); }
+.card-name::after {
+    content: attr(data-num) " · " attr(data-name);
+    display: block;
+    color: var(--fg-2);
+    font-size: 11px;
+    margin-bottom: 2px;
+    user-select: text;
+}
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--fg-2);
+}
+.card-meta a {
+    color: var(--fg-2);
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+}
+.card-meta a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.empty {
+    padding: 60px 0;
+    text-align: center;
+    color: var(--fg-2);
+}
+footer {
+    padding: 18px 32px 28px;
+    border-top: 1px solid var(--bg-3);
+    color: var(--fg-2);
+    font-size: 12px;
+    text-align: center;
+}
+footer code {
+    padding: 1px 5px;
+    background: var(--bg-2);
+    border-radius: 3px;
+    color: var(--fg-1);
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>cxx-ui 图标库</h1>
+    <p class="desc">每个图标 4 状态(default / hover / active / disabled),56×56 viewBox,与 cxx-repodock 风格统一。</p>
+    <div class="controls">
+        <div class="search">
+            <input id="filter" type="search" placeholder="搜索文件名或编号(例如 java、09、settings)">
+        </div>
+        <div class="summary" id="summary">0 个图标</div>
+        <div class="state-toggle" id="state-toggle" role="tablist">
+            <button data-size="small" type="button">小</button>
+            <button data-size="medium" type="button" class="active">中</button>
+            <button data-size="large" type="button">大</button>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>没有匹配的图标</div>
+</main>
+<footer>
+    启动方式:<code>node scripts/start.mjs</code> 或 <code>npm start</code> · 修改图标后刷新页面即可
+</footer>
+
+<script>
+/* 原型页逻辑:从 /icons/ 目录加载清单(由 start.mjs 提供),按编号/文件名过滤,点击文件名复制。 */
+const STATES = ['default', 'hover', 'active', 'disabled'];
+const STATE_LABELS = { default: '默认', hover: '悬停', active: '按下', disabled: '禁用' };
+let allIcons = [];
+let activeSize = 'medium';
+const SIZE_PX = { small: 18, medium: 24, large: 32 };
+
+async function loadIcons() {
+    const res = await fetch('/api/icons');
+    if (!res.ok) {
+        document.getElementById('grid').innerHTML = '<p class="empty">无法加载图标清单。请确认通过 <code>node scripts/start.mjs</code> 启动服务。</p>';
+        return;
+    }
+    const payload = await res.json();
+    allIcons = payload.icons || [];
+    render();
+}
+
+function render() {
+    const filter = document.getElementById('filter').value.trim().toLowerCase();
+    const matched = allIcons.filter(icon => {
+        if (!filter) return true;
+        return icon.name.toLowerCase().includes(filter) || icon.num.includes(filter);
+    });
+    document.getElementById('summary').textContent = `${matched.length} / ${allIcons.length} 个图标`;
+    document.getElementById('empty').hidden = matched.length > 0;
+    const grid = document.getElementById('grid');
+    grid.innerHTML = matched.map(icon => cardHTML(icon)).join('');
+    grid.querySelectorAll('.card-name').forEach(el => {
+        el.addEventListener('click', () => {
+            const text = el.dataset.name;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => flashCopied(el));
+            } else {
+                flashCopied(el);
+            }
+        });
+    });
+}
+
+function cardHTML(icon) {
+    const px = SIZE_PX[activeSize];
+    const statesHTML = STATES.map(state => {
+        const src = state === 'default'
+            ? `icons/${icon.name}.svg`
+            : `icons/${icon.name}-${state}.svg`;
+        return `<div class="card-state">
+            <img src="${src}" alt="${icon.name}-${state}" loading="lazy" style="--icon-size: ${px}px;">
+            <span class="label">${STATE_LABELS[state]}</span>
+        </div>`;
+    }).join('');
+    return `<article class="card">
+        <div class="card-states">${statesHTML}</div>
+        <div class="card-name" data-num="${icon.num}" data-name="${icon.name}.svg">${icon.name}.svg</div>
+        <div class="card-meta">
+            <a href="icons/${icon.name}.svg" target="_blank" rel="noopener">查看源文件</a>
+            <span>4 状态</span>
+        </div>
+    </article>`;
+}
+
+function flashCopied(el) {
+    const original = el.textContent;
+    el.textContent = '已复制 ✓';
+    el.style.color = 'var(--accent)';
+    setTimeout(() => {
+        el.textContent = original;
+        el.style.color = '';
+    }, 1000);
+}
+
+document.getElementById('filter').addEventListener('input', render);
+document.querySelectorAll('#state-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('#state-toggle button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeSize = btn.dataset.size;
+        render();
+    });
+});
+
+loadIcons();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "cxx-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "cxx-ui 图标库 + 本地原型预览",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/start.mjs"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
