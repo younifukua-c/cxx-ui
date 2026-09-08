@@ -464,6 +464,23 @@ const FILE_TYPES = [
     { type: 'rst',         exts: ['rst'],                           label: 'RST',         palette: 'gray' },
     { type: 'asciidoc',    exts: ['adoc', 'asciidoc'],              label: 'ADoc',        palette: 'gray' },
     { type: 'binary',      exts: ['exe', 'dll', 'so', 'dylib', 'bin', 'class', 'o', 'a'], label: 'BIN', palette: 'gray' },
+    { type: 'numbers',     exts: ['numbers'],                       logo: 'numbers',     palette: 'yellow' },
+    { type: 'pages',       exts: ['pages'],                         logo: 'pages',       palette: 'orange' },
+    { type: 'keynote',     exts: ['key'],                            logo: 'keynote',     palette: 'gray' },
+    { type: 'notebook',    exts: ['ipynb'],                         logo: 'notebook',    palette: 'orange' },
+    { type: 'gradle',      exts: ['gradle', 'gradle.kts'],           logo: 'gradle',      palette: 'cyan' },
+    { type: 'pom',         exts: ['pom'],                            logo: 'pom',         palette: 'red' },
+    { type: 'mod',         exts: ['mod'],                            logo: 'gomod',       palette: 'cyan' },
+    { type: 'bazel',       exts: ['bazel', 'bzl', 'bazelrc'],         logo: 'bazel',       palette: 'green' },
+    { type: 'aspx',        exts: ['aspx', 'ascx', 'asax', 'asmx'],   logo: 'aspx',        palette: 'blue' },
+    { type: 'cshtml',      exts: ['cshtml'],                         logo: 'cshtml',      palette: 'purple' },
+    { type: 'razor',       exts: ['razor'],                          logo: 'razor',       palette: 'purple' },
+    { type: 'xaml',        exts: ['xaml', 'axaml'],                  logo: 'xaml',        palette: 'purple' },
+    { type: 'csproj',      exts: ['csproj', 'vbproj', 'fsproj', 'proj'], logo: 'csproj',  palette: 'purple' },
+    { type: 'sln',         exts: ['sln'],                            logo: 'sln',         palette: 'gray' },
+    { type: 'hql',         exts: ['hql'],                            logo: 'hql',         palette: 'orange' },
+    { type: 'plsql',       exts: ['pks', 'pkb', 'plsql', 'pls', 'bdy', 'trg', 'fnc', 'spc'], logo: 'plsql', palette: 'red' },
+    { type: 'postcss',     exts: ['pcss', 'postcss'],                logo: 'postcss',     palette: 'red' },
     { type: 'unknown',     exts: [],                                label: '?',           palette: 'dimGray' },
 ];
 
@@ -822,6 +839,163 @@ const LOGOS = {
         return [
             '<rect x="4" y="4" width="48" height="48" rx="6" fill="#CC0000"/>',
             '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">R</text>',
+        ].join('');
+    },
+    /** Apple Numbers: 黄 + 绿表 */
+    numbers(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FFFBE5"/>',
+            '<rect x="4" y="4" width="48" height="14" fill="#FFCB05"/>',
+            '<rect x="10" y="22" width="14" height="22" fill="#41AD45"/>',
+            '<rect x="26" y="22" width="20" height="10" fill="#41AD45"/>',
+            '<rect x="26" y="34" width="20" height="10" fill="#41AD45" opacity="0.7"/>',
+        ].join('');
+    },
+    /** Apple Pages: 橙 + 笔尖 */
+    pages(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FFCB05"/>',
+            // 文档
+            '<rect x="12" y="12" width="32" height="32" rx="2" fill="#ffffff"/>',
+            // 笔尖
+            '<path d="M 14 38 L 22 30 L 26 34 L 18 42 Z" fill="#FF3B30"/>',
+            '<line x1="22" y1="30" x2="30" y2="22" stroke="#FF3B30" stroke-width="3" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** Apple Keynote: 黑 + 播放 + 灯 */
+    keynote(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1A1A1A"/>',
+            '<path d="M 24 18 L 36 30 L 24 42 Z" fill="url(#kg)" />',
+            '<defs><linearGradient id="kg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF3B30"/><stop offset="50%" stop-color="#FFCB05"/><stop offset="100%" stop-color="#34C759"/></linearGradient></defs>',
+        ].join('');
+    },
+    /** Jupyter Notebook: 橙 + 笔记本 */
+    notebook(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#F37626"/>',
+            '<rect x="14" y="14" width="28" height="28" rx="2" fill="#ffffff"/>',
+            '<line x1="20" y1="22" x2="36" y2="22" stroke="#F37626" stroke-width="2" stroke-linecap="round"/>',
+            '<line x1="20" y1="28" x2="36" y2="28" stroke="#F37626" stroke-width="2" stroke-linecap="round"/>',
+            '<line x1="20" y1="34" x2="32" y2="34" stroke="#F37626" stroke-width="2" stroke-linecap="round"/>',
+            // 圆环(jupyter 标志)
+            '<circle cx="28" cy="28" r="3" fill="none" stroke="#F37626" stroke-width="1"/>',
+        ].join('');
+    },
+    /** Gradle: 蓝绿 + 大象头 */
+    gradle(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#02303A"/>',
+            // 简化大象头
+            '<ellipse cx="28" cy="28" rx="14" ry="11" fill="#ffffff"/>',
+            '<circle cx="24" cy="24" r="1.5" fill="#02303A"/>',
+            '<path d="M 32 28 Q 38 28 38 22" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** Maven POM: 红 + 羽毛 */
+    pom(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#C71A36"/>',
+            // 羽毛笔
+            '<path d="M 16 40 L 36 20 Q 40 16 42 18 Q 40 22 36 26 L 16 42 Z" fill="#ffffff"/>',
+            '<line x1="18" y1="38" x2="22" y2="42" stroke="#C71A36" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** Go module: 蓝 + Go 字 */
+    gomod(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#00ADD8"/>',
+            '<text x="28" y="32" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">mod</text>',
+            '<path d="M 12 42 Q 18 38 24 42 T 36 42 T 48 42" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.5"/>',
+        ].join('');
+    },
+    /** Bazel: 绿 + B */
+    bazel(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#43A047"/>',
+            '<text x="28" y="38" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">B</text>',
+            '<line x1="14" y1="44" x2="42" y2="44" stroke="#ffffff" stroke-width="1.5" opacity="0.5"/>',
+        ].join('');
+    },
+    /** ASPX: 蓝 + <% */
+    aspx(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#005A9C"/>',
+            '<text x="28" y="36" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">&lt;%</text>',
+        ].join('');
+    },
+    /** Razor cshtml: 紫 + @ */
+    cshtml(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#512BD4"/>',
+            '<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">@</text>',
+        ].join('');
+    },
+    /** Razor: 紫 + razor 字 */
+    razor(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#512BD4"/>',
+            '<text x="28" y="22" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">RAZOR</text>',
+            '<line x1="10" y1="32" x2="46" y2="32" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="10" y1="38" x2="38" y2="38" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>',
+        ].join('');
+    },
+    /** XAML: 蓝 + 网格 */
+    xaml(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#512BD4"/>',
+            '<rect x="12" y="12" width="32" height="32" fill="none" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="12" y1="22" x2="44" y2="22" stroke="#ffffff" stroke-width="1"/>',
+            '<line x1="12" y1="32" x2="44" y2="32" stroke="#ffffff" stroke-width="1"/>',
+            '<line x1="22" y1="12" x2="22" y2="44" stroke="#ffffff" stroke-width="1"/>',
+            '<line x1="32" y1="12" x2="32" y2="44" stroke="#ffffff" stroke-width="1"/>',
+        ].join('');
+    },
+    /** .NET csproj: 蓝 + {} */
+    csproj(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#9B4F96"/>',
+            '<text x="28" y="36" font-family="ui-monospace, monospace" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">{}</text>',
+            '<text x="28" y="46" font-family="Arial, Helvetica, sans-serif" font-size="6" font-weight="700" fill="#ffffff" text-anchor="middle" opacity="0.7">.csproj</text>',
+        ].join('');
+    },
+    /** .NET sln: 蓝 + Visual Studio 简化 */
+    sln(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5E5E5E"/>',
+            '<rect x="10" y="14" width="36" height="28" rx="1" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="10" y1="22" x2="46" y2="22" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="18" y1="22" x2="18" y2="42" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>',
+            '<line x1="28" y1="22" x2="28" y2="42" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>',
+            '<line x1="38" y1="22" x2="38" y2="42" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>',
+        ].join('');
+    },
+    /** HiveQL: 橙 + 蜂巢 */
+    hql(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#F58500"/>',
+            // 蜂巢
+            '<polygon points="28,14 36,19 36,29 28,34 20,29 20,19" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<polygon points="20,29 12,34 12,44 20,49 28,44 28,34" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>',
+            '<polygon points="36,29 44,34 44,44 36,49 28,44 28,34" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>',
+        ].join('');
+    },
+    /** PL/SQL: 橙红 + 圆柱 */
+    plsql(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#F80000"/>',
+            '<ellipse cx="28" cy="16" rx="14" ry="4" fill="#ffffff"/>',
+            '<path d="M 14 16 L 14 42 Q 14 46 28 46 Q 42 46 42 42 L 42 16" fill="#ffffff" opacity="0.3"/>',
+            '<ellipse cx="28" cy="16" rx="14" ry="4" fill="none" stroke="#ffffff" stroke-width="1.5"/>',
+            '<ellipse cx="28" cy="28" rx="14" ry="4" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.6"/>',
+            '<ellipse cx="28" cy="40" rx="14" ry="4" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.6"/>',
+        ].join('');
+    },
+    /** PostCSS: 红 + DC */
+    postcss(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#DC3A00"/>',
+            '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">PC</text>',
         ].join('');
     },
 };

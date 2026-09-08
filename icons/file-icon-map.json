@@ -241,6 +241,41 @@
     "class": "binary",
     "o": "binary",
     "a": "binary",
+    "numbers": "numbers",
+    "pages": "pages",
+    "key": "keynote",
+    "ipynb": "notebook",
+    "gradle": "gradle",
+    "gradle.kts": "gradle",
+    "pom": "pom",
+    "mod": "mod",
+    "bazel": "bazel",
+    "bzl": "bazel",
+    "bazelrc": "bazel",
+    "aspx": "aspx",
+    "ascx": "aspx",
+    "asax": "aspx",
+    "asmx": "aspx",
+    "cshtml": "cshtml",
+    "razor": "razor",
+    "xaml": "xaml",
+    "axaml": "xaml",
+    "csproj": "csproj",
+    "vbproj": "csproj",
+    "fsproj": "csproj",
+    "proj": "csproj",
+    "sln": "sln",
+    "hql": "hql",
+    "pks": "plsql",
+    "pkb": "plsql",
+    "plsql": "plsql",
+    "pls": "plsql",
+    "bdy": "plsql",
+    "trg": "plsql",
+    "fnc": "plsql",
+    "spc": "plsql",
+    "pcss": "postcss",
+    "postcss": "postcss",
     "__filename_docker": "docker",
     "__filename_shell": "shell",
     "__filename_ruby": "ruby",
@@ -1393,6 +1428,177 @@
         "class",
         "o",
         "a"
+      ]
+    },
+    {
+      "type": "numbers",
+      "label": null,
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "numbers"
+      ]
+    },
+    {
+      "type": "pages",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "pages"
+      ]
+    },
+    {
+      "type": "keynote",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "key"
+      ]
+    },
+    {
+      "type": "notebook",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "ipynb"
+      ]
+    },
+    {
+      "type": "gradle",
+      "label": null,
+      "shape": null,
+      "palette": "cyan",
+      "exts": [
+        "gradle",
+        "gradle.kts"
+      ]
+    },
+    {
+      "type": "pom",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "pom"
+      ]
+    },
+    {
+      "type": "mod",
+      "label": null,
+      "shape": null,
+      "palette": "cyan",
+      "exts": [
+        "mod"
+      ]
+    },
+    {
+      "type": "bazel",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "bazel",
+        "bzl",
+        "bazelrc"
+      ]
+    },
+    {
+      "type": "aspx",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "aspx",
+        "ascx",
+        "asax",
+        "asmx"
+      ]
+    },
+    {
+      "type": "cshtml",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "cshtml"
+      ]
+    },
+    {
+      "type": "razor",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "razor"
+      ]
+    },
+    {
+      "type": "xaml",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "xaml",
+        "axaml"
+      ]
+    },
+    {
+      "type": "csproj",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "csproj",
+        "vbproj",
+        "fsproj",
+        "proj"
+      ]
+    },
+    {
+      "type": "sln",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "sln"
+      ]
+    },
+    {
+      "type": "hql",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "hql"
+      ]
+    },
+    {
+      "type": "plsql",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "pks",
+        "pkb",
+        "plsql",
+        "pls",
+        "bdy",
+        "trg",
+        "fnc",
+        "spc"
+      ]
+    },
+    {
+      "type": "postcss",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "pcss",
+        "postcss"
       ]
     },
     {
