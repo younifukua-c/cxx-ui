@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
-  <rect x="4" y="4" width="48" height="48" rx="6" fill="#2B579A"/><text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" font-style="italic" fill="#ffffff" text-anchor="middle">W</text>
+  <rect x="4" y="4" width="48" height="48" rx="6" fill="#2B579A"/><path d="M 14 12 L 30 12 L 38 20 L 38 44 L 14 44 Z" fill="#ffffff"/><path d="M 30 12 L 30 20 L 38 20" fill="none" stroke="#2B579A" stroke-width="1.5"/><path d="M 17 18 L 19 26 L 21 18 L 23 26 L 25 18" fill="none" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="18" y1="32" x2="32" y2="32" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round"/><line x1="18" y1="37" x2="30" y2="37" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

@@ -91,9 +91,9 @@ function getIconByPath(filePath, kind) {
 | 专门视觉(多媒体/容器/工具) | `file-archive.svg` | `archive` | gray | zip, rar, 7z, tar, gz, bz2, xz, tgz |
 | 专门视觉(多媒体/容器/工具) | `file-jar.svg` | `jar` | orange | jar, war, ear, apk, aab |
 | 专门视觉(多媒体/容器/工具) | `file-pdf.svg` | `-` | red | pdf |
-| 专门视觉(多媒体/容器/工具) | `file-doc.svg` | `-` | blue | doc, docx, rtf, odt |
-| 专门视觉(多媒体/容器/工具) | `file-sheet.svg` | `-` | teal | xls, xlsx, csv, tsv, ods |
-| 专门视觉(多媒体/容器/工具) | `file-slide.svg` | `-` | orange | ppt, pptx, odp |
+| 专门视觉(多媒体/容器/工具) | `file-doc.svg` | `-` | blue | doc, docx, dot, dotx, wbk |
+| 专门视觉(多媒体/容器/工具) | `file-sheet.svg` | `-` | teal | xls, xlsx, xlt, xltx, xlsm, xlsb |
+| 专门视觉(多媒体/容器/工具) | `file-slide.svg` | `-` | orange | ppt, pptx, pot, potx, pps, ppsx |
 | 专门视觉(多媒体/容器/工具) | `file-docker.svg` | `docker` | cyan | (完整文件名或扩展名匹配) |
 | 专门视觉(多媒体/容器/工具) | `file-shell.svg` | `shell` | gray | sh, bash, zsh, ksh |
 | 专门视觉(多媒体/容器/工具) | `file-bat.svg` | `shell` | gray | bat, cmd |
@@ -204,6 +204,10 @@ function getIconByPath(filePath, kind) {
 - `a` → `binary`
 - `aab` → `jar`
 - `aac` → `audio`
+- `accdb` → `access`
+- `accde` → `access`
+- `accdr` → `access`
+- `accdt` → `access`
 - `ada` → `ada`
 - `adb` → `ada`
 - `adoc` → `asciidoc`
@@ -252,7 +256,7 @@ function getIconByPath(filePath, kind) {
 - `cshtml` → `cshtml`
 - `csproj` → `csproj`
 - `css` → `css`
-- `csv` → `sheet`
+- `csv` → `csv`
 - `cts` → `typescript`
 - `cxx` → `cpp`
 - `cypress` → `cypress`
@@ -263,12 +267,15 @@ function getIconByPath(filePath, kind) {
 - `dll` → `binary`
 - `doc` → `doc`
 - `docx` → `doc`
+- `dot` → `doc`
+- `dotx` → `doc`
 - `dpr` → `pascal`
 - `dylib` → `binary`
 - `ear` → `jar`
 - `ect` → `ejs`
 - `ejs` → `ejs`
 - `el` → `emacs`
+- `eml` → `outlook`
 - `env` → `env`
 - `eot` → `font`
 - `erl` → `erlang`
@@ -285,6 +292,9 @@ function getIconByPath(filePath, kind) {
 - `flac` → `audio`
 - `flv` → `video`
 - `fnc` → `plsql`
+- `fodp` → `odp`
+- `fods` → `ods`
+- `fodt` → `odt`
 - `for` → `fortran`
 - `fs` → `fsharp`
 - `fsi` → `fsharp`
@@ -344,6 +354,7 @@ function getIconByPath(filePath, kind) {
 - `m4v` → `video`
 - `markdown` → `markdown`
 - `md` → `markdown`
+- `mdb` → `access`
 - `mdx` → `markdown`
 - `mjs` → `javascript`
 - `mkv` → `video`
@@ -353,16 +364,27 @@ function getIconByPath(filePath, kind) {
 - `mov` → `video`
 - `mp3` → `audio`
 - `mp4` → `video`
+- `mpp` → `project`
+- `mpt` → `project`
+- `msg` → `outlook`
 - `mts` → `typescript`
 - `mustache` → `handlebars`
 - `nix` → `nix`
 - `numbers` → `numbers`
 - `o` → `binary`
-- `odp` → `slide`
-- `ods` → `sheet`
-- `odt` → `doc`
+- `odm` → `odt`
+- `odp` → `odp`
+- `ods` → `ods`
+- `odt` → `odt`
 - `ogg` → `audio`
+- `one` → `onenote`
+- `onepkg` → `onenote`
+- `onetoc2` → `onenote`
+- `ost` → `outlook`
 - `otf` → `font`
+- `otp` → `odp`
+- `ots` → `ods`
+- `ott` → `odt`
 - `pages` → `pages`
 - `pas` → `pascal`
 - `patch` → `diff`
@@ -383,7 +405,11 @@ function getIconByPath(filePath, kind) {
 - `png` → `image`
 - `pom` → `pom`
 - `postcss` → `postcss`
+- `pot` → `slide`
+- `potx` → `slide`
 - `pp` → `pascal`
+- `pps` → `slide`
+- `ppsx` → `slide`
 - `ppt` → `slide`
 - `pptx` → `slide`
 - `prettier` → `prettier`
@@ -393,6 +419,9 @@ function getIconByPath(filePath, kind) {
 - `ps1` → `powershell`
 - `psd1` → `powershell`
 - `psm1` → `powershell`
+- `pst` → `outlook`
+- `pub` → `publisher`
+- `pubx` → `publisher`
 - `pug` → `pug`
 - `puppeteer` → `puppeteer`
 - `py` → `python`
@@ -407,7 +436,7 @@ function getIconByPath(filePath, kind) {
 - `rollup` → `rollup`
 - `rs` → `rust`
 - `rst` → `rst`
-- `rtf` → `doc`
+- `rtf` → `rtf`
 - `sass` → `sass`
 - `sbt` → `scala`
 - `scala` → `scala`
@@ -427,6 +456,7 @@ function getIconByPath(filePath, kind) {
 - `svg` → `svg`
 - `svh` → `verilog`
 - `swift` → `swift`
+- `tab` → `csv`
 - `tar` → `archive`
 - `tcl` → `tcl`
 - `tf` → `terraform`
@@ -437,7 +467,7 @@ function getIconByPath(filePath, kind) {
 - `toml` → `toml`
 - `trg` → `plsql`
 - `ts` → `typescript`
-- `tsv` → `sheet`
+- `tsv` → `csv`
 - `tsx` → `tsx`
 - `ttf` → `font`
 - `twig` → `twig`
@@ -446,13 +476,19 @@ function getIconByPath(filePath, kind) {
 - `vb` → `vb`
 - `vbproj` → `csproj`
 - `vbs` → `vb`
+- `vdx` → `visio`
 - `vh` → `verilog`
 - `vim` → `vim`
 - `vite` → `vite`
 - `vitest` → `vitest`
+- `vsd` → `visio`
+- `vsdx` → `visio`
+- `vss` → `visio`
+- `vst` → `visio`
 - `vue` → `vue`
 - `war` → `jar`
 - `wav` → `audio`
+- `wbk` → `doc`
 - `webm` → `video`
 - `webp` → `image`
 - `webpack` → `webpack`
@@ -463,7 +499,11 @@ function getIconByPath(filePath, kind) {
 - `xaml` → `xaml`
 - `xhtml` → `html`
 - `xls` → `sheet`
+- `xlsb` → `sheet`
+- `xlsm` → `sheet`
 - `xlsx` → `sheet`
+- `xlt` → `sheet`
+- `xltx` → `sheet`
 - `xml` → `xml`
 - `xsl` → `xml`
 - `xslt` → `xml`

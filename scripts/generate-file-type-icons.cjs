@@ -358,9 +358,23 @@ const FILE_TYPES = [
     { type: 'archive',  exts: ['zip','rar','7z','tar','gz','bz2','xz','tgz'], shape: 'archive', palette: 'gray' },
     { type: 'jar',      exts: ['jar','war','ear','apk','aab'], shape: 'jar', palette: 'orange' },
     { type: 'pdf',      exts: ['pdf'],      logo: 'pdf',         palette: 'red' },
-    { type: 'doc',      exts: ['doc','docx','rtf','odt'], logo: 'word',        palette: 'blue' },
-    { type: 'sheet',    exts: ['xls','xlsx','csv','tsv','ods'], logo: 'excel',     palette: 'teal' },
-    { type: 'slide',    exts: ['ppt','pptx','odp'], logo: 'powerpoint',  palette: 'orange' },
+    { type: 'doc',      exts: ['doc','docx','dot','dotx','wbk'], logo: 'word',        palette: 'blue' },
+    { type: 'docx',     exts: [],            logo: 'docx',        palette: 'blue' },
+    { type: 'rtf',      exts: ['rtf'],      logo: 'rtf',         palette: 'blue' },
+    { type: 'odt',      exts: ['odt','ott','fodt','odm'], logo: 'odt',   palette: 'blue' },
+    { type: 'sheet',    exts: ['xls','xlsx','xlt','xltx','xlsm','xlsb'], logo: 'excel', palette: 'teal' },
+    { type: 'xlsx',     exts: [],            logo: 'xlsx',        palette: 'teal' },
+    { type: 'csv',      exts: ['csv','tsv','tab'], logo: 'csv',    palette: 'green' },
+    { type: 'ods',      exts: ['ods','ots','fods'], logo: 'ods',     palette: 'green' },
+    { type: 'slide',    exts: ['ppt','pptx','pot','potx','pps','ppsx'], logo: 'powerpoint', palette: 'orange' },
+    { type: 'pptx',     exts: [],            logo: 'pptx',        palette: 'orange' },
+    { type: 'odp',      exts: ['odp','otp','fodp'], logo: 'odp',   palette: 'orange' },
+    { type: 'onenote',  exts: ['one','onetoc2','onepkg'], logo: 'onenote', palette: 'purple' },
+    { type: 'outlook',  exts: ['pst','ost','msg','eml'], logo: 'outlook', palette: 'blue' },
+    { type: 'access',   exts: ['mdb','accdb','accde','accdt','accdr'], logo: 'access', palette: 'red' },
+    { type: 'visio',    exts: ['vsd','vsdx','vss','vst','vdx'], logo: 'visio', palette: 'blue' },
+    { type: 'publisher',exts: ['pub','pubx'], logo: 'publisher',  palette: 'orange' },
+    { type: 'project',  exts: ['mpp','mpt'], logo: 'project',    palette: 'blue' },
     { type: 'docker',   exts: [], shape: 'docker', palette: 'cyan' },
     { type: 'shell',    exts: ['sh','bash','zsh','ksh'], shape: 'shell', palette: 'gray' },
     { type: 'bat',      exts: ['bat','cmd'], shape: 'shell', palette: 'gray' },
@@ -634,25 +648,44 @@ const LOGOS = {
             '<text x="28" y="32" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="#CE422B" text-anchor="middle">R</text>',
         ].join('');
     },
-    /** Office Word: 蓝底 + 大 W */
+    /** Office Word: 蓝底 + 文档(内嵌 W 折线) */
     word(fill, glyph) {
         return [
             '<rect x="4" y="4" width="48" height="48" rx="6" fill="#2B579A"/>',
-            '<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" font-style="italic" fill="#ffffff" text-anchor="middle">W</text>',
+            // 文档形状(白色,带角折)
+            '<path d="M 14 12 L 30 12 L 38 20 L 38 44 L 14 44 Z" fill="#ffffff"/>',
+            '<path d="M 30 12 L 30 20 L 38 20" fill="none" stroke="#2B579A" stroke-width="1.5"/>',
+            // W 折线(用 path 模拟笔迹风格)
+            '<path d="M 17 18 L 19 26 L 21 18 L 23 26 L 25 18" fill="none" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
+            // 文字行
+            '<line x1="18" y1="32" x2="32" y2="32" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round"/>',
+            '<line x1="18" y1="37" x2="30" y2="37" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round"/>',
         ].join('');
     },
-    /** Office Excel: 绿底 + 大 X */
+    /** Office Excel: 绿底 + 表格(内嵌 X 字符) */
     excel(fill, glyph) {
         return [
             '<rect x="4" y="4" width="48" height="48" rx="6" fill="#217346"/>',
-            '<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">X</text>',
+            // 表格
+            '<rect x="12" y="12" width="32" height="32" rx="1" fill="#ffffff"/>',
+            '<line x1="22" y1="12" x2="22" y2="44" stroke="#217346" stroke-width="1.5"/>',
+            '<line x1="34" y1="12" x2="34" y2="44" stroke="#217346" stroke-width="1.5"/>',
+            '<line x1="12" y1="22" x2="44" y2="22" stroke="#217346" stroke-width="1.5"/>',
+            '<line x1="12" y1="33" x2="44" y2="33" stroke="#217346" stroke-width="1.5"/>',
+            // X 字符
+            '<line x1="14" y1="14" x2="20" y2="20" stroke="#217346" stroke-width="2.5" stroke-linecap="round"/>',
+            '<line x1="20" y1="14" x2="14" y2="20" stroke="#217346" stroke-width="2.5" stroke-linecap="round"/>',
         ].join('');
     },
-    /** Office PowerPoint: 橙底 + 大 P */
+    /** Office PowerPoint: 橙底 + 演示稿(内嵌 P 字符) */
     powerpoint(fill, glyph) {
         return [
             '<rect x="4" y="4" width="48" height="48" rx="6" fill="#D24726"/>',
-            '<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">P</text>',
+            // 演示稿形状(白色,带角折)
+            '<path d="M 14 12 L 32 12 L 38 18 L 38 38 L 14 38 Z" fill="#ffffff"/>',
+            '<path d="M 32 12 L 32 18 L 38 18" fill="none" stroke="#D24726" stroke-width="1.5"/>',
+            // P 字符(用 path 画,接近 P 形)
+            '<path d="M 19 16 L 19 32 M 19 16 L 25 16 Q 28 16 28 20 Q 28 24 25 24 L 19 24" fill="none" stroke="#D24726" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
         ].join('');
     },
     /** PHP: 紫底椭圆 + PHP 字符 */
@@ -1096,6 +1129,178 @@ const LOGOS = {
         return [
             '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3178C6"/>',
             '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">TSX</text>',
+        ].join('');
+    },
+    /** Office 365 Word: 蓝 + 文档(跟 Word 略有不同,圆角更现代) */
+    docx(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#2B579A"/>',
+            '<path d="M 14 10 L 30 10 L 40 20 L 40 46 L 14 46 Z" fill="#ffffff"/>',
+            '<path d="M 30 10 L 30 20 L 40 20" fill="none" stroke="#2B579A" stroke-width="1.5" stroke-linejoin="round"/>',
+            '<path d="M 18 18 L 21 30 L 24 18 L 27 30 L 30 18" fill="none" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>',
+            '<line x1="18" y1="36" x2="34" y2="36" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round"/>',
+            '<line x1="18" y1="40" x2="30" y2="40" stroke="#2B579A" stroke-width="1.5" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** Office 365 Excel: 绿 + 表格 + X */
+    xlsx(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#217346"/>',
+            '<rect x="12" y="12" width="32" height="32" rx="2" fill="#ffffff"/>',
+            // 列分隔
+            '<line x1="20" y1="12" x2="20" y2="44" stroke="#217346" stroke-width="1.2"/>',
+            '<line x1="28" y1="12" x2="28" y2="44" stroke="#217346" stroke-width="1.2"/>',
+            '<line x1="36" y1="12" x2="36" y2="44" stroke="#217346" stroke-width="1.2"/>',
+            // 行分隔
+            '<line x1="12" y1="20" x2="44" y2="20" stroke="#217346" stroke-width="1.2"/>',
+            '<line x1="12" y1="28" x2="44" y2="28" stroke="#217346" stroke-width="1.2"/>',
+            '<line x1="12" y1="36" x2="44" y2="36" stroke="#217346" stroke-width="1.2"/>',
+            // X 字符
+            '<line x1="14" y1="14" x2="18" y2="18" stroke="#217346" stroke-width="2" stroke-linecap="round"/>',
+            '<line x1="18" y1="14" x2="14" y2="18" stroke="#217346" stroke-width="2" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** Office 365 PowerPoint: 橙 + 演示稿 + P */
+    pptx(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#D24726"/>',
+            '<path d="M 12 14 L 32 14 L 40 22 L 40 42 L 12 42 Z" fill="#ffffff"/>',
+            '<path d="M 32 14 L 32 22 L 40 22" fill="none" stroke="#D24726" stroke-width="1.5" stroke-linejoin="round"/>',
+            // P 字符
+            '<path d="M 18 18 L 18 36 M 18 18 L 24 18 Q 28 18 28 22 Q 28 26 24 26 L 18 26" fill="none" stroke="#D24726" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+        ].join('');
+    },
+    /** OpenDocument Text: 蓝白 + odt */
+    odt(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0078C8"/>',
+            '<path d="M 14 10 L 30 10 L 40 20 L 40 46 L 14 46 Z" fill="#ffffff"/>',
+            '<path d="M 30 10 L 30 20 L 40 20" fill="none" stroke="#0078C8" stroke-width="1.5" stroke-linejoin="round"/>',
+            // ODT 字
+            '<text x="27" y="40" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#0078C8" text-anchor="middle">ODT</text>',
+        ].join('');
+    },
+    /** OpenDocument Spreadsheet: 蓝绿 + ods */
+    ods(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#009A44"/>',
+            '<rect x="10" y="10" width="36" height="36" rx="2" fill="#ffffff"/>',
+            '<line x1="20" y1="10" x2="20" y2="46" stroke="#009A44" stroke-width="1.2"/>',
+            '<line x1="30" y1="10" x2="30" y2="46" stroke="#009A44" stroke-width="1.2"/>',
+            '<line x1="40" y1="10" x2="40" y2="46" stroke="#009A44" stroke-width="1.2"/>',
+            '<line x1="10" y1="20" x2="46" y2="20" stroke="#009A44" stroke-width="1.2"/>',
+            '<line x1="10" y1="30" x2="46" y2="30" stroke="#009A44" stroke-width="1.2"/>',
+            '<line x1="10" y1="40" x2="46" y2="40" stroke="#009A44" stroke-width="1.2"/>',
+            '<text x="28" y="9" font-family="Arial, sans-serif" font-size="6" font-weight="700" fill="#0078C8" text-anchor="middle">ODS</text>',
+        ].join('');
+    },
+    /** OpenDocument Presentation: 橙红 + odp */
+    odp(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#E66B0F"/>',
+            '<path d="M 12 14 L 32 14 L 40 22 L 40 42 L 12 42 Z" fill="#ffffff"/>',
+            '<path d="M 32 14 L 32 22 L 40 22" fill="none" stroke="#E66B0F" stroke-width="1.5" stroke-linejoin="round"/>',
+            // 播放三角
+            '<path d="M 22 26 L 32 30 L 22 34 Z" fill="#E66B0F"/>',
+        ].join('');
+    },
+    /** CSV: 绿白 + 表格 */
+    csv(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1F6F43"/>',
+            '<rect x="10" y="10" width="36" height="36" rx="2" fill="#ffffff"/>',
+            // 列分隔
+            '<line x1="20" y1="10" x2="20" y2="46" stroke="#1F6F43" stroke-width="1"/>',
+            '<line x1="30" y1="10" x2="30" y2="46" stroke="#1F6F43" stroke-width="1"/>',
+            '<line x1="40" y1="10" x2="40" y2="46" stroke="#1F6F43" stroke-width="1"/>',
+            // 行分隔
+            '<line x1="10" y1="18" x2="46" y2="18" stroke="#1F6F43" stroke-width="1"/>',
+            '<line x1="10" y1="28" x2="46" y2="28" stroke="#1F6F43" stroke-width="1"/>',
+            '<line x1="10" y1="38" x2="46" y2="38" stroke="#1F6F43" stroke-width="1"/>',
+            // 顶部表头(深色)
+            '<rect x="10" y="10" width="36" height="8" fill="#1F6F43"/>',
+        ].join('');
+    },
+    /** RTF: 蓝 + 文档 + R */
+    rtf(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0078C8"/>',
+            '<path d="M 14 10 L 30 10 L 40 20 L 40 46 L 14 46 Z" fill="#ffffff"/>',
+            '<path d="M 30 10 L 30 20 L 40 20" fill="none" stroke="#0078C8" stroke-width="1.5" stroke-linejoin="round"/>',
+            // R 字符
+            '<text x="27" y="40" font-family="Georgia, serif" font-size="20" font-weight="700" font-style="italic" fill="#0078C8" text-anchor="middle">R</text>',
+        ].join('');
+    },
+    /** OneNote: 紫 + 笔记本 */
+    onenote(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#80397B"/>',
+            // 笔记本
+            '<rect x="10" y="10" width="36" height="36" rx="2" fill="#ffffff"/>',
+            // 装订线
+            '<rect x="10" y="10" width="6" height="36" fill="#80397B"/>',
+            // 文字行
+            '<line x1="20" y1="20" x2="42" y2="20" stroke="#80397B" stroke-width="1.5"/>',
+            '<line x1="20" y1="28" x2="42" y2="28" stroke="#80397B" stroke-width="1.5"/>',
+            '<line x1="20" y1="36" x2="38" y2="36" stroke="#80397B" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** Outlook: 蓝 + 信封 */
+    outlook(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0078D4"/>',
+            // 信封
+            '<rect x="10" y="16" width="36" height="24" rx="2" fill="#ffffff"/>',
+            '<path d="M 10 16 L 28 30 L 46 16" fill="none" stroke="#0078D4" stroke-width="2" stroke-linejoin="round"/>',
+        ].join('');
+    },
+    /** Access: 红橙 + 数据库 */
+    access(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#A4373A"/>',
+            // 数据库圆柱
+            '<ellipse cx="28" cy="16" rx="14" ry="4" fill="#ffffff"/>',
+            '<path d="M 14 16 L 14 40 Q 14 44 28 44 Q 42 44 42 40 L 42 16" fill="#ffffff" opacity="0.4"/>',
+            '<ellipse cx="28" cy="16" rx="14" ry="4" fill="none" stroke="#A4373A" stroke-width="1.5"/>',
+            '<ellipse cx="28" cy="26" rx="14" ry="4" fill="none" stroke="#A4373A" stroke-width="1" opacity="0.6"/>',
+            '<ellipse cx="28" cy="36" rx="14" ry="4" fill="none" stroke="#A4373A" stroke-width="1" opacity="0.6"/>',
+        ].join('');
+    },
+    /** Visio: 蓝 + 形状 + 流程 */
+    visio(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3955A3"/>',
+            // 流程图形状
+            '<rect x="10" y="20" width="12" height="8" rx="1" fill="#ffffff"/>',
+            '<polygon points="34,18 44,24 34,30" fill="#ffffff"/>',
+            '<line x1="22" y1="24" x2="34" y2="24" stroke="#ffffff" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** Publisher: 绿 + 卡片 */
+    publisher(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#D56E0B"/>',
+            // 卡片
+            '<rect x="10" y="14" width="24" height="28" rx="1" fill="#ffffff"/>',
+            '<line x1="14" y1="20" x2="30" y2="20" stroke="#D56E0B" stroke-width="1"/>',
+            '<line x1="14" y1="24" x2="30" y2="24" stroke="#D56E0B" stroke-width="1"/>',
+            '<line x1="14" y1="28" x2="30" y2="28" stroke="#D56E0B" stroke-width="1"/>',
+            // 第二张
+            '<rect x="20" y="22" width="20" height="20" rx="1" fill="#ffffff" opacity="0.6"/>',
+        ].join('');
+    },
+    /** Project: 绿 + 甘特 */
+    project(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1D7CB6"/>',
+            // 甘特图条
+            '<rect x="10" y="16" width="6" height="3" fill="#ffffff"/>',
+            '<rect x="18" y="16" width="14" height="3" fill="#ffffff"/>',
+            '<rect x="14" y="24" width="10" height="3" fill="#ffffff"/>',
+            '<rect x="26" y="24" width="12" height="3" fill="#ffffff"/>',
+            '<rect x="12" y="32" width="8" height="3" fill="#ffffff"/>',
+            '<rect x="22" y="32" width="16" height="3" fill="#ffffff"/>',
+            '<rect x="16" y="40" width="14" height="3" fill="#ffffff"/>',
         ].join('');
     },
 };

@@ -53,16 +53,56 @@
     "pdf": "pdf",
     "doc": "doc",
     "docx": "doc",
-    "rtf": "doc",
-    "odt": "doc",
+    "dot": "doc",
+    "dotx": "doc",
+    "wbk": "doc",
+    "rtf": "rtf",
+    "odt": "odt",
+    "ott": "odt",
+    "fodt": "odt",
+    "odm": "odt",
     "xls": "sheet",
     "xlsx": "sheet",
-    "csv": "sheet",
-    "tsv": "sheet",
-    "ods": "sheet",
+    "xlt": "sheet",
+    "xltx": "sheet",
+    "xlsm": "sheet",
+    "xlsb": "sheet",
+    "csv": "csv",
+    "tsv": "csv",
+    "tab": "csv",
+    "ods": "ods",
+    "ots": "ods",
+    "fods": "ods",
     "ppt": "slide",
     "pptx": "slide",
-    "odp": "slide",
+    "pot": "slide",
+    "potx": "slide",
+    "pps": "slide",
+    "ppsx": "slide",
+    "odp": "odp",
+    "otp": "odp",
+    "fodp": "odp",
+    "one": "onenote",
+    "onetoc2": "onenote",
+    "onepkg": "onenote",
+    "pst": "outlook",
+    "ost": "outlook",
+    "msg": "outlook",
+    "eml": "outlook",
+    "mdb": "access",
+    "accdb": "access",
+    "accde": "access",
+    "accdt": "access",
+    "accdr": "access",
+    "vsd": "visio",
+    "vsdx": "visio",
+    "vss": "visio",
+    "vst": "visio",
+    "vdx": "visio",
+    "pub": "publisher",
+    "pubx": "publisher",
+    "mpp": "project",
+    "mpt": "project",
     "sh": "shell",
     "bash": "shell",
     "zsh": "shell",
@@ -414,8 +454,37 @@
       "exts": [
         "doc",
         "docx",
-        "rtf",
-        "odt"
+        "dot",
+        "dotx",
+        "wbk"
+      ]
+    },
+    {
+      "type": "docx",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": []
+    },
+    {
+      "type": "rtf",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "rtf"
+      ]
+    },
+    {
+      "type": "odt",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "odt",
+        "ott",
+        "fodt",
+        "odm"
       ]
     },
     {
@@ -426,9 +495,39 @@
       "exts": [
         "xls",
         "xlsx",
+        "xlt",
+        "xltx",
+        "xlsm",
+        "xlsb"
+      ]
+    },
+    {
+      "type": "xlsx",
+      "label": null,
+      "shape": null,
+      "palette": "teal",
+      "exts": []
+    },
+    {
+      "type": "csv",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
         "csv",
         "tsv",
-        "ods"
+        "tab"
+      ]
+    },
+    {
+      "type": "ods",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "ods",
+        "ots",
+        "fods"
       ]
     },
     {
@@ -439,7 +538,97 @@
       "exts": [
         "ppt",
         "pptx",
-        "odp"
+        "pot",
+        "potx",
+        "pps",
+        "ppsx"
+      ]
+    },
+    {
+      "type": "pptx",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": []
+    },
+    {
+      "type": "odp",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "odp",
+        "otp",
+        "fodp"
+      ]
+    },
+    {
+      "type": "onenote",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "one",
+        "onetoc2",
+        "onepkg"
+      ]
+    },
+    {
+      "type": "outlook",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "pst",
+        "ost",
+        "msg",
+        "eml"
+      ]
+    },
+    {
+      "type": "access",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "mdb",
+        "accdb",
+        "accde",
+        "accdt",
+        "accdr"
+      ]
+    },
+    {
+      "type": "visio",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "vsd",
+        "vsdx",
+        "vss",
+        "vst",
+        "vdx"
+      ]
+    },
+    {
+      "type": "publisher",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "pub",
+        "pubx"
+      ]
+    },
+    {
+      "type": "project",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "mpp",
+        "mpt"
       ]
     },
     {

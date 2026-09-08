@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <rect x="4" y="4" width="48" height="48" rx="6" fill="#0078C8"/><path d="M 14 10 L 30 10 L 40 20 L 40 46 L 14 46 Z" fill="#ffffff"/><path d="M 30 10 L 30 20 L 40 20" fill="none" stroke="#0078C8" stroke-width="1.5" stroke-linejoin="round"/><text x="27" y="40" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#0078C8" text-anchor="middle">ODT</text>
+</svg>
