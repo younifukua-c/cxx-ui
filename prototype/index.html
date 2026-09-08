@@ -259,7 +259,8 @@ function render() {
     const filter = document.getElementById('filter').value.trim().toLowerCase();
     const matched = allIcons.filter(icon => {
         if (!filter) return true;
-        return icon.name.toLowerCase().includes(filter) || icon.num.includes(filter);
+        const hay = (icon.name + ' ' + icon.kind).toLowerCase();
+        return hay.includes(filter);
     });
     document.getElementById('summary').textContent = `${matched.length} / ${allIcons.length} 个图标`;
     document.getElementById('empty').hidden = matched.length > 0;
@@ -290,10 +291,10 @@ function cardHTML(icon) {
     }).join('');
     return `<article class="card">
         <div class="card-states">${statesHTML}</div>
-        <div class="card-name" data-num="${icon.num}" data-name="${icon.name}.svg">${icon.name}.svg</div>
+        <div class="card-name" data-num="${icon.kind === 'file-type' ? '类型' : icon.num}" data-name="${icon.name}.svg">${icon.name}.svg</div>
         <div class="card-meta">
             <a href="icons/${icon.name}.svg" target="_blank" rel="noopener">查看源文件</a>
-            <span>4 状态</span>
+            <span>${icon.kind === 'file-type' ? '文件类型' : '通用'} · 4 状态</span>
         </div>
     </article>`;
 }

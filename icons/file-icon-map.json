@@ -1,0 +1,853 @@
+{
+  "version": 1,
+  "description": "扩展名/文件名 → 文件类型图标名(file-{type})。前端可直接 import 此 JSON 用。",
+  "extMap": {
+    "_folder": "folder",
+    "_unknown": "unknown",
+    "java": "java",
+    "kt": "kotlin",
+    "kts": "kotlin",
+    "scala": "scala",
+    "sbt": "scala",
+    "groovy": "groovy",
+    "c": "c",
+    "h": "c",
+    "cpp": "cpp",
+    "cc": "cpp",
+    "cxx": "cpp",
+    "hpp": "cpp",
+    "hxx": "cpp",
+    "cs": "csharp",
+    "go": "go",
+    "rs": "rust",
+    "rb": "ruby",
+    "py": "python",
+    "pyi": "python",
+    "pyc": "python",
+    "pyd": "python",
+    "pyo": "python",
+    "php": "php",
+    "php5": "php",
+    "phtml": "php",
+    "pl": "perl",
+    "pm": "perl",
+    "lua": "lua",
+    "erl": "erlang",
+    "hrl": "erlang",
+    "ex": "elixir",
+    "exs": "elixir",
+    "hs": "haskell",
+    "clj": "clojure",
+    "cljs": "clojure",
+    "cljc": "clojure",
+    "fs": "fsharp",
+    "fsx": "fsharp",
+    "fsi": "fsharp",
+    "ml": "ocaml",
+    "mli": "ocaml",
+    "dart": "dart",
+    "swift": "swift",
+    "js": "javascript",
+    "mjs": "javascript",
+    "cjs": "javascript",
+    "ts": "typescript",
+    "mts": "typescript",
+    "cts": "typescript",
+    "jsx": "jsx",
+    "tsx": "tsx",
+    "vue": "vue",
+    "svelte": "svelte",
+    "html": "html",
+    "htm": "html",
+    "xhtml": "html",
+    "css": "css",
+    "scss": "scss",
+    "sass": "sass",
+    "less": "less",
+    "styl": "stylus",
+    "xml": "xml",
+    "xsl": "xml",
+    "xslt": "xml",
+    "graphql": "graphql",
+    "gql": "graphql",
+    "json": "json",
+    "jsonc": "json",
+    "json5": "json",
+    "yml": "yaml",
+    "yaml": "yaml",
+    "toml": "toml",
+    "ini": "ini",
+    "cfg": "ini",
+    "conf": "ini",
+    "properties": "properties",
+    "env": "env",
+    "sql": "sql",
+    "md": "markdown",
+    "mdx": "markdown",
+    "markdown": "markdown",
+    "txt": "text",
+    "log": "text",
+    "rst": "rst",
+    "adoc": "asciidoc",
+    "asciidoc": "asciidoc",
+    "pdf": "pdf",
+    "doc": "doc",
+    "docx": "doc",
+    "rtf": "doc",
+    "odt": "doc",
+    "xls": "sheet",
+    "xlsx": "sheet",
+    "csv": "sheet",
+    "tsv": "sheet",
+    "ods": "sheet",
+    "ppt": "slide",
+    "pptx": "slide",
+    "odp": "slide",
+    "png": "image",
+    "jpg": "image",
+    "jpeg": "image",
+    "gif": "image",
+    "bmp": "image",
+    "webp": "image",
+    "avif": "image",
+    "heic": "image",
+    "tiff": "image",
+    "tif": "image",
+    "ico": "image",
+    "svg": "svg",
+    "mp4": "video",
+    "mov": "video",
+    "avi": "video",
+    "mkv": "video",
+    "webm": "video",
+    "flv": "video",
+    "wmv": "video",
+    "m4v": "video",
+    "mp3": "audio",
+    "wav": "audio",
+    "flac": "audio",
+    "ogg": "audio",
+    "m4a": "audio",
+    "aac": "audio",
+    "wma": "audio",
+    "ttf": "font",
+    "otf": "font",
+    "woff": "font",
+    "woff2": "font",
+    "eot": "font",
+    "zip": "archive",
+    "rar": "archive",
+    "7z": "archive",
+    "tar": "archive",
+    "gz": "archive",
+    "bz2": "archive",
+    "xz": "archive",
+    "tgz": "archive",
+    "jar": "jar",
+    "war": "jar",
+    "ear": "jar",
+    "apk": "jar",
+    "aab": "jar",
+    "exe": "binary",
+    "dll": "binary",
+    "so": "binary",
+    "dylib": "binary",
+    "bin": "binary",
+    "class": "binary",
+    "o": "binary",
+    "a": "binary",
+    "sh": "shell",
+    "bash": "shell",
+    "zsh": "shell",
+    "ksh": "shell",
+    "bat": "bat",
+    "cmd": "bat",
+    "ps1": "powershell",
+    "psm1": "powershell",
+    "psd1": "powershell",
+    "vim": "vim",
+    "el": "emacs",
+    "diff": "diff",
+    "patch": "diff",
+    "__filename_docker": "docker",
+    "__filename_shell": "shell",
+    "__filename_ruby": "ruby",
+    "__filename_config": "config",
+    "__filename_license": "license",
+    "__filename_readme": "readme",
+    "__filename_lock": "lock",
+    "__filename_json": "json",
+    "__filename_env": "env",
+    "__filename_git": "git"
+  },
+  "types": [
+    {
+      "type": "folder",
+      "label": null,
+      "palette": "gold",
+      "exts": []
+    },
+    {
+      "type": "java",
+      "label": "JV",
+      "palette": "green",
+      "exts": [
+        "java"
+      ]
+    },
+    {
+      "type": "kotlin",
+      "label": "Kt",
+      "palette": "green",
+      "exts": [
+        "kt",
+        "kts"
+      ]
+    },
+    {
+      "type": "scala",
+      "label": "Sc",
+      "palette": "red",
+      "exts": [
+        "scala",
+        "sbt"
+      ]
+    },
+    {
+      "type": "groovy",
+      "label": "Gy",
+      "palette": "blue",
+      "exts": [
+        "groovy"
+      ]
+    },
+    {
+      "type": "c",
+      "label": "C",
+      "palette": "gray",
+      "exts": [
+        "c",
+        "h"
+      ]
+    },
+    {
+      "type": "cpp",
+      "label": "C+",
+      "palette": "purple",
+      "exts": [
+        "cpp",
+        "cc",
+        "cxx",
+        "hpp",
+        "hxx"
+      ]
+    },
+    {
+      "type": "csharp",
+      "label": "C#",
+      "palette": "purple",
+      "exts": [
+        "cs"
+      ]
+    },
+    {
+      "type": "go",
+      "label": "Go",
+      "palette": "cyan",
+      "exts": [
+        "go"
+      ]
+    },
+    {
+      "type": "rust",
+      "label": "Rs",
+      "palette": "red",
+      "exts": [
+        "rs"
+      ]
+    },
+    {
+      "type": "ruby",
+      "label": "Rb",
+      "palette": "red",
+      "exts": [
+        "rb"
+      ]
+    },
+    {
+      "type": "python",
+      "label": "Py",
+      "palette": "light",
+      "exts": [
+        "py",
+        "pyi",
+        "pyc",
+        "pyd",
+        "pyo"
+      ]
+    },
+    {
+      "type": "php",
+      "label": "PHP",
+      "palette": "light",
+      "exts": [
+        "php",
+        "php5",
+        "phtml"
+      ]
+    },
+    {
+      "type": "perl",
+      "label": "Pl",
+      "palette": "blue",
+      "exts": [
+        "pl",
+        "pm"
+      ]
+    },
+    {
+      "type": "lua",
+      "label": "Lu",
+      "palette": "blue",
+      "exts": [
+        "lua"
+      ]
+    },
+    {
+      "type": "erlang",
+      "label": "Er",
+      "palette": "red",
+      "exts": [
+        "erl",
+        "hrl"
+      ]
+    },
+    {
+      "type": "elixir",
+      "label": "Ex",
+      "palette": "purple",
+      "exts": [
+        "ex",
+        "exs"
+      ]
+    },
+    {
+      "type": "haskell",
+      "label": "Hs",
+      "palette": "light",
+      "exts": [
+        "hs"
+      ]
+    },
+    {
+      "type": "clojure",
+      "label": "Cl",
+      "palette": "teal",
+      "exts": [
+        "clj",
+        "cljs",
+        "cljc"
+      ]
+    },
+    {
+      "type": "fsharp",
+      "label": "F#",
+      "palette": "blue",
+      "exts": [
+        "fs",
+        "fsx",
+        "fsi"
+      ]
+    },
+    {
+      "type": "ocaml",
+      "label": "Ml",
+      "palette": "orange",
+      "exts": [
+        "ml",
+        "mli"
+      ]
+    },
+    {
+      "type": "dart",
+      "label": "Dt",
+      "palette": "light",
+      "exts": [
+        "dart"
+      ]
+    },
+    {
+      "type": "swift",
+      "label": "Sw",
+      "palette": "red",
+      "exts": [
+        "swift"
+      ]
+    },
+    {
+      "type": "javascript",
+      "label": "JS",
+      "palette": "yellow",
+      "exts": [
+        "js",
+        "mjs",
+        "cjs"
+      ]
+    },
+    {
+      "type": "typescript",
+      "label": "TS",
+      "palette": "blue",
+      "exts": [
+        "ts",
+        "mts",
+        "cts"
+      ]
+    },
+    {
+      "type": "jsx",
+      "label": "JSX",
+      "palette": "yellow",
+      "exts": [
+        "jsx"
+      ]
+    },
+    {
+      "type": "tsx",
+      "label": "TSX",
+      "palette": "blue",
+      "exts": [
+        "tsx"
+      ]
+    },
+    {
+      "type": "vue",
+      "label": "V",
+      "palette": "green",
+      "exts": [
+        "vue"
+      ]
+    },
+    {
+      "type": "svelte",
+      "label": "Sv",
+      "palette": "red",
+      "exts": [
+        "svelte"
+      ]
+    },
+    {
+      "type": "html",
+      "label": "<>",
+      "palette": "yellow",
+      "exts": [
+        "html",
+        "htm",
+        "xhtml"
+      ]
+    },
+    {
+      "type": "css",
+      "label": "#",
+      "palette": "blue",
+      "exts": [
+        "css"
+      ]
+    },
+    {
+      "type": "scss",
+      "label": "Sc",
+      "palette": "blue",
+      "exts": [
+        "scss"
+      ]
+    },
+    {
+      "type": "sass",
+      "label": "Sa",
+      "palette": "blue",
+      "exts": [
+        "sass"
+      ]
+    },
+    {
+      "type": "less",
+      "label": "Ls",
+      "palette": "blue",
+      "exts": [
+        "less"
+      ]
+    },
+    {
+      "type": "stylus",
+      "label": "St",
+      "palette": "green",
+      "exts": [
+        "styl"
+      ]
+    },
+    {
+      "type": "xml",
+      "label": "X",
+      "palette": "orange",
+      "exts": [
+        "xml",
+        "xsl",
+        "xslt"
+      ]
+    },
+    {
+      "type": "graphql",
+      "label": "GQ",
+      "palette": "purple",
+      "exts": [
+        "graphql",
+        "gql"
+      ]
+    },
+    {
+      "type": "json",
+      "label": "{}",
+      "palette": "yellow",
+      "exts": [
+        "json",
+        "jsonc",
+        "json5"
+      ]
+    },
+    {
+      "type": "yaml",
+      "label": "Y",
+      "palette": "cyan",
+      "exts": [
+        "yml",
+        "yaml"
+      ]
+    },
+    {
+      "type": "toml",
+      "label": "Tl",
+      "palette": "cyan",
+      "exts": [
+        "toml"
+      ]
+    },
+    {
+      "type": "ini",
+      "label": "I",
+      "palette": "cyan",
+      "exts": [
+        "ini",
+        "cfg",
+        "conf"
+      ]
+    },
+    {
+      "type": "properties",
+      "label": "P",
+      "palette": "cyan",
+      "exts": [
+        "properties"
+      ]
+    },
+    {
+      "type": "env",
+      "label": "E",
+      "palette": "yellow",
+      "exts": [
+        "env"
+      ]
+    },
+    {
+      "type": "config",
+      "label": "*",
+      "palette": "cyan",
+      "exts": []
+    },
+    {
+      "type": "sql",
+      "label": "SQL",
+      "palette": "purple",
+      "exts": [
+        "sql"
+      ]
+    },
+    {
+      "type": "markdown",
+      "label": "M.",
+      "palette": "gray",
+      "exts": [
+        "md",
+        "mdx",
+        "markdown"
+      ]
+    },
+    {
+      "type": "text",
+      "label": "TXT",
+      "palette": "yellow",
+      "exts": [
+        "txt",
+        "log"
+      ]
+    },
+    {
+      "type": "rst",
+      "label": "R",
+      "palette": "gray",
+      "exts": [
+        "rst"
+      ]
+    },
+    {
+      "type": "asciidoc",
+      "label": "Ad",
+      "palette": "blue",
+      "exts": [
+        "adoc",
+        "asciidoc"
+      ]
+    },
+    {
+      "type": "pdf",
+      "label": "PDF",
+      "palette": "red",
+      "exts": [
+        "pdf"
+      ]
+    },
+    {
+      "type": "doc",
+      "label": "W",
+      "palette": "blue",
+      "exts": [
+        "doc",
+        "docx",
+        "rtf",
+        "odt"
+      ]
+    },
+    {
+      "type": "sheet",
+      "label": "X",
+      "palette": "teal",
+      "exts": [
+        "xls",
+        "xlsx",
+        "csv",
+        "tsv",
+        "ods"
+      ]
+    },
+    {
+      "type": "slide",
+      "label": "P",
+      "palette": "orange",
+      "exts": [
+        "ppt",
+        "pptx",
+        "odp"
+      ]
+    },
+    {
+      "type": "image",
+      "label": "IMG",
+      "palette": "purple",
+      "exts": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif",
+        "bmp",
+        "webp",
+        "avif",
+        "heic",
+        "tiff",
+        "tif",
+        "ico"
+      ]
+    },
+    {
+      "type": "svg",
+      "label": "SVG",
+      "palette": "purple",
+      "exts": [
+        "svg"
+      ]
+    },
+    {
+      "type": "video",
+      "label": "VID",
+      "palette": "red",
+      "exts": [
+        "mp4",
+        "mov",
+        "avi",
+        "mkv",
+        "webm",
+        "flv",
+        "wmv",
+        "m4v"
+      ]
+    },
+    {
+      "type": "audio",
+      "label": "AUD",
+      "palette": "red",
+      "exts": [
+        "mp3",
+        "wav",
+        "flac",
+        "ogg",
+        "m4a",
+        "aac",
+        "wma"
+      ]
+    },
+    {
+      "type": "font",
+      "label": "Aa",
+      "palette": "gray",
+      "exts": [
+        "ttf",
+        "otf",
+        "woff",
+        "woff2",
+        "eot"
+      ]
+    },
+    {
+      "type": "archive",
+      "label": "ZIP",
+      "palette": "gray",
+      "exts": [
+        "zip",
+        "rar",
+        "7z",
+        "tar",
+        "gz",
+        "bz2",
+        "xz",
+        "tgz"
+      ]
+    },
+    {
+      "type": "jar",
+      "label": "JAR",
+      "palette": "orange",
+      "exts": [
+        "jar",
+        "war",
+        "ear",
+        "apk",
+        "aab"
+      ]
+    },
+    {
+      "type": "binary",
+      "label": "BIN",
+      "palette": "gray",
+      "exts": [
+        "exe",
+        "dll",
+        "so",
+        "dylib",
+        "bin",
+        "class",
+        "o",
+        "a"
+      ]
+    },
+    {
+      "type": "shell",
+      "label": ">_",
+      "palette": "gray",
+      "exts": [
+        "sh",
+        "bash",
+        "zsh",
+        "ksh"
+      ]
+    },
+    {
+      "type": "bat",
+      "label": "B",
+      "palette": "gray",
+      "exts": [
+        "bat",
+        "cmd"
+      ]
+    },
+    {
+      "type": "powershell",
+      "label": "P$",
+      "palette": "blue",
+      "exts": [
+        "ps1",
+        "psm1",
+        "psd1"
+      ]
+    },
+    {
+      "type": "vim",
+      "label": "Vm",
+      "palette": "green",
+      "exts": [
+        "vim"
+      ]
+    },
+    {
+      "type": "emacs",
+      "label": "El",
+      "palette": "purple",
+      "exts": [
+        "el"
+      ]
+    },
+    {
+      "type": "docker",
+      "label": "DK",
+      "palette": "cyan",
+      "exts": []
+    },
+    {
+      "type": "git",
+      "label": "GIT",
+      "palette": "red",
+      "exts": []
+    },
+    {
+      "type": "diff",
+      "label": "±",
+      "palette": "gray",
+      "exts": [
+        "diff",
+        "patch"
+      ]
+    },
+    {
+      "type": "license",
+      "label": "©",
+      "palette": "gray",
+      "exts": []
+    },
+    {
+      "type": "readme",
+      "label": "i",
+      "palette": "gray",
+      "exts": []
+    },
+    {
+      "type": "lock",
+      "label": "L",
+      "palette": "gray",
+      "exts": []
+    },
+    {
+      "type": "unknown",
+      "label": "?",
+      "palette": "dimGray",
+      "exts": []
+    }
+  ]
+}

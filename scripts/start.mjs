@@ -42,23 +42,32 @@ const MIME_TYPES = Object.freeze({
     '.md':   'text/markdown; charset=utf-8',
 });
 
-/** 读取 icons/ 目录,按"编号-名称"归并成清单(每图标返回 num + name)。 */
+/** 读取 icons/ 目录,归并成清单。两种命名都支持:
+ *  - NN-name.svg(通用图标,带 2 位编号,固定集合)
+ *  - file-{type}.svg(文件类型图标,无序号,无限集合)
+ * 返回统一结构 { kind, num, name, files }。 */
 function listIcons() {
     if (!fs.existsSync(ICONS_DIR)) return [];
     const groups = new Map();
     for (const entry of fs.readdirSync(ICONS_DIR, { withFileTypes: true })) {
         if (!entry.isFile() || !entry.name.endsWith('.svg')) continue;
         const base = entry.name.replace(/-(?:hover|active|disabled)(?=\.svg$)/, '').replace(/\.svg$/, '');
-        const match = /^(\d{2})-([a-z0-9]+(?:-[a-z0-9]+)*)$/i.exec(base);
-        if (!match) continue;
-        const num = match[1];
-        const name = match[0];
-        if (!groups.has(num)) groups.set(num, { num, name, files: [] });
-        groups.get(num).files.push(entry.name);
+        const generic = /^(\d{2})-([a-z0-9]+(?:-[a-z0-9]+)*)$/i.exec(base);
+        const fileType = /^file-([a-z0-9]+(?:-[a-z0-9]+)*)$/i.exec(base);
+        if (!generic && !fileType) continue;
+        const key = generic ? generic[0] : fileType[0];
+        const num = generic ? generic[1] : 'ft';
+        const kind = generic ? 'generic' : 'file-type';
+        if (!groups.has(key)) groups.set(key, { kind, num, name: key, files: [] });
+        groups.get(key).files.push(entry.name);
     }
     return [...groups.values()]
         .filter(g => g.files.some(f => !f.includes('-hover') && !f.includes('-active') && !f.includes('-disabled')))
-        .sort((a, b) => Number(a.num) - Number(b.num));
+        .sort((a, b) => {
+            if (a.kind !== b.kind) return a.kind === 'generic' ? -1 : 1;
+            if (a.kind === 'generic') return Number(a.num) - Number(b.num);
+            return a.name.localeCompare(b.name);
+        });
 }
 
 /** 把 URL 路径解析成磁盘路径,防止越界访问仓库外文件。 */
