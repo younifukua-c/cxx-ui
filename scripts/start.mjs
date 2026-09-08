@@ -25,7 +25,8 @@ const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(__filename), '..');
 const ICONS_DIR = path.join(ROOT, 'icons');
 const PROTOTYPE_DIR = path.join(ROOT, 'prototype');
-const PORT = Number(process.env.CXX_UI_PORT) || 4173;
+const DEFAULT_PORT = 8001;
+const PORT = Number(process.env.CXX_UI_PORT) || DEFAULT_PORT;
 const HOST = '127.0.0.1';
 const MIME_TYPES = Object.freeze({
     '.html': 'text/html; charset=utf-8',
@@ -134,6 +135,9 @@ function log(req, res, start) {
 server.listen(PORT, HOST, () => {
     const url = `http://${HOST}:${PORT}/`;
     console.log(`cxx-ui 原型服务已启动: ${url}`);
+    if (Number(PORT) === DEFAULT_PORT) {
+        console.log('提示:可通过 $env:CXX_UI_PORT=其它端口(或 set CXX_UI_PORT=其它端口)切换。');
+    }
     console.log('按 Ctrl+C 停止。');
     openBrowser(url);
 });

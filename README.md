@@ -26,7 +26,7 @@ npm start
 
 | 环境变量 | 含义 | 默认值 |
 |---|---|---|
-| `CXX_UI_PORT` | 监听端口 | `4173` |
+| `CXX_UI_PORT` | 监听端口 | `8001` |
 | `CXX_UI_NO_BROWSER` | 设为 `1` 时不自动打开浏览器 | 未设置 |
 
 ```powershell
