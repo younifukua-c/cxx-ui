@@ -130,7 +130,7 @@ function getIconByPath(filePath, kind) {
 | 后端 / 系统语言 | `file-fortran.svg` | `Fortran` | purple | f, f77, f90, f95, f03, for |
 | 后端 / 系统语言 | `file-cobol.svg` | `Cob` | blue | cob, cbl |
 | 后端 / 系统语言 | `file-tcl.svg` | `Tcl` | cyan | tcl |
-| 后端 / 系统语言 | `file-verilog.svg` | `Verilog` | orange | v, sv, vh, svh |
+| 后端 / 系统语言 | `file-verilog.svg` | `-` | orange | v, sv, vh, svh |
 | 前端 / 脚本 | `file-graphql.svg` | `GQL` | pink | graphql, gql |
 | 前端 / 脚本 | `file-coffeescript.svg` | `Coffee` | brown | coffee |
 | 前端 / 脚本 | `file-livescript.svg` | `LS` | blue | ls |
@@ -146,13 +146,13 @@ function getIconByPath(filePath, kind) {
 | 前端 / 脚本 | `file-sass.svg` | `-` | pink | sass |
 | 前端 / 脚本 | `file-less.svg` | `-` | blue | less |
 | 前端 / 脚本 | `file-stylus.svg` | `Stylus` | green | styl |
-| 前端 / 脚本 | `file-xml.svg` | `XML` | orange | xml, xsl, xslt |
+| 前端 / 脚本 | `file-xml.svg` | `-` | orange | xml, xsl, xslt |
 | 模板 / 视图 | `file-haml.svg` | `Haml` | orange | haml |
 | 模板 / 视图 | `file-slim.svg` | `Slim` | green | slim |
 | 模板 / 视图 | `file-pug.svg` | `Pug` | red | pug, jade |
 | 模板 / 视图 | `file-ejs.svg` | `EJS` | yellow | ejs, ect |
 | 模板 / 视图 | `file-handlebars.svg` | `Hbs` | orange | hbs, handlebars, mustache |
-| 模板 / 视图 | `file-twig.svg` | `Twig` | green | twig |
+| 模板 / 视图 | `file-twig.svg` | `-` | green | twig |
 | 模板 / 视图 | `file-jinja.svg` | `Jin` | red | jinja, jinja2, j2 |
 | 模板 / 视图 | `file-blade.svg` | `Blade` | red | blade.php, bladephp |
 | 模板 / 视图 | `file-liquid.svg` | `Liq` | green | liquid |
@@ -168,15 +168,15 @@ function getIconByPath(filePath, kind) {
 | 配置 / 数据 | `file-config.svg` | `Cfg` | gray | (查不到扩展名时) |
 | 接口 / 协议 | `file-protobuf.svg` | `Proto` | blue | proto |
 | 接口 / 协议 | `file-graphql.svg` | `GQL` | pink | graphql, gql |
-| 构建 / 工具 | `file-vim.svg` | `Vim` | green | vim |
+| 构建 / 工具 | `file-vim.svg` | `-` | green | vim |
 | 构建 / 工具 | `file-emacs.svg` | `El` | purple | el |
 | 构建 / 工具 | `file-diff.svg` | `Diff` | gray | diff, patch |
 | 构建 / 工具 | `file-cmake.svg` | `CMake` | gray | cmake |
 | 构建 / 工具 | `file-cargo.svg` | `Cargo` | orange | cargo, cargo.toml |
 | 构建 / 工具 | `file-pipfile.svg` | `Pip` | blue | pipfile |
 | 构建 / 工具 | `file-pyproject.svg` | `PyProj` | blue | pyproject |
-| 构建 / 工具 | `file-webpack.svg` | `WP` | blue | webpack |
-| 构建 / 工具 | `file-vite.svg` | `Vite` | purple | vite |
+| 构建 / 工具 | `file-webpack.svg` | `-` | blue | webpack |
+| 构建 / 工具 | `file-vite.svg` | `-` | purple | vite |
 | 构建 / 工具 | `file-rollup.svg` | `Roll` | red | rollup |
 | 构建 / 工具 | `file-esbuild.svg` | `eB` | yellow | esbuild |
 | 构建 / 工具 | `file-babel.svg` | `Babel` | yellow | babel |
@@ -184,7 +184,7 @@ function getIconByPath(filePath, kind) {
 | 构建 / 工具 | `file-prettier.svg` | `Pret` | blue | prettier |
 | 构建 / 工具 | `file-stylelint.svg` | `Sty` | teal | stylelint |
 | 构建 / 工具 | `file-jest.svg` | `Jest` | red | jest |
-| 构建 / 工具 | `file-vitest.svg` | `VTest` | green | vitest |
+| 构建 / 工具 | `file-vitest.svg` | `-` | green | vitest |
 | 构建 / 工具 | `file-cypress.svg` | `Cy` | green | cypress |
 | 构建 / 工具 | `file-playwright.svg` | `PW` | purple | playwright |
 | 构建 / 工具 | `file-puppeteer.svg` | `Pptr` | red | puppeteer |

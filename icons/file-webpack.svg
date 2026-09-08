@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
-  <path d="M 12 8 L 32 8 L 44 20 L 44 48 L 12 48 Z" fill="#228BE6"/>
-  <path d="M 32 8 L 32 20 L 44 20" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>
-  <rect x="18" y="28" width="16" height="2" fill="#ffffff" opacity="0.55"/>
-  <rect x="18" y="35" width="20" height="2" fill="#ffffff" opacity="0.75"/>
-  <rect x="18" y="42" width="12" height="2" fill="#ffffff" opacity="0.55"/>
-  <text x="36" y="46" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">WP</text>
+  <rect x="4" y="4" width="48" height="48" rx="6" fill="#1C78C0"/><path d="M 28 12 L 40 19 L 40 37 L 28 44 L 16 37 L 16 19 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/><line x1="28" y1="12" x2="28" y2="44" stroke="#ffffff" stroke-width="2"/><line x1="28" y1="12" x2="16" y2="19" stroke="#ffffff" stroke-width="2"/><line x1="28" y1="12" x2="40" y2="19" stroke="#ffffff" stroke-width="2"/><line x1="16" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="2"/><line x1="40" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="2"/>
 </svg>

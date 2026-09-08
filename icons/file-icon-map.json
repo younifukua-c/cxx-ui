@@ -807,7 +807,7 @@
     },
     {
       "type": "verilog",
-      "label": "Verilog",
+      "label": null,
       "shape": null,
       "palette": "orange",
       "exts": [
@@ -991,7 +991,7 @@
     },
     {
       "type": "xml",
-      "label": "XML",
+      "label": null,
       "shape": null,
       "palette": "orange",
       "exts": [
@@ -1051,7 +1051,7 @@
     },
     {
       "type": "twig",
-      "label": "Twig",
+      "label": null,
       "shape": null,
       "palette": "green",
       "exts": [
@@ -1165,7 +1165,7 @@
     },
     {
       "type": "vim",
-      "label": "Vim",
+      "label": null,
       "shape": null,
       "palette": "green",
       "exts": [
@@ -1230,7 +1230,7 @@
     },
     {
       "type": "webpack",
-      "label": "WP",
+      "label": null,
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -1239,7 +1239,7 @@
     },
     {
       "type": "vite",
-      "label": "Vite",
+      "label": null,
       "shape": null,
       "palette": "purple",
       "exts": [
@@ -1311,7 +1311,7 @@
     },
     {
       "type": "vitest",
-      "label": "VTest",
+      "label": null,
       "shape": null,
       "palette": "green",
       "exts": [

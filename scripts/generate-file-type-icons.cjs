@@ -393,13 +393,13 @@ const FILE_TYPES = [
     { type: 'dart',        exts: ['dart'],                          label: 'Dart',       palette: 'cyan' },
     { type: 'swift',       exts: ['swift'],                         logo: 'swift',       palette: 'orange' },
     { type: 'lisp',        exts: ['lisp', 'lsp', 'cl'],             logo: 'clojure',     palette: 'yellow' },
-    { type: 'vb',          exts: ['vb', 'vbs'],                     logo: 'csharp',      palette: 'blue' },
+    { type: 'vb',          exts: ['vb', 'vbs'],                     logo: 'vb',          palette: 'blue' },
     { type: 'pascal',      exts: ['pas', 'dpr', 'pp'],              label: 'Pas',         palette: 'red' },
     { type: 'ada',         exts: ['ada', 'adb', 'ads'],             label: 'Ada',         palette: 'blue' },
     { type: 'fortran',     exts: ['f', 'f77', 'f90', 'f95', 'f03', 'for'], label: 'Fortran', palette: 'purple' },
     { type: 'cobol',       exts: ['cob', 'cbl'],                    label: 'Cob',         palette: 'blue' },
     { type: 'tcl',         exts: ['tcl'],                           label: 'Tcl',         palette: 'cyan' },
-    { type: 'verilog',     exts: ['v', 'sv', 'vh', 'svh'],           label: 'Verilog',     palette: 'orange' },
+    { type: 'verilog',     exts: ['v', 'sv', 'vh', 'svh'],           logo: 'verilog',     palette: 'orange' },
     { type: 'sql',         exts: ['sql'],                           logo: 'sql',         palette: 'blue' },
     { type: 'sqlite',      exts: ['sqlite', 'sqlite3', 'db', 'db3'],label: 'SQLite',     palette: 'blue' },
     { type: 'protobuf',    exts: ['proto'],                         label: 'Proto',       palette: 'blue' },
@@ -409,7 +409,7 @@ const FILE_TYPES = [
     { type: 'javascript',  exts: ['js', 'mjs', 'cjs'],              logo: 'javascript',  palette: 'yellow' },
     { type: 'typescript',  exts: ['ts', 'mts', 'cts'],              logo: 'typescript',  palette: 'blue' },
     { type: 'jsx',         exts: ['jsx'],                           logo: 'javascript',  palette: 'yellow' },
-    { type: 'tsx',         exts: ['tsx'],                           logo: 'typescript',  palette: 'blue' },
+    { type: 'tsx',         exts: ['tsx'],                           logo: 'tsx',         palette: 'blue' },
     { type: 'vue',         exts: ['vue'],                           logo: 'vue',         palette: 'green' },
     { type: 'svelte',      exts: ['svelte'],                        label: 'Sv',          palette: 'red' },
     { type: 'html',        exts: ['html', 'htm', 'xhtml'],          logo: 'html',        palette: 'orange' },
@@ -418,13 +418,13 @@ const FILE_TYPES = [
     { type: 'sass',        exts: ['sass'],                          logo: 'sass',        palette: 'pink' },
     { type: 'less',        exts: ['less'],                          logo: 'less',        palette: 'blue' },
     { type: 'stylus',      exts: ['styl'],                          label: 'Stylus',      palette: 'green' },
-    { type: 'xml',         exts: ['xml', 'xsl', 'xslt'],            label: 'XML',         palette: 'orange' },
+    { type: 'xml',         exts: ['xml', 'xsl', 'xslt'],            logo: 'xml',         palette: 'orange' },
     { type: 'haml',        exts: ['haml'],                          label: 'Haml',        palette: 'orange' },
     { type: 'slim',        exts: ['slim'],                          label: 'Slim',        palette: 'green' },
     { type: 'pug',         exts: ['pug', 'jade'],                   label: 'Pug',         palette: 'red' },
     { type: 'ejs',         exts: ['ejs', 'ect'],                    label: 'EJS',         palette: 'yellow' },
     { type: 'handlebars',  exts: ['hbs', 'handlebars', 'mustache'], label: 'Hbs',         palette: 'orange' },
-    { type: 'twig',        exts: ['twig'],                          label: 'Twig',        palette: 'green' },
+    { type: 'twig',        exts: ['twig'],                          logo: 'twig',        palette: 'green' },
     { type: 'jinja',       exts: ['jinja', 'jinja2', 'j2'],         label: 'Jin',         palette: 'red' },
     { type: 'blade',       exts: ['blade.php', 'bladephp'],         label: 'Blade',       palette: 'red' },
     { type: 'liquid',      exts: ['liquid'],                        label: 'Liq',         palette: 'green' },
@@ -436,15 +436,15 @@ const FILE_TYPES = [
     { type: 'env',         exts: ['env'],                           label: '.env',        palette: 'yellow' },
     { type: 'plist',       exts: ['plist'],                         label: 'Plist',       palette: 'gray' },
     { type: 'config',      exts: [],                                label: 'Cfg',         palette: 'gray' },
-    { type: 'vim',         exts: ['vim'],                           label: 'Vim',         palette: 'green' },
+    { type: 'vim',         exts: ['vim'],                           logo: 'vim',         palette: 'green' },
     { type: 'emacs',       exts: ['el'],                            label: 'El',          palette: 'purple' },
     { type: 'diff',        exts: ['diff', 'patch'],                 label: 'Diff',        palette: 'gray' },
     { type: 'cmake',       exts: ['cmake'],                         label: 'CMake',       palette: 'gray' },
     { type: 'cargo',       exts: ['cargo', 'cargo.toml'],           label: 'Cargo',       palette: 'orange' },
     { type: 'pipfile',     exts: ['pipfile'],                       label: 'Pip',         palette: 'blue' },
     { type: 'pyproject',   exts: ['pyproject'],                     label: 'PyProj',      palette: 'blue' },
-    { type: 'webpack',     exts: ['webpack'],                       label: 'WP',          palette: 'blue' },
-    { type: 'vite',        exts: ['vite'],                          label: 'Vite',        palette: 'purple' },
+    { type: 'webpack',     exts: ['webpack'],                       logo: 'webpack',     palette: 'blue' },
+    { type: 'vite',        exts: ['vite'],                          logo: 'vite',        palette: 'purple' },
     { type: 'rollup',      exts: ['rollup'],                        label: 'Roll',        palette: 'red' },
     { type: 'esbuild',     exts: ['esbuild'],                       label: 'eB',          palette: 'yellow' },
     { type: 'babel',       exts: ['babel'],                         label: 'Babel',       palette: 'yellow' },
@@ -452,7 +452,7 @@ const FILE_TYPES = [
     { type: 'prettier',    exts: ['prettier'],                      label: 'Pret',        palette: 'blue' },
     { type: 'stylelint',   exts: ['stylelint'],                     label: 'Sty',         palette: 'teal' },
     { type: 'jest',        exts: ['jest'],                          label: 'Jest',        palette: 'red' },
-    { type: 'vitest',      exts: ['vitest'],                        label: 'VTest',       palette: 'green' },
+    { type: 'vitest',      exts: ['vitest'],                        logo: 'vitest',      palette: 'green' },
     { type: 'cypress',     exts: ['cypress'],                       label: 'Cy',          palette: 'green' },
     { type: 'playwright',  exts: ['playwright'],                    label: 'PW',          palette: 'purple' },
     { type: 'puppeteer',   exts: ['puppeteer'],                     label: 'Pptr',        palette: 'red' },
@@ -996,6 +996,106 @@ const LOGOS = {
         return [
             '<rect x="4" y="4" width="48" height="48" rx="6" fill="#DC3A00"/>',
             '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">PC</text>',
+        ].join('');
+    },
+    /** Twig: 绿 + 树叶 */
+    twig(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#138F4A"/>',
+            // 叶子
+            '<path d="M 28 14 Q 16 18 16 32 Q 16 40 28 42 Q 40 40 40 32 Q 40 18 28 14 Z" fill="#ffffff"/>',
+            '<path d="M 28 14 L 28 42" stroke="#138F4A" stroke-width="2" stroke-linecap="round"/>',
+            '<path d="M 28 22 L 22 26 M 28 28 L 22 32 M 28 34 L 22 38" stroke="#138F4A" stroke-width="1.2" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** Verilog: 橙 + 芯片引脚 */
+    verilog(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FF7043"/>',
+            // 芯片
+            '<rect x="14" y="14" width="28" height="28" rx="2" fill="#ffffff"/>',
+            // 引脚
+            '<rect x="11" y="18" width="3" height="2" fill="#ffffff"/>',
+            '<rect x="11" y="24" width="3" height="2" fill="#ffffff"/>',
+            '<rect x="11" y="30" width="3" height="2" fill="#ffffff"/>',
+            '<rect x="11" y="36" width="3" height="2" fill="#ffffff"/>',
+            '<rect x="42" y="18" width="3" height="2" fill="#ffffff"/>',
+            '<rect x="42" y="24" width="3" height="2" fill="#ffffff"/>',
+            '<rect x="42" y="30" width="3" height="2" fill="#ffffff"/>',
+            '<rect x="42" y="36" width="3" height="2" fill="#ffffff"/>',
+            // V 字
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#FF7043" text-anchor="middle">V</text>',
+        ].join('');
+    },
+    /** Vim: 绿 + 字母 V + 路径 */
+    vim(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#199F4B"/>',
+            // 折叠的角(模拟编辑器)
+            '<path d="M 14 16 L 30 16 L 30 24 L 38 16 L 42 20 L 34 28 L 42 36 L 38 40 L 30 32 L 30 40 L 14 40 Z" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Vite: 紫 + 闪电 */
+    vite(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#646CFF"/>',
+            // 闪电
+            '<path d="M 32 8 L 16 32 L 26 32 L 22 48 L 40 22 L 30 22 L 36 8 Z" fill="#FFD62F" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round"/>',
+        ].join('');
+    },
+    /** Vitest: 绿 + 试管 */
+    vitest(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#729B1B"/>',
+            // 试管
+            '<path d="M 22 12 L 22 22 L 16 38 Q 16 44 22 44 L 34 44 Q 40 44 40 38 L 34 22 L 34 12 Z" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>',
+            // 液体
+            '<path d="M 18 32 L 38 32 L 40 38 Q 40 44 34 44 L 22 44 Q 16 44 16 38 Z" fill="#ffffff" opacity="0.4"/>',
+            // V 标
+            '<text x="28" y="24" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">V</text>',
+        ].join('');
+    },
+    /** Webpack: 蓝 + 立方体 */
+    webpack(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1C78C0"/>',
+            // 立方体(简化的 webpack logo)
+            '<path d="M 28 12 L 40 19 L 40 37 L 28 44 L 16 37 L 16 19 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>',
+            '<line x1="28" y1="12" x2="28" y2="44" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="28" y1="12" x2="16" y2="19" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="28" y1="12" x2="40" y2="19" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="16" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="40" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="2"/>',
+        ].join('');
+    },
+    /** XML: 橙 + 角括号 */
+    xml(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FF6600"/>',
+            // 角括号
+            '<path d="M 16 16 L 22 28 L 16 40" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>',
+            '<path d="M 40 16 L 34 28 L 40 40" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>',
+            '<line x1="26" y1="14" x2="30" y2="42" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** VB: 蓝 + 窗口 */
+    vb(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#005A9C"/>',
+            // 三个窗口
+            '<rect x="12" y="14" width="20" height="14" rx="1" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<rect x="24" y="24" width="20" height="14" rx="1" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="12" y1="18" x2="32" y2="18" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="24" y1="28" x2="44" y2="28" stroke="#ffffff" stroke-width="1.5"/>',
+            '<circle cx="15" cy="16" r="0.7" fill="#ffffff"/>',
+            '<circle cx="27" cy="26" r="0.7" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** tsx (TypeScript JSX): 蓝 + TSX */
+    tsx(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3178C6"/>',
+            '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">TSX</text>',
         ].join('');
     },
 };
