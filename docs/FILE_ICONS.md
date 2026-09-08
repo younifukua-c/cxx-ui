@@ -90,10 +90,10 @@ function getIconByPath(filePath, kind) {
 | 专门视觉(多媒体/容器/工具) | `file-font.svg` | `font` | gray | ttf, otf, woff, woff2, eot |
 | 专门视觉(多媒体/容器/工具) | `file-archive.svg` | `archive` | gray | zip, rar, 7z, tar, gz, bz2, xz, tgz |
 | 专门视觉(多媒体/容器/工具) | `file-jar.svg` | `jar` | orange | jar, war, ear, apk, aab |
-| 专门视觉(多媒体/容器/工具) | `file-pdf.svg` | `pdf` | red | pdf |
-| 专门视觉(多媒体/容器/工具) | `file-doc.svg` | `doc` | blue | doc, docx, rtf, odt |
-| 专门视觉(多媒体/容器/工具) | `file-sheet.svg` | `sheet` | teal | xls, xlsx, csv, tsv, ods |
-| 专门视觉(多媒体/容器/工具) | `file-slide.svg` | `slide` | orange | ppt, pptx, odp |
+| 专门视觉(多媒体/容器/工具) | `file-pdf.svg` | `-` | red | pdf |
+| 专门视觉(多媒体/容器/工具) | `file-doc.svg` | `-` | blue | doc, docx, rtf, odt |
+| 专门视觉(多媒体/容器/工具) | `file-sheet.svg` | `-` | teal | xls, xlsx, csv, tsv, ods |
+| 专门视觉(多媒体/容器/工具) | `file-slide.svg` | `-` | orange | ppt, pptx, odp |
 | 专门视觉(多媒体/容器/工具) | `file-docker.svg` | `docker` | cyan | (完整文件名或扩展名匹配) |
 | 专门视觉(多媒体/容器/工具) | `file-shell.svg` | `shell` | gray | sh, bash, zsh, ksh |
 | 专门视觉(多媒体/容器/工具) | `file-bat.svg` | `shell` | gray | bat, cmd |
@@ -102,99 +102,99 @@ function getIconByPath(filePath, kind) {
 | 专门视觉(多媒体/容器/工具) | `file-license.svg` | `license` | gray | (完整文件名或扩展名匹配) |
 | 专门视觉(多媒体/容器/工具) | `file-readme.svg` | `readme` | gray | (完整文件名或扩展名匹配) |
 | 专门视觉(多媒体/容器/工具) | `file-lock.svg` | `lock` | gray | (完整文件名或扩展名匹配) |
-| 后端 / 系统语言 | `file-java.svg` | `JV` | green | java |
-| 后端 / 系统语言 | `file-kotlin.svg` | `Kt` | green | kt, kts |
-| 后端 / 系统语言 | `file-scala.svg` | `Sc` | red | scala, sbt |
-| 后端 / 系统语言 | `file-groovy.svg` | `Gy` | blue | groovy |
+| 后端 / 系统语言 | `file-java.svg` | `-` | red | java |
+| 后端 / 系统语言 | `file-kotlin.svg` | `-` | purple | kt, kts |
+| 后端 / 系统语言 | `file-scala.svg` | `-` | red | scala, sbt |
+| 后端 / 系统语言 | `file-groovy.svg` | `-` | blue | groovy |
 | 后端 / 系统语言 | `file-c.svg` | `C` | gray | c, h |
-| 后端 / 系统语言 | `file-cpp.svg` | `C+` | purple | cpp, cc, cxx, hpp, hxx |
-| 后端 / 系统语言 | `file-csharp.svg` | `C#` | purple | cs |
-| 后端 / 系统语言 | `file-go.svg` | `Go` | cyan | go |
-| 后端 / 系统语言 | `file-rust.svg` | `Rs` | red | rs |
-| 后端 / 系统语言 | `file-ruby.svg` | `Rb` | red | rb |
-| 后端 / 系统语言 | `file-php.svg` | `PHP` | light | php, php5, phtml |
-| 后端 / 系统语言 | `file-perl.svg` | `Pl` | blue | pl, pm |
-| 后端 / 系统语言 | `file-lua.svg` | `Lu` | blue | lua |
-| 后端 / 系统语言 | `file-erlang.svg` | `Er` | red | erl, hrl |
-| 后端 / 系统语言 | `file-elixir.svg` | `Ex` | purple | ex, exs |
-| 后端 / 系统语言 | `file-haskell.svg` | `Hs` | light | hs |
-| 后端 / 系统语言 | `file-clojure.svg` | `Cl` | teal | clj, cljs, cljc |
-| 后端 / 系统语言 | `file-fsharp.svg` | `F#` | blue | fs, fsx, fsi |
-| 后端 / 系统语言 | `file-ocaml.svg` | `Ml` | orange | ml, mli |
-| 后端 / 系统语言 | `file-dart.svg` | `Dt` | light | dart |
-| 后端 / 系统语言 | `file-swift.svg` | `Sw` | red | swift |
-| 后端 / 系统语言 | `file-lisp.svg` | `Lp` | purple | lisp, lsp, cl |
-| 后端 / 系统语言 | `file-vb.svg` | `VB` | blue | vb, vbs |
-| 后端 / 系统语言 | `file-pascal.svg` | `Pa` | red | pas, dpr, pp |
-| 后端 / 系统语言 | `file-ada.svg` | `Ad` | blue | ada, adb, ads |
-| 后端 / 系统语言 | `file-fortran.svg` | `Ft` | purple | f, f77, f90, f95, f03, for |
-| 后端 / 系统语言 | `file-cobol.svg` | `Cb` | blue | cob, cbl |
-| 后端 / 系统语言 | `file-tcl.svg` | `Tc` | cyan | tcl |
-| 后端 / 系统语言 | `file-verilog.svg` | `Vg` | orange | v, sv, vh, svh |
-| 前端 / 脚本 | `file-graphql.svg` | `GQ` | purple | graphql, gql |
-| 前端 / 脚本 | `file-coffeescript.svg` | `Cf` | yellow | coffee |
+| 后端 / 系统语言 | `file-cpp.svg` | `-` | blue | cpp, cc, cxx, hpp, hxx |
+| 后端 / 系统语言 | `file-csharp.svg` | `-` | purple | cs |
+| 后端 / 系统语言 | `file-go.svg` | `-` | cyan | go |
+| 后端 / 系统语言 | `file-rust.svg` | `-` | orange | rs |
+| 后端 / 系统语言 | `file-ruby.svg` | `-` | red | rb |
+| 后端 / 系统语言 | `file-php.svg` | `-` | purple | php, php5, phtml |
+| 后端 / 系统语言 | `file-perl.svg` | `-` | cyan | pl, pm |
+| 后端 / 系统语言 | `file-lua.svg` | `Lua` | blue | lua |
+| 后端 / 系统语言 | `file-erlang.svg` | `-` | red | erl, hrl |
+| 后端 / 系统语言 | `file-elixir.svg` | `-` | purple | ex, exs |
+| 后端 / 系统语言 | `file-haskell.svg` | `-` | purple | hs |
+| 后端 / 系统语言 | `file-clojure.svg` | `-` | blue | clj, cljs, cljc |
+| 后端 / 系统语言 | `file-fsharp.svg` | `-` | purple | fs, fsx, fsi |
+| 后端 / 系统语言 | `file-ocaml.svg` | `OC` | orange | ml, mli |
+| 后端 / 系统语言 | `file-dart.svg` | `Dart` | cyan | dart |
+| 后端 / 系统语言 | `file-swift.svg` | `-` | orange | swift |
+| 后端 / 系统语言 | `file-lisp.svg` | `-` | yellow | lisp, lsp, cl |
+| 后端 / 系统语言 | `file-vb.svg` | `-` | blue | vb, vbs |
+| 后端 / 系统语言 | `file-pascal.svg` | `Pas` | red | pas, dpr, pp |
+| 后端 / 系统语言 | `file-ada.svg` | `Ada` | blue | ada, adb, ads |
+| 后端 / 系统语言 | `file-fortran.svg` | `Fortran` | purple | f, f77, f90, f95, f03, for |
+| 后端 / 系统语言 | `file-cobol.svg` | `Cob` | blue | cob, cbl |
+| 后端 / 系统语言 | `file-tcl.svg` | `Tcl` | cyan | tcl |
+| 后端 / 系统语言 | `file-verilog.svg` | `Verilog` | orange | v, sv, vh, svh |
+| 前端 / 脚本 | `file-graphql.svg` | `GQL` | pink | graphql, gql |
+| 前端 / 脚本 | `file-coffeescript.svg` | `Coffee` | brown | coffee |
 | 前端 / 脚本 | `file-livescript.svg` | `LS` | blue | ls |
-| 前端 / 脚本 | `file-javascript.svg` | `JS` | yellow | js, mjs, cjs |
-| 前端 / 脚本 | `file-typescript.svg` | `TS` | blue | ts, mts, cts |
-| 前端 / 脚本 | `file-jsx.svg` | `JSX` | yellow | jsx |
-| 前端 / 脚本 | `file-tsx.svg` | `TSX` | blue | tsx |
-| 前端 / 脚本 | `file-vue.svg` | `V` | green | vue |
+| 前端 / 脚本 | `file-javascript.svg` | `-` | yellow | js, mjs, cjs |
+| 前端 / 脚本 | `file-typescript.svg` | `-` | blue | ts, mts, cts |
+| 前端 / 脚本 | `file-jsx.svg` | `-` | yellow | jsx |
+| 前端 / 脚本 | `file-tsx.svg` | `-` | blue | tsx |
+| 前端 / 脚本 | `file-vue.svg` | `-` | green | vue |
 | 前端 / 脚本 | `file-svelte.svg` | `Sv` | red | svelte |
-| 前端 / 脚本 | `file-html.svg` | `<>` | yellow | html, htm, xhtml |
-| 前端 / 脚本 | `file-css.svg` | `#` | blue | css |
-| 前端 / 脚本 | `file-scss.svg` | `Sc` | blue | scss |
-| 前端 / 脚本 | `file-sass.svg` | `Sa` | blue | sass |
-| 前端 / 脚本 | `file-less.svg` | `Ls` | blue | less |
-| 前端 / 脚本 | `file-stylus.svg` | `St` | green | styl |
-| 前端 / 脚本 | `file-xml.svg` | `X` | orange | xml, xsl, xslt |
-| 模板 / 视图 | `file-haml.svg` | `Hm` | orange | haml |
-| 模板 / 视图 | `file-slim.svg` | `Sl` | green | slim |
-| 模板 / 视图 | `file-pug.svg` | `Pg` | red | pug, jade |
-| 模板 / 视图 | `file-ejs.svg` | `EJ` | yellow | ejs, ect |
-| 模板 / 视图 | `file-handlebars.svg` | `Hb` | orange | hbs, handlebars, mustache |
-| 模板 / 视图 | `file-twig.svg` | `Tw` | green | twig |
-| 模板 / 视图 | `file-jinja.svg` | `Jn` | red | jinja, jinja2, j2 |
-| 模板 / 视图 | `file-blade.svg` | `Bl` | red | blade.php, bladephp |
-| 模板 / 视图 | `file-liquid.svg` | `Lq` | green | liquid |
-| 配置 / 数据 | `file-sql.svg` | `SQL` | purple | sql |
-| 配置 / 数据 | `file-sqlite.svg` | `SL` | blue | sqlite, sqlite3, db, db3 |
-| 配置 / 数据 | `file-json.svg` | `{}` | yellow | json, jsonc, json5 |
-| 配置 / 数据 | `file-yaml.svg` | `Y` | cyan | yml, yaml |
-| 配置 / 数据 | `file-toml.svg` | `Tl` | cyan | toml |
-| 配置 / 数据 | `file-ini.svg` | `I` | cyan | ini, cfg, conf |
-| 配置 / 数据 | `file-properties.svg` | `P` | cyan | properties |
-| 配置 / 数据 | `file-env.svg` | `E` | yellow | env |
-| 配置 / 数据 | `file-plist.svg` | `Ps` | gray | plist |
-| 配置 / 数据 | `file-config.svg` | `*` | cyan | (查不到扩展名时) |
-| 接口 / 协议 | `file-protobuf.svg` | `P#` | purple | proto |
-| 接口 / 协议 | `file-graphql.svg` | `GQ` | purple | graphql, gql |
-| 构建 / 工具 | `file-vim.svg` | `Vm` | green | vim |
+| 前端 / 脚本 | `file-html.svg` | `-` | orange | html, htm, xhtml |
+| 前端 / 脚本 | `file-css.svg` | `-` | blue | css |
+| 前端 / 脚本 | `file-scss.svg` | `-` | pink | scss |
+| 前端 / 脚本 | `file-sass.svg` | `-` | pink | sass |
+| 前端 / 脚本 | `file-less.svg` | `-` | blue | less |
+| 前端 / 脚本 | `file-stylus.svg` | `Stylus` | green | styl |
+| 前端 / 脚本 | `file-xml.svg` | `XML` | orange | xml, xsl, xslt |
+| 模板 / 视图 | `file-haml.svg` | `Haml` | orange | haml |
+| 模板 / 视图 | `file-slim.svg` | `Slim` | green | slim |
+| 模板 / 视图 | `file-pug.svg` | `Pug` | red | pug, jade |
+| 模板 / 视图 | `file-ejs.svg` | `EJS` | yellow | ejs, ect |
+| 模板 / 视图 | `file-handlebars.svg` | `Hbs` | orange | hbs, handlebars, mustache |
+| 模板 / 视图 | `file-twig.svg` | `Twig` | green | twig |
+| 模板 / 视图 | `file-jinja.svg` | `Jin` | red | jinja, jinja2, j2 |
+| 模板 / 视图 | `file-blade.svg` | `Blade` | red | blade.php, bladephp |
+| 模板 / 视图 | `file-liquid.svg` | `Liq` | green | liquid |
+| 配置 / 数据 | `file-sql.svg` | `-` | blue | sql |
+| 配置 / 数据 | `file-sqlite.svg` | `SQLite` | blue | sqlite, sqlite3, db, db3 |
+| 配置 / 数据 | `file-json.svg` | `-` | yellow | json, jsonc, json5 |
+| 配置 / 数据 | `file-yaml.svg` | `-` | red | yml, yaml |
+| 配置 / 数据 | `file-toml.svg` | `TOML` | gray | toml |
+| 配置 / 数据 | `file-ini.svg` | `INI` | gray | ini, cfg, conf |
+| 配置 / 数据 | `file-properties.svg` | `Prop` | gray | properties |
+| 配置 / 数据 | `file-env.svg` | `.env` | yellow | env |
+| 配置 / 数据 | `file-plist.svg` | `Plist` | gray | plist |
+| 配置 / 数据 | `file-config.svg` | `Cfg` | gray | (查不到扩展名时) |
+| 接口 / 协议 | `file-protobuf.svg` | `Proto` | blue | proto |
+| 接口 / 协议 | `file-graphql.svg` | `GQL` | pink | graphql, gql |
+| 构建 / 工具 | `file-vim.svg` | `Vim` | green | vim |
 | 构建 / 工具 | `file-emacs.svg` | `El` | purple | el |
-| 构建 / 工具 | `file-diff.svg` | `±` | gray | diff, patch |
-| 构建 / 工具 | `file-cmake.svg` | `CM` | gray | cmake |
-| 构建 / 工具 | `file-cargo.svg` | `Cg` | orange | cargo, cargo.toml |
-| 构建 / 工具 | `file-pipfile.svg` | `Py` | blue | pipfile |
-| 构建 / 工具 | `file-pyproject.svg` | `Py` | blue | pyproject |
-| 构建 / 工具 | `file-webpack.svg` | `Wp` | blue | webpack |
-| 构建 / 工具 | `file-vite.svg` | `Vi` | purple | vite |
-| 构建 / 工具 | `file-rollup.svg` | `Rp` | red | rollup |
-| 构建 / 工具 | `file-esbuild.svg` | `Eb` | yellow | esbuild |
-| 构建 / 工具 | `file-babel.svg` | `Bb` | yellow | babel |
-| 构建 / 工具 | `file-eslint.svg` | `Es` | purple | eslint |
-| 构建 / 工具 | `file-prettier.svg` | `Pt` | blue | prettier |
-| 构建 / 工具 | `file-stylelint.svg` | `Sn` | teal | stylelint |
-| 构建 / 工具 | `file-jest.svg` | `Jt` | red | jest |
-| 构建 / 工具 | `file-vitest.svg` | `Vs` | green | vitest |
+| 构建 / 工具 | `file-diff.svg` | `Diff` | gray | diff, patch |
+| 构建 / 工具 | `file-cmake.svg` | `CMake` | gray | cmake |
+| 构建 / 工具 | `file-cargo.svg` | `Cargo` | orange | cargo, cargo.toml |
+| 构建 / 工具 | `file-pipfile.svg` | `Pip` | blue | pipfile |
+| 构建 / 工具 | `file-pyproject.svg` | `PyProj` | blue | pyproject |
+| 构建 / 工具 | `file-webpack.svg` | `WP` | blue | webpack |
+| 构建 / 工具 | `file-vite.svg` | `Vite` | purple | vite |
+| 构建 / 工具 | `file-rollup.svg` | `Roll` | red | rollup |
+| 构建 / 工具 | `file-esbuild.svg` | `eB` | yellow | esbuild |
+| 构建 / 工具 | `file-babel.svg` | `Babel` | yellow | babel |
+| 构建 / 工具 | `file-eslint.svg` | `ESLint` | purple | eslint |
+| 构建 / 工具 | `file-prettier.svg` | `Pret` | blue | prettier |
+| 构建 / 工具 | `file-stylelint.svg` | `Sty` | teal | stylelint |
+| 构建 / 工具 | `file-jest.svg` | `Jest` | red | jest |
+| 构建 / 工具 | `file-vitest.svg` | `VTest` | green | vitest |
 | 构建 / 工具 | `file-cypress.svg` | `Cy` | green | cypress |
-| 构建 / 工具 | `file-playwright.svg` | `Pw` | purple | playwright |
-| 构建 / 工具 | `file-puppeteer.svg` | `Pu` | red | puppeteer |
-| 构建 / 工具 | `file-terraform.svg` | `Tf` | purple | tf, tfvars, hcl |
-| 构建 / 工具 | `file-bicep.svg` | `Bi` | blue | bicep |
-| 构建 / 工具 | `file-nix.svg` | `Nx` | blue | nix |
-| 元数据 / 占位 | `file-markdown.svg` | `M.` | gray | md, mdx, markdown |
-| 元数据 / 占位 | `file-text.svg` | `TXT` | yellow | txt, log |
-| 元数据 / 占位 | `file-rst.svg` | `R` | gray | rst |
-| 元数据 / 占位 | `file-asciidoc.svg` | `Ad` | blue | adoc, asciidoc |
+| 构建 / 工具 | `file-playwright.svg` | `PW` | purple | playwright |
+| 构建 / 工具 | `file-puppeteer.svg` | `Pptr` | red | puppeteer |
+| 构建 / 工具 | `file-terraform.svg` | `TF` | purple | tf, tfvars, hcl |
+| 构建 / 工具 | `file-bicep.svg` | `Bicep` | blue | bicep |
+| 构建 / 工具 | `file-nix.svg` | `Nix` | blue | nix |
+| 元数据 / 占位 | `file-markdown.svg` | `-` | blue | md, mdx, markdown |
+| 元数据 / 占位 | `file-text.svg` | `TXT` | gray | txt, log |
+| 元数据 / 占位 | `file-rst.svg` | `RST` | gray | rst |
+| 元数据 / 占位 | `file-asciidoc.svg` | `ADoc` | gray | adoc, asciidoc |
 | 元数据 / 占位 | `file-binary.svg` | `BIN` | gray | exe, dll, so, dylib, bin, class, o, a |
 | 元数据 / 占位 | `file-unknown.svg` | `?` | dimGray | (查不到扩展名时) |
 

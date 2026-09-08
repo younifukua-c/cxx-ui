@@ -36,6 +36,7 @@ const PALETTE = Object.freeze({
     teal:    { default: '#20C997', hover: '#3BC9DB', active: '#0CA678' },
     orange:  { default: '#FD7E14', hover: '#FF922B', active: '#E8590C' },
     pink:    { default: '#E64980', hover: '#F06595', active: '#C2255C' },
+    brown:   { default: '#8B4513', hover: '#A0522D', active: '#6B3410' },
 });
 const DISABLED_COLOR = '#868E96';
 
@@ -123,7 +124,10 @@ function renderTextGlyph(text, color) {
 }
 
 /**
- * 自定义形状库。每种形状都是完整的 SVG 路径/元素,不再是文档基线 + 字符。
+ * 自定义形状库。
+ * - SHAPES:通用形状(图/视频/音频/字体/容器/工具/办公)沿用文档基线风格的专门视觉
+ * - LOGOS:品牌 logo 风格(Vue/Python/Java/Rust/Office 系列),画真正的 logo 视觉
+ *
  * 形参:fillColor 主体色,glyphColor 前景色(default/hover/active 时白,disabled 时灰)。
  */
 const SHAPES = {
@@ -353,10 +357,10 @@ const FILE_TYPES = [
     { type: 'font',     exts: ['ttf','otf','woff','woff2','eot'], shape: 'font', palette: 'gray' },
     { type: 'archive',  exts: ['zip','rar','7z','tar','gz','bz2','xz','tgz'], shape: 'archive', palette: 'gray' },
     { type: 'jar',      exts: ['jar','war','ear','apk','aab'], shape: 'jar', palette: 'orange' },
-    { type: 'pdf',      exts: ['pdf'],      shape: 'pdf', palette: 'red' },
-    { type: 'doc',      exts: ['doc','docx','rtf','odt'], shape: 'doc', palette: 'blue' },
-    { type: 'sheet',    exts: ['xls','xlsx','csv','tsv','ods'], shape: 'sheet', palette: 'teal' },
-    { type: 'slide',    exts: ['ppt','pptx','odp'], shape: 'slide', palette: 'orange' },
+    { type: 'pdf',      exts: ['pdf'],      logo: 'pdf',         palette: 'red' },
+    { type: 'doc',      exts: ['doc','docx','rtf','odt'], logo: 'word',        palette: 'blue' },
+    { type: 'sheet',    exts: ['xls','xlsx','csv','tsv','ods'], logo: 'excel',     palette: 'teal' },
+    { type: 'slide',    exts: ['ppt','pptx','odp'], logo: 'powerpoint',  palette: 'orange' },
     { type: 'docker',   exts: [], shape: 'docker', palette: 'cyan' },
     { type: 'shell',    exts: ['sh','bash','zsh','ksh'], shape: 'shell', palette: 'gray' },
     { type: 'bat',      exts: ['bat','cmd'], shape: 'shell', palette: 'gray' },
@@ -365,102 +369,102 @@ const FILE_TYPES = [
     { type: 'license',  exts: [], shape: 'license', palette: 'gray' },
     { type: 'readme',   exts: [], shape: 'readme', palette: 'gray' },
     { type: 'lock',     exts: [], shape: 'lock', palette: 'gray' },
-    // 文档基线 + 字符(代码/配置/数据)
-    { type: 'java',        exts: ['java'],                          label: 'JV', palette: 'green' },
-    { type: 'kotlin',      exts: ['kt', 'kts'],                     label: 'Kt', palette: 'green' },
-    { type: 'scala',       exts: ['scala', 'sbt'],                   label: 'Sc', palette: 'red' },
-    { type: 'groovy',      exts: ['groovy'],                        label: 'Gy', palette: 'blue' },
-    { type: 'c',           exts: ['c', 'h'],                        label: 'C',  palette: 'gray' },
-    { type: 'cpp',         exts: ['cpp', 'cc', 'cxx', 'hpp', 'hxx'], label: 'C+', palette: 'purple' },
-    { type: 'csharp',      exts: ['cs'],                            label: 'C#', palette: 'purple' },
-    { type: 'go',          exts: ['go'],                            label: 'Go', palette: 'cyan' },
-    { type: 'rust',        exts: ['rs'],                            label: 'Rs', palette: 'red' },
-    { type: 'ruby',        exts: ['rb'],                            label: 'Rb', palette: 'red' },
-    { type: 'python',      exts: ['py', 'pyi', 'pyc', 'pyd', 'pyo'],label: 'Py', palette: 'light' },
-    { type: 'php',         exts: ['php', 'php5', 'phtml'],          label: 'PHP', palette: 'light' },
-    { type: 'perl',        exts: ['pl', 'pm'],                      label: 'Pl', palette: 'blue' },
-    { type: 'lua',         exts: ['lua'],                           label: 'Lu', palette: 'blue' },
-    { type: 'erlang',      exts: ['erl', 'hrl'],                    label: 'Er', palette: 'red' },
-    { type: 'elixir',      exts: ['ex', 'exs'],                     label: 'Ex', palette: 'purple' },
-    { type: 'haskell',     exts: ['hs'],                            label: 'Hs', palette: 'light' },
-    { type: 'clojure',     exts: ['clj', 'cljs', 'cljc'],           label: 'Cl', palette: 'teal' },
-    { type: 'fsharp',      exts: ['fs', 'fsx', 'fsi'],              label: 'F#', palette: 'blue' },
-    { type: 'ocaml',       exts: ['ml', 'mli'],                     label: 'Ml', palette: 'orange' },
-    { type: 'dart',        exts: ['dart'],                          label: 'Dt', palette: 'light' },
-    { type: 'swift',       exts: ['swift'],                         label: 'Sw', palette: 'red' },
-    { type: 'lisp',        exts: ['lisp', 'lsp', 'cl'],             label: 'Lp', palette: 'purple' },
-    { type: 'vb',          exts: ['vb', 'vbs'],                     label: 'VB', palette: 'blue' },
-    { type: 'pascal',      exts: ['pas', 'dpr', 'pp'],              label: 'Pa', palette: 'red' },
-    { type: 'ada',         exts: ['ada', 'adb', 'ads'],             label: 'Ad', palette: 'blue' },
-    { type: 'fortran',     exts: ['f', 'f77', 'f90', 'f95', 'f03', 'for'], label: 'Ft', palette: 'purple' },
-    { type: 'cobol',       exts: ['cob', 'cbl'],                    label: 'Cb', palette: 'blue' },
-    { type: 'tcl',         exts: ['tcl'],                           label: 'Tc', palette: 'cyan' },
-    { type: 'verilog',     exts: ['v', 'sv', 'vh', 'svh'],           label: 'Vg', palette: 'orange' },
-    { type: 'sql',         exts: ['sql'],                           label: 'SQL', palette: 'purple' },
-    { type: 'sqlite',      exts: ['sqlite', 'sqlite3', 'db', 'db3'],label: 'SL', palette: 'blue' },
-    { type: 'protobuf',    exts: ['proto'],                         label: 'P#', palette: 'purple' },
-    { type: 'graphql',     exts: ['graphql', 'gql'],                label: 'GQ', palette: 'purple' },
-    { type: 'coffeescript',exts: ['coffee'],                        label: 'Cf', palette: 'yellow' },
-    { type: 'livescript',  exts: ['ls'],                            label: 'LS', palette: 'blue' },
-    { type: 'javascript',  exts: ['js', 'mjs', 'cjs'],              label: 'JS', palette: 'yellow' },
-    { type: 'typescript',  exts: ['ts', 'mts', 'cts'],              label: 'TS', palette: 'blue' },
-    { type: 'jsx',         exts: ['jsx'],                           label: 'JSX', palette: 'yellow' },
-    { type: 'tsx',         exts: ['tsx'],                           label: 'TSX', palette: 'blue' },
-    { type: 'vue',         exts: ['vue'],                           label: 'V',  palette: 'green' },
-    { type: 'svelte',      exts: ['svelte'],                        label: 'Sv', palette: 'red' },
-    { type: 'html',        exts: ['html', 'htm', 'xhtml'],          label: '<>', palette: 'yellow' },
-    { type: 'css',         exts: ['css'],                           label: '#',  palette: 'blue' },
-    { type: 'scss',        exts: ['scss'],                          label: 'Sc', palette: 'blue' },
-    { type: 'sass',        exts: ['sass'],                          label: 'Sa', palette: 'blue' },
-    { type: 'less',        exts: ['less'],                          label: 'Ls', palette: 'blue' },
-    { type: 'stylus',      exts: ['styl'],                          label: 'St', palette: 'green' },
-    { type: 'xml',         exts: ['xml', 'xsl', 'xslt'],            label: 'X',  palette: 'orange' },
-    { type: 'haml',        exts: ['haml'],                          label: 'Hm', palette: 'orange' },
-    { type: 'slim',        exts: ['slim'],                          label: 'Sl', palette: 'green' },
-    { type: 'pug',         exts: ['pug', 'jade'],                   label: 'Pg', palette: 'red' },
-    { type: 'ejs',         exts: ['ejs', 'ect'],                    label: 'EJ', palette: 'yellow' },
-    { type: 'handlebars',  exts: ['hbs', 'handlebars', 'mustache'], label: 'Hb', palette: 'orange' },
-    { type: 'twig',        exts: ['twig'],                          label: 'Tw', palette: 'green' },
-    { type: 'jinja',       exts: ['jinja', 'jinja2', 'j2'],         label: 'Jn', palette: 'red' },
-    { type: 'blade',       exts: ['blade.php', 'bladephp'],         label: 'Bl', palette: 'red' },
-    { type: 'liquid',      exts: ['liquid'],                        label: 'Lq', palette: 'green' },
-    { type: 'json',        exts: ['json', 'jsonc', 'json5'],        label: '{}', palette: 'yellow' },
-    { type: 'yaml',        exts: ['yml', 'yaml'],                   label: 'Y',  palette: 'cyan' },
-    { type: 'toml',        exts: ['toml'],                          label: 'Tl', palette: 'cyan' },
-    { type: 'ini',         exts: ['ini', 'cfg', 'conf'],            label: 'I',  palette: 'cyan' },
-    { type: 'properties',  exts: ['properties'],                    label: 'P',  palette: 'cyan' },
-    { type: 'env',         exts: ['env'],                           label: 'E',  palette: 'yellow' },
-    { type: 'plist',       exts: ['plist'],                         label: 'Ps', palette: 'gray' },
-    { type: 'config',      exts: [],                                label: '*',  palette: 'cyan' },
-    { type: 'vim',         exts: ['vim'],                           label: 'Vm', palette: 'green' },
-    { type: 'emacs',       exts: ['el'],                            label: 'El', palette: 'purple' },
-    { type: 'diff',        exts: ['diff', 'patch'],                 label: '±',  palette: 'gray' },
-    { type: 'cmake',       exts: ['cmake'],                         label: 'CM', palette: 'gray' },
-    { type: 'cargo',       exts: ['cargo', 'cargo.toml'],           label: 'Cg', palette: 'orange' },
-    { type: 'pipfile',     exts: ['pipfile'],                       label: 'Py', palette: 'blue' },
-    { type: 'pyproject',   exts: ['pyproject'],                     label: 'Py', palette: 'blue' },
-    { type: 'webpack',     exts: ['webpack'],                       label: 'Wp', palette: 'blue' },
-    { type: 'vite',        exts: ['vite'],                          label: 'Vi', palette: 'purple' },
-    { type: 'rollup',      exts: ['rollup'],                        label: 'Rp', palette: 'red' },
-    { type: 'esbuild',     exts: ['esbuild'],                       label: 'Eb', palette: 'yellow' },
-    { type: 'babel',       exts: ['babel'],                         label: 'Bb', palette: 'yellow' },
-    { type: 'eslint',      exts: ['eslint'],                        label: 'Es', palette: 'purple' },
-    { type: 'prettier',    exts: ['prettier'],                      label: 'Pt', palette: 'blue' },
-    { type: 'stylelint',   exts: ['stylelint'],                     label: 'Sn', palette: 'teal' },
-    { type: 'jest',        exts: ['jest'],                          label: 'Jt', palette: 'red' },
-    { type: 'vitest',      exts: ['vitest'],                        label: 'Vs', palette: 'green' },
-    { type: 'cypress',     exts: ['cypress'],                       label: 'Cy', palette: 'green' },
-    { type: 'playwright',  exts: ['playwright'],                    label: 'Pw', palette: 'purple' },
-    { type: 'puppeteer',   exts: ['puppeteer'],                     label: 'Pu', palette: 'red' },
-    { type: 'terraform',   exts: ['tf', 'tfvars', 'hcl'],           label: 'Tf', palette: 'purple' },
-    { type: 'bicep',       exts: ['bicep'],                         label: 'Bi', palette: 'blue' },
-    { type: 'nix',         exts: ['nix'],                           label: 'Nx', palette: 'blue' },
-    { type: 'markdown',    exts: ['md', 'mdx', 'markdown'],         label: 'M.', palette: 'gray' },
-    { type: 'text',        exts: ['txt', 'log'],                    label: 'TXT', palette: 'yellow' },
-    { type: 'rst',         exts: ['rst'],                           label: 'R',  palette: 'gray' },
-    { type: 'asciidoc',    exts: ['adoc', 'asciidoc'],              label: 'Ad', palette: 'blue' },
+    // 品牌 logo 风格(简化、品牌中性化,不直接抄官方 logo)
+    { type: 'java',        exts: ['java'],                          logo: 'java',        palette: 'red' },
+    { type: 'kotlin',      exts: ['kt', 'kts'],                     logo: 'kotlin',      palette: 'purple' },
+    { type: 'scala',       exts: ['scala', 'sbt'],                   logo: 'scala',       palette: 'red' },
+    { type: 'groovy',      exts: ['groovy'],                        logo: 'rails',       palette: 'blue' },
+    { type: 'c',           exts: ['c', 'h'],                        label: 'C',            palette: 'gray' },
+    { type: 'cpp',         exts: ['cpp', 'cc', 'cxx', 'hpp', 'hxx'], logo: 'cpp',         palette: 'blue' },
+    { type: 'csharp',      exts: ['cs'],                            logo: 'csharp',      palette: 'purple' },
+    { type: 'go',          exts: ['go'],                            logo: 'go',          palette: 'cyan' },
+    { type: 'rust',        exts: ['rs'],                            logo: 'rust',        palette: 'orange' },
+    { type: 'ruby',        exts: ['rb'],                            logo: 'ruby',        palette: 'red' },
+    { type: 'python',      exts: ['py', 'pyi', 'pyc', 'pyd', 'pyo'],logo: 'python',      palette: 'blue' },
+    { type: 'php',         exts: ['php', 'php5', 'phtml'],          logo: 'php',         palette: 'purple' },
+    { type: 'perl',        exts: ['pl', 'pm'],                      logo: 'perl',        palette: 'cyan' },
+    { type: 'lua',         exts: ['lua'],                           label: 'Lua',         palette: 'blue' },
+    { type: 'erlang',      exts: ['erl', 'hrl'],                    logo: 'erlang',      palette: 'red' },
+    { type: 'elixir',      exts: ['ex', 'exs'],                     logo: 'elixir',      palette: 'purple' },
+    { type: 'haskell',     exts: ['hs'],                            logo: 'haskell',     palette: 'purple' },
+    { type: 'clojure',     exts: ['clj', 'cljs', 'cljc'],           logo: 'clojure',     palette: 'blue' },
+    { type: 'fsharp',      exts: ['fs', 'fsx', 'fsi'],              logo: 'csharp',      palette: 'purple' },
+    { type: 'ocaml',       exts: ['ml', 'mli'],                     label: 'OC',         palette: 'orange' },
+    { type: 'dart',        exts: ['dart'],                          label: 'Dart',       palette: 'cyan' },
+    { type: 'swift',       exts: ['swift'],                         logo: 'swift',       palette: 'orange' },
+    { type: 'lisp',        exts: ['lisp', 'lsp', 'cl'],             logo: 'clojure',     palette: 'yellow' },
+    { type: 'vb',          exts: ['vb', 'vbs'],                     logo: 'csharp',      palette: 'blue' },
+    { type: 'pascal',      exts: ['pas', 'dpr', 'pp'],              label: 'Pas',         palette: 'red' },
+    { type: 'ada',         exts: ['ada', 'adb', 'ads'],             label: 'Ada',         palette: 'blue' },
+    { type: 'fortran',     exts: ['f', 'f77', 'f90', 'f95', 'f03', 'for'], label: 'Fortran', palette: 'purple' },
+    { type: 'cobol',       exts: ['cob', 'cbl'],                    label: 'Cob',         palette: 'blue' },
+    { type: 'tcl',         exts: ['tcl'],                           label: 'Tcl',         palette: 'cyan' },
+    { type: 'verilog',     exts: ['v', 'sv', 'vh', 'svh'],           label: 'Verilog',     palette: 'orange' },
+    { type: 'sql',         exts: ['sql'],                           logo: 'sql',         palette: 'blue' },
+    { type: 'sqlite',      exts: ['sqlite', 'sqlite3', 'db', 'db3'],label: 'SQLite',     palette: 'blue' },
+    { type: 'protobuf',    exts: ['proto'],                         label: 'Proto',       palette: 'blue' },
+    { type: 'graphql',     exts: ['graphql', 'gql'],                label: 'GQL',         palette: 'pink' },
+    { type: 'coffeescript',exts: ['coffee'],                        label: 'Coffee',      palette: 'brown' },
+    { type: 'livescript',  exts: ['ls'],                            label: 'LS',          palette: 'blue' },
+    { type: 'javascript',  exts: ['js', 'mjs', 'cjs'],              logo: 'javascript',  palette: 'yellow' },
+    { type: 'typescript',  exts: ['ts', 'mts', 'cts'],              logo: 'typescript',  palette: 'blue' },
+    { type: 'jsx',         exts: ['jsx'],                           logo: 'javascript',  palette: 'yellow' },
+    { type: 'tsx',         exts: ['tsx'],                           logo: 'typescript',  palette: 'blue' },
+    { type: 'vue',         exts: ['vue'],                           logo: 'vue',         palette: 'green' },
+    { type: 'svelte',      exts: ['svelte'],                        label: 'Sv',          palette: 'red' },
+    { type: 'html',        exts: ['html', 'htm', 'xhtml'],          logo: 'html',        palette: 'orange' },
+    { type: 'css',         exts: ['css'],                           logo: 'css',         palette: 'blue' },
+    { type: 'scss',        exts: ['scss'],                          logo: 'sass',        palette: 'pink' },
+    { type: 'sass',        exts: ['sass'],                          logo: 'sass',        palette: 'pink' },
+    { type: 'less',        exts: ['less'],                          logo: 'less',        palette: 'blue' },
+    { type: 'stylus',      exts: ['styl'],                          label: 'Stylus',      palette: 'green' },
+    { type: 'xml',         exts: ['xml', 'xsl', 'xslt'],            label: 'XML',         palette: 'orange' },
+    { type: 'haml',        exts: ['haml'],                          label: 'Haml',        palette: 'orange' },
+    { type: 'slim',        exts: ['slim'],                          label: 'Slim',        palette: 'green' },
+    { type: 'pug',         exts: ['pug', 'jade'],                   label: 'Pug',         palette: 'red' },
+    { type: 'ejs',         exts: ['ejs', 'ect'],                    label: 'EJS',         palette: 'yellow' },
+    { type: 'handlebars',  exts: ['hbs', 'handlebars', 'mustache'], label: 'Hbs',         palette: 'orange' },
+    { type: 'twig',        exts: ['twig'],                          label: 'Twig',        palette: 'green' },
+    { type: 'jinja',       exts: ['jinja', 'jinja2', 'j2'],         label: 'Jin',         palette: 'red' },
+    { type: 'blade',       exts: ['blade.php', 'bladephp'],         label: 'Blade',       palette: 'red' },
+    { type: 'liquid',      exts: ['liquid'],                        label: 'Liq',         palette: 'green' },
+    { type: 'json',        exts: ['json', 'jsonc', 'json5'],        logo: 'json',        palette: 'yellow' },
+    { type: 'yaml',        exts: ['yml', 'yaml'],                   logo: 'yaml',        palette: 'red' },
+    { type: 'toml',        exts: ['toml'],                          label: 'TOML',        palette: 'gray' },
+    { type: 'ini',         exts: ['ini', 'cfg', 'conf'],            label: 'INI',         palette: 'gray' },
+    { type: 'properties',  exts: ['properties'],                    label: 'Prop',        palette: 'gray' },
+    { type: 'env',         exts: ['env'],                           label: '.env',        palette: 'yellow' },
+    { type: 'plist',       exts: ['plist'],                         label: 'Plist',       palette: 'gray' },
+    { type: 'config',      exts: [],                                label: 'Cfg',         palette: 'gray' },
+    { type: 'vim',         exts: ['vim'],                           label: 'Vim',         palette: 'green' },
+    { type: 'emacs',       exts: ['el'],                            label: 'El',          palette: 'purple' },
+    { type: 'diff',        exts: ['diff', 'patch'],                 label: 'Diff',        palette: 'gray' },
+    { type: 'cmake',       exts: ['cmake'],                         label: 'CMake',       palette: 'gray' },
+    { type: 'cargo',       exts: ['cargo', 'cargo.toml'],           label: 'Cargo',       palette: 'orange' },
+    { type: 'pipfile',     exts: ['pipfile'],                       label: 'Pip',         palette: 'blue' },
+    { type: 'pyproject',   exts: ['pyproject'],                     label: 'PyProj',      palette: 'blue' },
+    { type: 'webpack',     exts: ['webpack'],                       label: 'WP',          palette: 'blue' },
+    { type: 'vite',        exts: ['vite'],                          label: 'Vite',        palette: 'purple' },
+    { type: 'rollup',      exts: ['rollup'],                        label: 'Roll',        palette: 'red' },
+    { type: 'esbuild',     exts: ['esbuild'],                       label: 'eB',          palette: 'yellow' },
+    { type: 'babel',       exts: ['babel'],                         label: 'Babel',       palette: 'yellow' },
+    { type: 'eslint',      exts: ['eslint'],                        label: 'ESLint',      palette: 'purple' },
+    { type: 'prettier',    exts: ['prettier'],                      label: 'Pret',        palette: 'blue' },
+    { type: 'stylelint',   exts: ['stylelint'],                     label: 'Sty',         palette: 'teal' },
+    { type: 'jest',        exts: ['jest'],                          label: 'Jest',        palette: 'red' },
+    { type: 'vitest',      exts: ['vitest'],                        label: 'VTest',       palette: 'green' },
+    { type: 'cypress',     exts: ['cypress'],                       label: 'Cy',          palette: 'green' },
+    { type: 'playwright',  exts: ['playwright'],                    label: 'PW',          palette: 'purple' },
+    { type: 'puppeteer',   exts: ['puppeteer'],                     label: 'Pptr',        palette: 'red' },
+    { type: 'terraform',   exts: ['tf', 'tfvars', 'hcl'],           label: 'TF',          palette: 'purple' },
+    { type: 'bicep',       exts: ['bicep'],                         label: 'Bicep',       palette: 'blue' },
+    { type: 'nix',         exts: ['nix'],                           label: 'Nix',         palette: 'blue' },
+    { type: 'markdown',    exts: ['md', 'mdx', 'markdown'],         logo: 'markdown',    palette: 'blue' },
+    { type: 'text',        exts: ['txt', 'log'],                    label: 'TXT',         palette: 'gray' },
+    { type: 'rst',         exts: ['rst'],                           label: 'RST',         palette: 'gray' },
+    { type: 'asciidoc',    exts: ['adoc', 'asciidoc'],              label: 'ADoc',        palette: 'gray' },
     { type: 'binary',      exts: ['exe', 'dll', 'so', 'dylib', 'bin', 'class', 'o', 'a'], label: 'BIN', palette: 'gray' },
-    { type: 'unknown',     exts: [],                                label: '?',  palette: 'dimGray' },
+    { type: 'unknown',     exts: [],                                label: '?',           palette: 'dimGray' },
 ];
 
 /** 完整文件名匹配(优先级最高)。 */
@@ -517,6 +521,18 @@ function renderIcon(type, state) {
         ].join('\n');
     }
 
+    // 品牌 logo 风格(简化,品牌中性化,不直接抄官方 logo)
+    if (type.logo && LOGOS[type.logo]) {
+        const inner = LOGOS[type.logo](fillColor, glyphColor);
+        return [
+            '<?xml version="1.0" encoding="UTF-8"?>',
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">',
+            '  ' + inner,
+            '</svg>',
+            '',
+        ].join('\n');
+    }
+
     // 文档基线 + 字符(默认)。用 SVG <text> + 等宽字体,字符在 14px 实际显示时仍清晰。
     const label = (type.label || '')
         .replace(/&/g, '&amp;')
@@ -537,6 +553,278 @@ function renderIcon(type, state) {
         '',
     ].join('\n');
 }
+
+/**
+ * 品牌 logo 风格(简化、品牌中性化,不直接抄官方 logo)。
+ * 全部用几何/字符/简化符号传达品牌特征,不依赖外链。
+ */
+const LOGOS = {
+    /** Vue: 绿底圆角矩形 + 大 V 字 */
+    vue(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#41B883"/>',
+            // 外 V
+            '<path d="M 12 14 L 18 14 L 28 32 L 38 14 L 44 14 L 30 38 L 26 38 Z" fill="#ffffff"/>',
+            // 内 V
+            '<path d="M 24 28 L 28 22 L 32 28 L 30 32 L 28 28 L 26 32 Z" fill="#ffffff" opacity="0.5"/>',
+        ].join('');
+    },
+    /** Python: 蓝黄双蛇简笔 */
+    python(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#306998"/>',
+            // 上半(蓝)
+            '<path d="M 14 16 Q 14 12 18 12 L 36 12 Q 40 12 40 16 L 40 26 Q 40 30 36 30 L 22 30 Q 18 30 18 26 L 18 22" fill="none" stroke="#FFD43B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>',
+            // 下半(黄)
+            '<path d="M 18 30 L 18 40 Q 18 44 22 44 L 40 44 Q 42 44 42 42 L 42 32" fill="none" stroke="#FFD43B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>',
+            // 眼
+            '<circle cx="20" cy="18" r="1.2" fill="#FFD43B"/>',
+            '<circle cx="36" cy="38" r="1.2" fill="#FFD43B"/>',
+        ].join('');
+    },
+    /** Java: 红色咖啡杯 + 蒸汽 */
+    java(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#E76F00"/>',
+            // 蒸汽
+            '<path d="M 22 12 Q 20 14 22 16 M 28 12 Q 30 14 28 16 M 34 12 Q 32 14 34 16" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>',
+            // 杯身
+            '<path d="M 16 18 L 40 18 L 38 40 Q 38 44 34 44 L 22 44 Q 18 44 18 40 Z" fill="#ffffff"/>',
+            // 把手
+            '<path d="M 40 22 Q 46 22 46 28 Q 46 34 40 34" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            // 杯中咖啡
+            '<path d="M 20 22 L 36 22" stroke="#E76F00" stroke-width="1.5" opacity="0.5"/>',
+        ].join('');
+    },
+    /** Rust: 深灰齿轮 */
+    rust(fill, glyph) {
+        // 6 齿齿轮简化
+        return [
+            '<circle cx="28" cy="28" r="22" fill="#000000"/>',
+            '<circle cx="28" cy="28" r="18" fill="#CE422B"/>',
+            // 6 齿
+            '<rect x="25" y="2" width="6" height="8" fill="#CE422B"/>',
+            '<rect x="25" y="46" width="6" height="8" fill="#CE422B"/>',
+            '<rect x="2" y="25" width="8" height="6" fill="#CE422B"/>',
+            '<rect x="46" y="25" width="8" height="6" fill="#CE422B"/>',
+            '<rect x="8" y="8" width="6" height="8" fill="#CE422B" transform="rotate(45 11 11)"/>',
+            '<rect x="42" y="8" width="6" height="8" fill="#CE422B" transform="rotate(-45 45 11)"/>',
+            '<rect x="8" y="40" width="6" height="8" fill="#CE422B" transform="rotate(-45 11 45)"/>',
+            '<rect x="42" y="40" width="6" height="8" fill="#CE422B" transform="rotate(45 45 45)"/>',
+            // 中心
+            '<circle cx="28" cy="28" r="6" fill="#ffffff"/>',
+            // 简化 R 字符
+            '<text x="28" y="32" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="#CE422B" text-anchor="middle">R</text>',
+        ].join('');
+    },
+    /** Office Word: 蓝底 + 大 W */
+    word(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#2B579A"/>',
+            '<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" font-style="italic" fill="#ffffff" text-anchor="middle">W</text>',
+        ].join('');
+    },
+    /** Office Excel: 绿底 + 大 X */
+    excel(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#217346"/>',
+            '<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">X</text>',
+        ].join('');
+    },
+    /** Office PowerPoint: 橙底 + 大 P */
+    powerpoint(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#D24726"/>',
+            '<text x="28" y="40" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">P</text>',
+        ].join('');
+    },
+    /** PHP: 紫底椭圆 + PHP 字符 */
+    php(fill, glyph) {
+        return [
+            '<ellipse cx="28" cy="28" rx="24" ry="14" fill="#777BB4"/>',
+            '<ellipse cx="28" cy="28" rx="22" ry="12" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3"/>',
+            '<text x="28" y="34" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle" font-style="italic">PHP</text>',
+        ].join('');
+    },
+    /** C++: 蓝色 + 大 ++ */
+    cpp(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#00599C"/>',
+            '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">C++</text>',
+        ].join('');
+    },
+    /** C#: 紫色 + 大 # */
+    csharp(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#9B4F96"/>',
+            '<text x="28" y="38" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">C#</text>',
+        ].join('');
+    },
+    /** Ruby: 红宝石 */
+    ruby(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#CC342D"/>',
+            // 红宝石菱形
+            '<path d="M 28 12 L 40 22 L 28 44 L 16 22 Z" fill="#ffffff"/>',
+            '<path d="M 28 12 L 16 22 L 28 22 Z" fill="#9B1B1B"/>',
+            '<path d="M 28 12 L 40 22 L 28 22 Z" fill="#B52521"/>',
+            '<path d="M 28 22 L 16 22 L 28 44 Z" fill="#CC342D"/>',
+            '<path d="M 28 22 L 40 22 L 28 44 Z" fill="#E04A3F"/>',
+        ].join('');
+    },
+    /** Go: 蓝色 + 简化 Gopher(简化为 GO 字符) */
+    go(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#00ADD8"/>',
+            '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">Go</text>',
+            // 底部波浪(Go 的特色)
+            '<path d="M 12 44 Q 18 40 24 44 T 36 44 T 48 44" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.5"/>',
+        ].join('');
+    },
+    /** Swift: 橙红 + 鸟形简笔 */
+    swift(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="10" fill="#F05138"/>',
+            // 鸟的简化(像 V 形)
+            '<path d="M 12 36 Q 18 24 28 18 Q 38 12 44 14 Q 38 18 32 24 Q 26 30 18 36 Z" fill="#ffffff"/>',
+            '<circle cx="38" cy="18" r="1.5" fill="#F05138"/>',
+        ].join('');
+    },
+    /** Kotlin: 紫底 + 简化 K */
+    kotlin(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#7F52FF"/>',
+            // K 形
+            '<path d="M 16 12 L 22 12 L 22 28 L 36 12 L 44 12 L 30 28 L 44 44 L 36 44 L 22 28 L 22 44 L 16 44 Z" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** TypeScript: 蓝底 + TS 字符 */
+    typescript(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3178C6"/>',
+            '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">TS</text>',
+        ].join('');
+    },
+    /** JavaScript: 黄底 + JS 字符 */
+    javascript(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#F7DF1E"/>',
+            '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000" text-anchor="middle">JS</text>',
+        ].join('');
+    },
+    /** Scala: 红底 + Scala 字符 */
+    scala(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#DC322F"/>',
+            // 简化的阶梯(向上)
+            '<path d="M 10 38 L 18 38 L 18 30 L 26 30 L 26 22 L 34 22 L 34 14 L 42 14" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="square"/>',
+        ].join('');
+    },
+    /** Haskell: 紫底 + λ(希腊字母) */
+    haskell(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5E5086"/>',
+            '<text x="28" y="40" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">λ</text>',
+        ].join('');
+    },
+    /** Clojure: 蓝绿 + 简化括号 */
+    clojure(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5881D8"/>',
+            '<text x="28" y="38" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">[ ]</text>',
+        ].join('');
+    },
+    /** Erlang: 红 + E 字符 */
+    erlang(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#A90533"/>',
+            '<text x="28" y="38" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Er</text>',
+        ].join('');
+    },
+    /** Elixir: 紫 + 紫色宝石 */
+    elixir(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#9159A1"/>',
+            // 宝石
+            '<path d="M 28 14 L 38 22 L 28 42 L 18 22 Z" fill="#ffffff"/>',
+            '<path d="M 28 14 L 28 42 L 18 22 Z" fill="#A589B5"/>',
+        ].join('');
+    },
+    /** HTML: 橙底 + </> */
+    html(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#E34F26"/>',
+            '<text x="28" y="34" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">&lt;/&gt;</text>',
+        ].join('');
+    },
+    /** CSS: 蓝底 + # */
+    css(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1572B6"/>',
+            '<text x="28" y="38" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">#</text>',
+        ].join('');
+    },
+    /** Sass: 粉红 */
+    sass(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#CD6799"/>',
+            '<text x="28" y="34" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Sass</text>',
+        ].join('');
+    },
+    /** Less: 蓝 */
+    less(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1D365D"/>',
+            '<text x="28" y="34" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Less</text>',
+        ].join('');
+    },
+    /** Markdown: 灰底 + M↓ */
+    markdown(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#083FA1"/>',
+            '<text x="28" y="34" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">M↓</text>',
+        ].join('');
+    },
+    /** JSON: 黄底 + {} */
+    json(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#F7DF1E"/>',
+            '<text x="28" y="36" font-family="ui-monospace, monospace" font-size="22" font-weight="700" fill="#000000" text-anchor="middle">{}</text>',
+        ].join('');
+    },
+    /** YAML: 红底 + YML */
+    yaml(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#CB171E"/>',
+            '<text x="28" y="34" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">YML</text>',
+        ].join('');
+    },
+    /** SQL: 蓝底 + 圆柱 */
+    sql(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#00758F"/>',
+            '<ellipse cx="28" cy="14" rx="12" ry="4" fill="#ffffff"/>',
+            '<path d="M 16 14 L 16 42 Q 16 46 28 46 Q 40 46 40 42 L 40 14" fill="#ffffff" opacity="0.3"/>',
+            '<ellipse cx="28" cy="14" rx="12" ry="4" fill="none" stroke="#ffffff" stroke-width="1.5"/>',
+            '<ellipse cx="28" cy="26" rx="12" ry="4" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.6"/>',
+            '<ellipse cx="28" cy="38" rx="12" ry="4" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.6"/>',
+        ].join('');
+    },
+    /** Perl: 蓝底 + 大象简笔(只画头+鼻) */
+    perl(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0298C3"/>',
+            '<text x="28" y="36" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle" font-style="italic">Perl</text>',
+        ].join('');
+    },
+    /** Ruby on Rails: 红 + 简化 */
+    rails(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#CC0000"/>',
+            '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">R</text>',
+        ].join('');
+    },
+};
 
 function stateSuffix(state) {
     return state === 'default' ? '' : '-' + state;

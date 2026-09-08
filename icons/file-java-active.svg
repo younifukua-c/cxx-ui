@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
-  <path d="M 12 8 L 32 8 L 44 20 L 44 48 L 12 48 Z" fill="#37B24D"/>
-  <path d="M 32 8 L 32 20 L 44 20" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>
-  <rect x="18" y="28" width="16" height="2" fill="#ffffff" opacity="0.55"/>
-  <rect x="18" y="35" width="20" height="2" fill="#ffffff" opacity="0.75"/>
-  <rect x="18" y="42" width="12" height="2" fill="#ffffff" opacity="0.55"/>
-  <text x="36" y="46" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">JV</text>
+  <rect x="4" y="4" width="48" height="48" rx="6" fill="#E76F00"/><path d="M 22 12 Q 20 14 22 16 M 28 12 Q 30 14 28 16 M 34 12 Q 32 14 34 16" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/><path d="M 16 18 L 40 18 L 38 40 Q 38 44 34 44 L 22 44 Q 18 44 18 40 Z" fill="#ffffff"/><path d="M 40 22 Q 46 22 46 28 Q 46 34 40 34" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M 20 22 L 36 22" stroke="#E76F00" stroke-width="1.5" opacity="0.5"/>
 </svg>

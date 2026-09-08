@@ -365,7 +365,7 @@
     {
       "type": "pdf",
       "label": null,
-      "shape": "pdf",
+      "shape": null,
       "palette": "red",
       "exts": [
         "pdf"
@@ -374,7 +374,7 @@
     {
       "type": "doc",
       "label": null,
-      "shape": "doc",
+      "shape": null,
       "palette": "blue",
       "exts": [
         "doc",
@@ -386,7 +386,7 @@
     {
       "type": "sheet",
       "label": null,
-      "shape": "sheet",
+      "shape": null,
       "palette": "teal",
       "exts": [
         "xls",
@@ -399,7 +399,7 @@
     {
       "type": "slide",
       "label": null,
-      "shape": "slide",
+      "shape": null,
       "palette": "orange",
       "exts": [
         "ppt",
@@ -477,18 +477,18 @@
     },
     {
       "type": "java",
-      "label": "JV",
+      "label": null,
       "shape": null,
-      "palette": "green",
+      "palette": "red",
       "exts": [
         "java"
       ]
     },
     {
       "type": "kotlin",
-      "label": "Kt",
+      "label": null,
       "shape": null,
-      "palette": "green",
+      "palette": "purple",
       "exts": [
         "kt",
         "kts"
@@ -496,7 +496,7 @@
     },
     {
       "type": "scala",
-      "label": "Sc",
+      "label": null,
       "shape": null,
       "palette": "red",
       "exts": [
@@ -506,7 +506,7 @@
     },
     {
       "type": "groovy",
-      "label": "Gy",
+      "label": null,
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -525,9 +525,9 @@
     },
     {
       "type": "cpp",
-      "label": "C+",
+      "label": null,
       "shape": null,
-      "palette": "purple",
+      "palette": "blue",
       "exts": [
         "cpp",
         "cc",
@@ -538,7 +538,7 @@
     },
     {
       "type": "csharp",
-      "label": "C#",
+      "label": null,
       "shape": null,
       "palette": "purple",
       "exts": [
@@ -547,7 +547,7 @@
     },
     {
       "type": "go",
-      "label": "Go",
+      "label": null,
       "shape": null,
       "palette": "cyan",
       "exts": [
@@ -556,16 +556,16 @@
     },
     {
       "type": "rust",
-      "label": "Rs",
+      "label": null,
       "shape": null,
-      "palette": "red",
+      "palette": "orange",
       "exts": [
         "rs"
       ]
     },
     {
       "type": "ruby",
-      "label": "Rb",
+      "label": null,
       "shape": null,
       "palette": "red",
       "exts": [
@@ -574,9 +574,9 @@
     },
     {
       "type": "python",
-      "label": "Py",
+      "label": null,
       "shape": null,
-      "palette": "light",
+      "palette": "blue",
       "exts": [
         "py",
         "pyi",
@@ -587,9 +587,9 @@
     },
     {
       "type": "php",
-      "label": "PHP",
+      "label": null,
       "shape": null,
-      "palette": "light",
+      "palette": "purple",
       "exts": [
         "php",
         "php5",
@@ -598,9 +598,9 @@
     },
     {
       "type": "perl",
-      "label": "Pl",
+      "label": null,
       "shape": null,
-      "palette": "blue",
+      "palette": "cyan",
       "exts": [
         "pl",
         "pm"
@@ -608,7 +608,7 @@
     },
     {
       "type": "lua",
-      "label": "Lu",
+      "label": "Lua",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -617,7 +617,7 @@
     },
     {
       "type": "erlang",
-      "label": "Er",
+      "label": null,
       "shape": null,
       "palette": "red",
       "exts": [
@@ -627,7 +627,7 @@
     },
     {
       "type": "elixir",
-      "label": "Ex",
+      "label": null,
       "shape": null,
       "palette": "purple",
       "exts": [
@@ -637,18 +637,18 @@
     },
     {
       "type": "haskell",
-      "label": "Hs",
+      "label": null,
       "shape": null,
-      "palette": "light",
+      "palette": "purple",
       "exts": [
         "hs"
       ]
     },
     {
       "type": "clojure",
-      "label": "Cl",
+      "label": null,
       "shape": null,
-      "palette": "teal",
+      "palette": "blue",
       "exts": [
         "clj",
         "cljs",
@@ -657,9 +657,9 @@
     },
     {
       "type": "fsharp",
-      "label": "F#",
+      "label": null,
       "shape": null,
-      "palette": "blue",
+      "palette": "purple",
       "exts": [
         "fs",
         "fsx",
@@ -668,7 +668,7 @@
     },
     {
       "type": "ocaml",
-      "label": "Ml",
+      "label": "OC",
       "shape": null,
       "palette": "orange",
       "exts": [
@@ -678,27 +678,27 @@
     },
     {
       "type": "dart",
-      "label": "Dt",
+      "label": "Dart",
       "shape": null,
-      "palette": "light",
+      "palette": "cyan",
       "exts": [
         "dart"
       ]
     },
     {
       "type": "swift",
-      "label": "Sw",
+      "label": null,
       "shape": null,
-      "palette": "red",
+      "palette": "orange",
       "exts": [
         "swift"
       ]
     },
     {
       "type": "lisp",
-      "label": "Lp",
+      "label": null,
       "shape": null,
-      "palette": "purple",
+      "palette": "yellow",
       "exts": [
         "lisp",
         "lsp",
@@ -707,7 +707,7 @@
     },
     {
       "type": "vb",
-      "label": "VB",
+      "label": null,
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -717,7 +717,7 @@
     },
     {
       "type": "pascal",
-      "label": "Pa",
+      "label": "Pas",
       "shape": null,
       "palette": "red",
       "exts": [
@@ -728,7 +728,7 @@
     },
     {
       "type": "ada",
-      "label": "Ad",
+      "label": "Ada",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -739,7 +739,7 @@
     },
     {
       "type": "fortran",
-      "label": "Ft",
+      "label": "Fortran",
       "shape": null,
       "palette": "purple",
       "exts": [
@@ -753,7 +753,7 @@
     },
     {
       "type": "cobol",
-      "label": "Cb",
+      "label": "Cob",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -763,7 +763,7 @@
     },
     {
       "type": "tcl",
-      "label": "Tc",
+      "label": "Tcl",
       "shape": null,
       "palette": "cyan",
       "exts": [
@@ -772,7 +772,7 @@
     },
     {
       "type": "verilog",
-      "label": "Vg",
+      "label": "Verilog",
       "shape": null,
       "palette": "orange",
       "exts": [
@@ -784,16 +784,16 @@
     },
     {
       "type": "sql",
-      "label": "SQL",
+      "label": null,
       "shape": null,
-      "palette": "purple",
+      "palette": "blue",
       "exts": [
         "sql"
       ]
     },
     {
       "type": "sqlite",
-      "label": "SL",
+      "label": "SQLite",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -805,18 +805,18 @@
     },
     {
       "type": "protobuf",
-      "label": "P#",
+      "label": "Proto",
       "shape": null,
-      "palette": "purple",
+      "palette": "blue",
       "exts": [
         "proto"
       ]
     },
     {
       "type": "graphql",
-      "label": "GQ",
+      "label": "GQL",
       "shape": null,
-      "palette": "purple",
+      "palette": "pink",
       "exts": [
         "graphql",
         "gql"
@@ -824,9 +824,9 @@
     },
     {
       "type": "coffeescript",
-      "label": "Cf",
+      "label": "Coffee",
       "shape": null,
-      "palette": "yellow",
+      "palette": "brown",
       "exts": [
         "coffee"
       ]
@@ -842,7 +842,7 @@
     },
     {
       "type": "javascript",
-      "label": "JS",
+      "label": null,
       "shape": null,
       "palette": "yellow",
       "exts": [
@@ -853,7 +853,7 @@
     },
     {
       "type": "typescript",
-      "label": "TS",
+      "label": null,
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -864,7 +864,7 @@
     },
     {
       "type": "jsx",
-      "label": "JSX",
+      "label": null,
       "shape": null,
       "palette": "yellow",
       "exts": [
@@ -873,7 +873,7 @@
     },
     {
       "type": "tsx",
-      "label": "TSX",
+      "label": null,
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -882,7 +882,7 @@
     },
     {
       "type": "vue",
-      "label": "V",
+      "label": null,
       "shape": null,
       "palette": "green",
       "exts": [
@@ -900,9 +900,9 @@
     },
     {
       "type": "html",
-      "label": "<>",
+      "label": null,
       "shape": null,
-      "palette": "yellow",
+      "palette": "orange",
       "exts": [
         "html",
         "htm",
@@ -911,7 +911,7 @@
     },
     {
       "type": "css",
-      "label": "#",
+      "label": null,
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -920,25 +920,25 @@
     },
     {
       "type": "scss",
-      "label": "Sc",
+      "label": null,
       "shape": null,
-      "palette": "blue",
+      "palette": "pink",
       "exts": [
         "scss"
       ]
     },
     {
       "type": "sass",
-      "label": "Sa",
+      "label": null,
       "shape": null,
-      "palette": "blue",
+      "palette": "pink",
       "exts": [
         "sass"
       ]
     },
     {
       "type": "less",
-      "label": "Ls",
+      "label": null,
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -947,7 +947,7 @@
     },
     {
       "type": "stylus",
-      "label": "St",
+      "label": "Stylus",
       "shape": null,
       "palette": "green",
       "exts": [
@@ -956,7 +956,7 @@
     },
     {
       "type": "xml",
-      "label": "X",
+      "label": "XML",
       "shape": null,
       "palette": "orange",
       "exts": [
@@ -967,7 +967,7 @@
     },
     {
       "type": "haml",
-      "label": "Hm",
+      "label": "Haml",
       "shape": null,
       "palette": "orange",
       "exts": [
@@ -976,7 +976,7 @@
     },
     {
       "type": "slim",
-      "label": "Sl",
+      "label": "Slim",
       "shape": null,
       "palette": "green",
       "exts": [
@@ -985,7 +985,7 @@
     },
     {
       "type": "pug",
-      "label": "Pg",
+      "label": "Pug",
       "shape": null,
       "palette": "red",
       "exts": [
@@ -995,7 +995,7 @@
     },
     {
       "type": "ejs",
-      "label": "EJ",
+      "label": "EJS",
       "shape": null,
       "palette": "yellow",
       "exts": [
@@ -1005,7 +1005,7 @@
     },
     {
       "type": "handlebars",
-      "label": "Hb",
+      "label": "Hbs",
       "shape": null,
       "palette": "orange",
       "exts": [
@@ -1016,7 +1016,7 @@
     },
     {
       "type": "twig",
-      "label": "Tw",
+      "label": "Twig",
       "shape": null,
       "palette": "green",
       "exts": [
@@ -1025,7 +1025,7 @@
     },
     {
       "type": "jinja",
-      "label": "Jn",
+      "label": "Jin",
       "shape": null,
       "palette": "red",
       "exts": [
@@ -1036,7 +1036,7 @@
     },
     {
       "type": "blade",
-      "label": "Bl",
+      "label": "Blade",
       "shape": null,
       "palette": "red",
       "exts": [
@@ -1046,7 +1046,7 @@
     },
     {
       "type": "liquid",
-      "label": "Lq",
+      "label": "Liq",
       "shape": null,
       "palette": "green",
       "exts": [
@@ -1055,7 +1055,7 @@
     },
     {
       "type": "json",
-      "label": "{}",
+      "label": null,
       "shape": null,
       "palette": "yellow",
       "exts": [
@@ -1066,9 +1066,9 @@
     },
     {
       "type": "yaml",
-      "label": "Y",
+      "label": null,
       "shape": null,
-      "palette": "cyan",
+      "palette": "red",
       "exts": [
         "yml",
         "yaml"
@@ -1076,18 +1076,18 @@
     },
     {
       "type": "toml",
-      "label": "Tl",
+      "label": "TOML",
       "shape": null,
-      "palette": "cyan",
+      "palette": "gray",
       "exts": [
         "toml"
       ]
     },
     {
       "type": "ini",
-      "label": "I",
+      "label": "INI",
       "shape": null,
-      "palette": "cyan",
+      "palette": "gray",
       "exts": [
         "ini",
         "cfg",
@@ -1096,16 +1096,16 @@
     },
     {
       "type": "properties",
-      "label": "P",
+      "label": "Prop",
       "shape": null,
-      "palette": "cyan",
+      "palette": "gray",
       "exts": [
         "properties"
       ]
     },
     {
       "type": "env",
-      "label": "E",
+      "label": ".env",
       "shape": null,
       "palette": "yellow",
       "exts": [
@@ -1114,7 +1114,7 @@
     },
     {
       "type": "plist",
-      "label": "Ps",
+      "label": "Plist",
       "shape": null,
       "palette": "gray",
       "exts": [
@@ -1123,14 +1123,14 @@
     },
     {
       "type": "config",
-      "label": "*",
+      "label": "Cfg",
       "shape": null,
-      "palette": "cyan",
+      "palette": "gray",
       "exts": []
     },
     {
       "type": "vim",
-      "label": "Vm",
+      "label": "Vim",
       "shape": null,
       "palette": "green",
       "exts": [
@@ -1148,7 +1148,7 @@
     },
     {
       "type": "diff",
-      "label": "±",
+      "label": "Diff",
       "shape": null,
       "palette": "gray",
       "exts": [
@@ -1158,7 +1158,7 @@
     },
     {
       "type": "cmake",
-      "label": "CM",
+      "label": "CMake",
       "shape": null,
       "palette": "gray",
       "exts": [
@@ -1167,7 +1167,7 @@
     },
     {
       "type": "cargo",
-      "label": "Cg",
+      "label": "Cargo",
       "shape": null,
       "palette": "orange",
       "exts": [
@@ -1177,7 +1177,7 @@
     },
     {
       "type": "pipfile",
-      "label": "Py",
+      "label": "Pip",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -1186,7 +1186,7 @@
     },
     {
       "type": "pyproject",
-      "label": "Py",
+      "label": "PyProj",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -1195,7 +1195,7 @@
     },
     {
       "type": "webpack",
-      "label": "Wp",
+      "label": "WP",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -1204,7 +1204,7 @@
     },
     {
       "type": "vite",
-      "label": "Vi",
+      "label": "Vite",
       "shape": null,
       "palette": "purple",
       "exts": [
@@ -1213,7 +1213,7 @@
     },
     {
       "type": "rollup",
-      "label": "Rp",
+      "label": "Roll",
       "shape": null,
       "palette": "red",
       "exts": [
@@ -1222,7 +1222,7 @@
     },
     {
       "type": "esbuild",
-      "label": "Eb",
+      "label": "eB",
       "shape": null,
       "palette": "yellow",
       "exts": [
@@ -1231,7 +1231,7 @@
     },
     {
       "type": "babel",
-      "label": "Bb",
+      "label": "Babel",
       "shape": null,
       "palette": "yellow",
       "exts": [
@@ -1240,7 +1240,7 @@
     },
     {
       "type": "eslint",
-      "label": "Es",
+      "label": "ESLint",
       "shape": null,
       "palette": "purple",
       "exts": [
@@ -1249,7 +1249,7 @@
     },
     {
       "type": "prettier",
-      "label": "Pt",
+      "label": "Pret",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -1258,7 +1258,7 @@
     },
     {
       "type": "stylelint",
-      "label": "Sn",
+      "label": "Sty",
       "shape": null,
       "palette": "teal",
       "exts": [
@@ -1267,7 +1267,7 @@
     },
     {
       "type": "jest",
-      "label": "Jt",
+      "label": "Jest",
       "shape": null,
       "palette": "red",
       "exts": [
@@ -1276,7 +1276,7 @@
     },
     {
       "type": "vitest",
-      "label": "Vs",
+      "label": "VTest",
       "shape": null,
       "palette": "green",
       "exts": [
@@ -1294,7 +1294,7 @@
     },
     {
       "type": "playwright",
-      "label": "Pw",
+      "label": "PW",
       "shape": null,
       "palette": "purple",
       "exts": [
@@ -1303,7 +1303,7 @@
     },
     {
       "type": "puppeteer",
-      "label": "Pu",
+      "label": "Pptr",
       "shape": null,
       "palette": "red",
       "exts": [
@@ -1312,7 +1312,7 @@
     },
     {
       "type": "terraform",
-      "label": "Tf",
+      "label": "TF",
       "shape": null,
       "palette": "purple",
       "exts": [
@@ -1323,7 +1323,7 @@
     },
     {
       "type": "bicep",
-      "label": "Bi",
+      "label": "Bicep",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -1332,7 +1332,7 @@
     },
     {
       "type": "nix",
-      "label": "Nx",
+      "label": "Nix",
       "shape": null,
       "palette": "blue",
       "exts": [
@@ -1341,9 +1341,9 @@
     },
     {
       "type": "markdown",
-      "label": "M.",
+      "label": null,
       "shape": null,
-      "palette": "gray",
+      "palette": "blue",
       "exts": [
         "md",
         "mdx",
@@ -1354,7 +1354,7 @@
       "type": "text",
       "label": "TXT",
       "shape": null,
-      "palette": "yellow",
+      "palette": "gray",
       "exts": [
         "txt",
         "log"
@@ -1362,7 +1362,7 @@
     },
     {
       "type": "rst",
-      "label": "R",
+      "label": "RST",
       "shape": null,
       "palette": "gray",
       "exts": [
@@ -1371,9 +1371,9 @@
     },
     {
       "type": "asciidoc",
-      "label": "Ad",
+      "label": "ADoc",
       "shape": null,
-      "palette": "blue",
+      "palette": "gray",
       "exts": [
         "adoc",
         "asciidoc"

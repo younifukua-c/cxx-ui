@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
-  <path d="M 12 8 L 32 8 L 44 20 L 44 48 L 12 48 Z" fill="#7048E8"/>
-  <path d="M 32 8 L 32 20 L 44 20" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>
-  <rect x="18" y="28" width="16" height="2" fill="#ffffff" opacity="0.55"/>
-  <rect x="18" y="35" width="20" height="2" fill="#ffffff" opacity="0.75"/>
-  <rect x="18" y="42" width="12" height="2" fill="#ffffff" opacity="0.55"/>
-  <text x="36" y="46" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">Lp</text>
+  <rect x="4" y="4" width="48" height="48" rx="6" fill="#5881D8"/><text x="28" y="38" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">[ ]</text>
 </svg>
