@@ -2,8 +2,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
   <path d="M 12 8 L 32 8 L 44 20 L 44 48 L 12 48 Z" fill="#7048E8"/>
   <path d="M 32 8 L 32 20 L 44 20" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>
-  <line x1="18" y1="28" x2="34" y2="28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="18" y1="35" x2="38" y2="35" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="18" y1="42" x2="30" y2="42" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-  <rect x="22.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="23.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="24.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="25.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="26.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="24.5" y="33.0" width="1" height="1" fill="#ffffff"/><rect x="24.5" y="34.0" width="1" height="1" fill="#ffffff"/><rect x="24.5" y="35.0" width="1" height="1" fill="#ffffff"/><rect x="24.5" y="36.0" width="1" height="1" fill="#ffffff"/><rect x="24.5" y="37.0" width="1" height="1" fill="#ffffff"/><rect x="24.5" y="38.0" width="1" height="1" fill="#ffffff"/><rect x="28.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="29.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="30.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="31.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="32.5" y="32.0" width="1" height="1" fill="#ffffff"/><rect x="28.5" y="33.0" width="1" height="1" fill="#ffffff"/><rect x="28.5" y="34.0" width="1" height="1" fill="#ffffff"/><rect x="28.5" y="35.0" width="1" height="1" fill="#ffffff"/><rect x="29.5" y="35.0" width="1" height="1" fill="#ffffff"/><rect x="30.5" y="35.0" width="1" height="1" fill="#ffffff"/><rect x="31.5" y="35.0" width="1" height="1" fill="#ffffff"/><rect x="28.5" y="36.0" width="1" height="1" fill="#ffffff"/><rect x="28.5" y="37.0" width="1" height="1" fill="#ffffff"/><rect x="28.5" y="38.0" width="1" height="1" fill="#ffffff"/>
+  <rect x="18" y="28" width="16" height="2" fill="#ffffff" opacity="0.55"/>
+  <rect x="18" y="35" width="20" height="2" fill="#ffffff" opacity="0.75"/>
+  <rect x="18" y="42" width="12" height="2" fill="#ffffff" opacity="0.55"/>
+  <text x="36" y="46" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">Tf</text>
 </svg>

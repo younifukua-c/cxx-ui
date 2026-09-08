@@ -517,18 +517,22 @@ function renderIcon(type, state) {
         ].join('\n');
     }
 
-    // 文档基线 + 字符(默认)
-    const lines = FILE_LINES.map(l =>
-        '<line x1="' + l.x1 + '" y1="' + l.y1 + '" x2="' + l.x2 + '" y2="' + l.y2 + '" stroke="' + glyphColor + '" stroke-width="2.5" stroke-linecap="round"/>'
-    ).join('\n  ');
-    const label = type.label ? renderTextGlyph(type.label, glyphColor) : '';
+    // 文档基线 + 字符(默认)。用 SVG <text> + 等宽字体,字符在 14px 实际显示时仍清晰。
+    const label = (type.label || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
     return [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">',
         '  <path d="' + FILE_BODY + '" fill="' + fillColor + '"/>',
         '  <path d="' + FILE_CORNER_FOLD + '" fill="none" stroke="' + glyphColor + '" stroke-width="2.5" stroke-linejoin="round"/>',
-        '  ' + lines,
-        '  ' + label,
+        // 3 行模拟代码高亮(色块,代表代码内容)
+        '  <rect x="18" y="28" width="16" height="2" fill="' + glyphColor + '" opacity="0.55"/>',
+        '  <rect x="18" y="35" width="20" height="2" fill="' + glyphColor + '" opacity="0.75"/>',
+        '  <rect x="18" y="42" width="12" height="2" fill="' + glyphColor + '" opacity="0.55"/>',
+        // 字符标签(系统等宽字体,大字号清晰)
+        '  <text x="36" y="46" font-family="ui-monospace, SFMono-Regular, Consolas, Menlo, monospace" font-size="9" font-weight="700" fill="' + glyphColor + '" text-anchor="middle" letter-spacing="0.5">' + label + '</text>',
         '</svg>',
         '',
     ].join('\n');
