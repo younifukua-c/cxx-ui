@@ -37,6 +37,7 @@ const PALETTE = Object.freeze({
     orange:  { default: '#FD7E14', hover: '#FF922B', active: '#E8590C' },
     pink:    { default: '#E64980', hover: '#F06595', active: '#C2255C' },
     brown:   { default: '#8B4513', hover: '#A0522D', active: '#6B3410' },
+    black:   { default: '#1A1A1A', hover: '#333333', active: '#000000' },
 });
 const DISABLED_COLOR = '#868E96';
 
@@ -495,6 +496,99 @@ const FILE_TYPES = [
     { type: 'hql',         exts: ['hql'],                            logo: 'hql',         palette: 'orange' },
     { type: 'plsql',       exts: ['pks', 'pkb', 'plsql', 'pls', 'bdy', 'trg', 'fnc', 'spc'], logo: 'plsql', palette: 'red' },
     { type: 'postcss',     exts: ['pcss', 'postcss'],                logo: 'postcss',     palette: 'red' },
+    // === 第二轮:系统/二进制/游戏/软件 ===
+    { type: 'exe',         exts: ['exe', 'msi', 'cab', 'app', 'dll', 'drv', 'sys'], logo: 'exe', palette: 'black' },
+    { type: 'lnk',         exts: ['lnk', 'url'],                     logo: 'lnk',         palette: 'blue' },
+    { type: 'vm',          exts: ['vm'],                             logo: 'vm',          palette: 'blue' },
+    { type: 'dts',         exts: ['d.ts'],                           logo: 'dts',         palette: 'blue' },
+    { type: 'wasm',        exts: ['wasm', 'wat'],                    logo: 'wasm',        palette: 'purple' },
+    { type: 'fish',        exts: ['fish'],                           logo: 'fish',        palette: 'green' },
+    { type: 'jsonl',       exts: ['jsonl', 'ndjson'],                logo: 'jsonl',       palette: 'yellow' },
+    { type: 'gyp',         exts: ['gyp', 'gypi'],                    logo: 'gyp',         palette: 'gray' },
+    { type: 'pak',         exts: ['pak', 'pack'],                    logo: 'pak',         palette: 'purple' },
+    { type: 'unity',       exts: ['unity', 'asset', 'prefab', 'mat', 'controller', 'shader', 'physicmaterial'], logo: 'unity', palette: 'black' },
+    { type: 'unitypackage',exts: ['unitypackage'],                  logo: 'unitypackage', palette: 'black' },
+    { type: 'uasset',      exts: ['uasset', 'umap', 'uexp', 'ubulk', 'uplugin'], logo: 'uasset', palette: 'black' },
+    { type: 'vpk',         exts: ['vpk', 'vtf', 'vmt', 'ncf'],       logo: 'vpk',         palette: 'red' },
+    { type: 'bsp',         exts: ['bsp', 'nav', 'ain'],              logo: 'bsp',         palette: 'red' },
+    { type: 'wad',         exts: ['wad', 'pk3', 'bsp', 'map'],      logo: 'wad',         palette: 'red' },
+    { type: 'iso',         exts: ['iso', 'img', 'nrg', 'mdf', 'cue', 'iso', 'cdr'], logo: 'iso', palette: 'blue' },
+    { type: 'torrent',     exts: ['torrent'],                        logo: 'torrent',     palette: 'blue' },
+    { type: 'psd',         exts: ['psd', 'psb'],                    logo: 'psd',         palette: 'blue' },
+    { type: 'ai',          exts: ['ai'],                             logo: 'ai',          palette: 'orange' },
+    { type: 'indd',        exts: ['indd', 'indl'],                  logo: 'indd',        palette: 'red' },
+    { type: 'sketch',      exts: ['sketch'],                         logo: 'sketch',      palette: 'orange' },
+    { type: 'fig',         exts: ['fig'],                            logo: 'fig',         palette: 'purple' },
+    { type: 'xd',          exts: ['xd'],                             logo: 'xd',          palette: 'purple' },
+    { type: 'aep',         exts: ['aep', 'aepx'],                    logo: 'aep',         palette: 'purple' },
+    { type: 'fla',         exts: ['fla'],                            logo: 'fla',         palette: 'red' },
+    { type: 'blend',       exts: ['blend'],                          logo: 'blend',       palette: 'blue' },
+    { type: 'fbx',         exts: ['fbx'],                            logo: 'fbx',         palette: 'blue' },
+    { type: 'obj',         exts: ['obj'],                            logo: 'obj',         palette: 'gray' },
+    { type: 'stl',         exts: ['stl'],                            logo: 'stl',         palette: 'blue' },
+    { type: 'gltf',        exts: ['gltf', 'glb'],                    logo: 'gltf',        palette: 'blue' },
+    { type: 'dwg',         exts: ['dwg'],                            logo: 'dwg',         palette: 'red' },
+    { type: 'dxf',         exts: ['dxf'],                            logo: 'dxf',         palette: 'gray' },
+    { type: 'apk',         exts: ['apk', 'aab', 'apks', 'xapk'],     logo: 'apk',         palette: 'green' },
+    { type: 'ipa',         exts: ['ipa'],                            logo: 'ipa',         palette: 'black' },
+    { type: 'dmg',         exts: ['dmg'],                            logo: 'dmg',         palette: 'gray' },
+    { type: 'pkg',         exts: ['pkg', 'mpkg'],                    logo: 'pkg',         palette: 'gray' },
+    { type: 'deb',         exts: ['deb', 'udeb'],                    logo: 'deb',         palette: 'red' },
+    { type: 'rpm',         exts: ['rpm'],                            logo: 'rpm',         palette: 'blue' },
+    { type: 'appimage',    exts: ['appimage', 'AppImage'],           logo: 'appimage',    palette: 'green' },
+    { type: 'msi',         exts: ['msp', 'msm'],                    logo: 'msi',         palette: 'blue' },
+    { type: 'cab',         exts: ['cab'],                            logo: 'cab',         palette: 'blue' },
+    { type: 'ova',         exts: ['ova', 'ovf'],                     logo: 'ova',         palette: 'blue' },
+    { type: 'vmdk',        exts: ['vmdk'],                           logo: 'vmdk',        palette: 'green' },
+    { type: 'vdi',         exts: ['vdi'],                            logo: 'vdi',         palette: 'blue' },
+    { type: 'vhd',         exts: ['vhd', 'vhdx'],                    logo: 'vhd',         palette: 'blue' },
+    { type: 'qcow2',       exts: ['qcow2', 'qcow'],                  logo: 'qcow2',       palette: 'red' },
+    { type: 'img',         exts: ['img'],                            logo: 'img',         palette: 'gray' },
+    { type: 'midi',        exts: ['mid', 'midi', 'kar'],             logo: 'midi',        palette: 'blue' },
+    { type: 'ape',         exts: ['ape'],                            logo: 'ape',         palette: 'brown' },
+    { type: 'wv',          exts: ['wv'],                             logo: 'wv',          palette: 'green' },
+    { type: 'raw',         exts: ['raw', 'cr2', 'cr3', 'nef', 'arw', 'dng', 'raf', 'orf', 'rw2'], logo: 'raw', palette: 'black' },
+    { type: 'bak',         exts: ['bak', 'old', 'orig'],             logo: 'bak',         palette: 'gray' },
+    { type: 'qrc',         exts: ['qrc'],                            logo: 'qrc',         palette: 'green' },
+    { type: 'kra',         exts: ['kra'],                            logo: 'kra',         palette: 'black' },
+    { type: 'xcf',         exts: ['xcf'],                            logo: 'xcf',         palette: 'gray' },
+    { type: 'epub',        exts: ['epub', 'mobi', 'azw', 'azw3'],     logo: 'epub',        palette: 'brown' },
+    { type: 'ps',          exts: ['ps', 'eps'],                      logo: 'postscript',  palette: 'blue' },
+    { type: 'tex',         exts: ['tex'],                            logo: 'tex',         palette: 'green' },
+    { type: 'bib',         exts: ['bib', 'bibtex'],                  logo: 'bib',         palette: 'green' },
+    { type: 'sourcemap',   exts: ['map'],                            logo: 'sourcemap',   palette: 'gray' },
+    { type: 'minecraft',   exts: ['minecraft', 'mcworld', 'mcpack', 'mcmeta', 'dat'], logo: 'minecraft', palette: 'green' },
+    { type: 'rom',         exts: ['gba', 'nds', '3ds', 'gb', 'gbc', 'nes', 'sfc', 'n64', 'iso'], logo: 'rom', palette: 'gray' },
+    { type: 'tmp',         exts: ['tmp', 'temp', 'bak2', 'old2'],    logo: 'tmp',         palette: 'gray' },
+    { type: 'ico',         exts: ['ico', 'icon'],                    logo: 'ico',         palette: 'gray' },
+    { type: 'lfs',         exts: ['lfs'],                            logo: 'lfs',         palette: 'black' },
+    { type: 'sv',          exts: ['sv', 'svh'],                      logo: 'sv',          palette: 'orange' },
+    { type: 'cuda',        exts: ['cu', 'cuh'],                      logo: 'cuda',        palette: 'green' },
+    { type: 'dtsi',        exts: ['dts', 'dtsi'],                    logo: 'dtsi',        palette: 'teal' },
+    { type: 'romchip',     exts: ['rom', 'bios', 'uefi'],             logo: 'romchip',     palette: 'blue' },
+    { type: 'vagrant',     exts: ['vagrantfile', 'box'],             logo: 'vagrant',     palette: 'blue' },
+    { type: 'old',         exts: ['old'],                            logo: 'old',         palette: 'gray' },
+    { type: 'eclipse',     exts: ['project', 'classpath', 'prefs'],   logo: 'eclipse',     palette: 'purple' },
+    { type: 'intellij',    exts: ['iml', 'iws', 'ipr'],              logo: 'intellij',    palette: 'red' },
+    { type: 'patch',       exts: ['patch', 'diff'],                  logo: 'patch',       palette: 'gray' },
+    { type: 'vault',       exts: ['kdbx', 'kdb', '1pif', 'agilekeychain'], logo: 'vault', palette: 'blue' },
+    { type: 'locale',      exts: ['po', 'mo', 'pot'],                 logo: 'locale',      palette: 'gray' },
+    { type: 'sp',          exts: ['sp'],                             logo: 'sp',          palette: 'red' },
+    { type: 'rocksdb',     exts: ['sst', 'ldb', 'log'],              logo: 'rocksdb',     palette: 'purple' },
+    { type: 'ghaction',    exts: ['githubaction'],                   logo: 'ghaction',    palette: 'blue' },
+    { type: 'uplugin',     exts: ['uplugin'],                        logo: 'uplugin',     palette: 'black' },
+    { type: 'gamemaker',   exts: ['gml', 'yy', 'yyp'],                logo: 'gamemaker',   palette: 'blue' },
+    { type: 'steam',       exts: ['acf', 'vdf'],                     logo: 'steam',       palette: 'blue' },
+    { type: 'subtitle',    exts: ['srt', 'ass', 'ssa', 'vtt', 'sub'], logo: 'subtitle',    palette: 'black' },
+    { type: 'postgres',    exts: ['pgsql', 'psql'],                  logo: 'postgres',    palette: 'blue' },
+    { type: 'mysql',       exts: ['mysql', 'frm', 'myd', 'myi'],     logo: 'mysql',       palette: 'blue' },
+    { type: 'redis',       exts: ['rdb', 'redis'],                   logo: 'redis',       palette: 'red' },
+    { type: 'mongodb',     exts: ['bson'],                           logo: 'mongodb',     palette: 'green' },
+    { type: 'elasticsearch', exts: ['es'],                           logo: 'elasticsearch', palette: 'yellow' },
+    { type: 'kafka',       exts: ['log.0', 'log.1', 'log.2'],        logo: 'kafka',       palette: 'black' },
+    { type: 'tensorflow',  exts: ['pb', 'tflite'],                   logo: 'tensorflow',  palette: 'orange' },
+    { type: 'pytorch',     exts: ['pt', 'pth', 'pkl'],               logo: 'pytorch',     palette: 'red' },
+    { type: 'compose',     exts: ['docker-compose.yml', 'compose.yml', 'compose.yaml'], logo: 'compose', palette: 'blue' },
     { type: 'unknown',     exts: [],                                label: '?',           palette: 'dimGray' },
 ];
 
@@ -1031,6 +1125,851 @@ const LOGOS = {
             '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">PC</text>',
         ].join('');
     },
+    /** EXE 可执行: 深色 + 终端 + 提示符 */
+    exe(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1E1E1E"/>',
+            '<rect x="6" y="12" width="44" height="34" rx="2" fill="#0F0F0F"/>',
+            '<rect x="6" y="12" width="44" height="6" fill="#0078D4"/>',
+            '<text x="10" y="32" font-family="monospace" font-size="10" font-weight="bold" fill="#00FF00">&gt;_</text>',
+            '<rect x="22" y="26" width="2" height="6" fill="#00FF00"/>',
+        ].join('');
+    },
+    /** Windows 快捷方式 lnk: 蓝 + 弯曲箭头 */
+    lnk(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1F78D1"/>',
+            '<path d="M 14 14 L 28 14 L 36 22 L 36 42 L 14 42 Z" fill="#ffffff"/>',
+            '<path d="M 28 14 L 28 22 L 36 22" fill="none" stroke="#1F78D1" stroke-width="1"/>',
+            '<path d="M 18 36 Q 14 32 18 28" fill="none" stroke="#FFCB05" stroke-width="2.5" stroke-linecap="round"/>',
+            '<polygon points="18,28 22,30 18,32" fill="#FFCB05"/>',
+        ].join('');
+    },
+    /** Velocity 模板 .vm: 蓝 + V */
+    vm(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0066CC"/>',
+            '<text x="28" y="38" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">V</text>',
+            '<path d="M 14 16 L 42 16" stroke="#ffffff" stroke-width="1.5" opacity="0.5"/>',
+            '<path d="M 14 22 L 38 22" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>',
+        ].join('');
+    },
+    /** TypeScript 声明 .d.ts: 蓝 + DT */
+    dts(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3178C6"/>',
+            '<text x="28" y="36" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">.d.ts</text>',
+        ].join('');
+    },
+    /** WebAssembly .wasm: 紫 + 网格 */
+    wasm(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#654FF0"/>',
+            '<rect x="14" y="14" width="28" height="28" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 2"/>',
+            '<text x="28" y="33" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">W</text>',
+        ].join('');
+    },
+    /** Fish shell .fish: 绿 + >  */
+    fish(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#44883E"/>',
+            '<text x="28" y="40" font-family="monospace" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">&gt;_</text>',
+        ].join('');
+    },
+    /** JSON Lines .jsonl: 黄 + 多行 */
+    jsonl(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#F7DF1E"/>',
+            '<line x1="10" y1="16" x2="46" y2="16" stroke="#000000" stroke-width="2"/>',
+            '<line x1="10" y1="24" x2="40" y2="24" stroke="#000000" stroke-width="2"/>',
+            '<line x1="10" y1="32" x2="46" y2="32" stroke="#000000" stroke-width="2"/>',
+            '<line x1="10" y1="40" x2="34" y2="40" stroke="#000000" stroke-width="2"/>',
+        ].join('');
+    },
+    /** Chromium GYP .gyp: 灰 + 齿轮 */
+    gyp(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#4D4D4D"/>',
+            '<circle cx="28" cy="28" r="12" fill="none" stroke="#ffffff" stroke-width="2.5"/>',
+            '<rect x="26" y="10" width="4" height="6" fill="#ffffff"/>',
+            '<rect x="26" y="40" width="4" height="6" fill="#ffffff"/>',
+            '<rect x="10" y="26" width="6" height="4" fill="#ffffff"/>',
+            '<rect x="40" y="26" width="6" height="4" fill="#ffffff"/>',
+            '<circle cx="28" cy="28" r="4" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Pak 资源包 .pak: 紫 + 盒 */
+    pak(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5C2D91"/>',
+            '<rect x="10" y="20" width="36" height="22" rx="2" fill="#ffffff"/>',
+            '<rect x="10" y="20" width="36" height="6" fill="#9B4F96"/>',
+            '<rect x="20" y="14" width="16" height="6" fill="#ffffff"/>',
+            '<rect x="22" y="12" width="12" height="2" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Unity 资源: 黑 + 立方体 */
+    unity(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#000000"/>',
+            '<path d="M 28 12 L 42 19 L 42 37 L 28 44 L 14 37 L 14 19 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>',
+            '<line x1="28" y1="12" x2="28" y2="44" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="28" y1="12" x2="14" y2="19" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="28" y1="12" x2="42" y2="19" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="14" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="42" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** Unity prefab: 黑 + 拼图 */
+    prefab(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#222C37"/>',
+            '<path d="M 12 12 L 22 12 L 22 18 Q 22 20 24 20 Q 26 20 26 18 L 26 12 L 36 12 L 36 22 Q 36 24 38 24 Q 40 24 40 22 L 40 12 L 44 12 L 44 24 L 38 24 L 38 28 L 44 28 L 44 44 L 32 44 L 32 36 L 26 36 L 26 44 L 12 44 L 12 36 L 18 36 L 18 32 L 12 32 Z" fill="#21A179"/>',
+        ].join('');
+    },
+    /** Unity package: 黑 + 包装 */
+    unitypackage(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#000000"/>',
+            '<path d="M 14 16 L 42 16 L 42 40 L 14 40 Z" fill="#ffffff"/>',
+            '<rect x="14" y="16" width="28" height="3" fill="#21A179"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#000000" text-anchor="middle">U</text>',
+        ].join('');
+    },
+    /** Unreal Engine .uasset: 黑 + U */
+    uasset(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0D0D0D"/>',
+            '<path d="M 18 16 L 18 30 Q 18 38 28 38 Q 38 38 38 30 L 38 16" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** Unreal 地图 .umap: 黑 + 网格 + 道路 */
+    umap(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0D0D0D"/>',
+            '<line x1="14" y1="20" x2="42" y2="20" stroke="#ffffff" stroke-width="0.8" opacity="0.5"/>',
+            '<line x1="14" y1="30" x2="42" y2="30" stroke="#ffffff" stroke-width="0.8" opacity="0.5"/>',
+            '<line x1="14" y1="40" x2="42" y2="40" stroke="#ffffff" stroke-width="0.8" opacity="0.5"/>',
+            '<path d="M 14 14 Q 22 22 28 30 Q 34 38 42 36" fill="none" stroke="#FFD700" stroke-width="2.5"/>',
+        ].join('');
+    },
+    /** Source Engine .vpk: 暗红 + 包装 */
+    vpk(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1B1B1B"/>',
+            '<rect x="10" y="20" width="36" height="22" rx="2" fill="#D7261A"/>',
+            '<rect x="10" y="20" width="36" height="6" fill="#A41C13"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#ffffff" text-anchor="middle">VP</text>',
+        ].join('');
+    },
+    /** Source VTF .vtf: 暗红 + T */
+    vtf(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1B1B1B"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#D7261A" text-anchor="middle">VTF</text>',
+        ].join('');
+    },
+    /** Source 地图 .bsp: 暗红 + 缩放网格 */
+    bsp(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1B1B1B"/>',
+            '<path d="M 14 18 L 28 12 L 42 18 L 42 38 L 28 44 L 14 38 Z" fill="none" stroke="#D7261A" stroke-width="2"/>',
+            '<line x1="14" y1="18" x2="14" y2="38" stroke="#D7261A" stroke-width="1" opacity="0.5"/>',
+            '<line x1="42" y1="18" x2="42" y2="38" stroke="#D7261A" stroke-width="1" opacity="0.5"/>',
+            '<line x1="14" y1="38" x2="42" y2="38" stroke="#D7261A" stroke-width="1" opacity="0.5"/>',
+        ].join('');
+    },
+    /** Doom/Quake WAD .wad: 暗红 + W */
+    wad(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#A40E0E"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">W</text>',
+        ].join('');
+    },
+    /** ISO 镜像 .iso: 蓝灰 + 光盘 */
+    iso(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3D5A80"/>',
+            '<circle cx="28" cy="28" r="18" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<circle cx="28" cy="28" r="10" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>',
+            '<circle cx="28" cy="28" r="3" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Torrent .torrent: 蓝 + 双箭头 */
+    torrent(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5C8FCC"/>',
+            '<path d="M 28 10 L 16 22 L 22 22 L 22 36 L 18 36 L 28 46 L 38 36 L 34 36 L 34 22 L 40 22 Z" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Photoshop .psd: 深蓝 + 圆 */
+    psd(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#001E36"/>',
+            '<circle cx="28" cy="28" r="14" fill="none" stroke="#31A8FF" stroke-width="2"/>',
+            '<path d="M 18 22 L 22 18 L 30 26 L 38 22" fill="none" stroke="#31A8FF" stroke-width="2" stroke-linejoin="round"/>',
+        ].join('');
+    },
+    /** Illustrator .ai: 橙 + 圆 + Ai */
+    ai(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#330000"/>',
+            '<rect x="14" y="14" width="28" height="28" rx="14" fill="#FF9A00"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Ai</text>',
+        ].join('');
+    },
+    /** InDesign .indd: 红紫 + Id */
+    indd(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#49021F"/>',
+            '<text x="28" y="38" font-family="Georgia, serif" font-size="24" font-weight="700" font-style="italic" fill="#FF3366" text-anchor="middle">Id</text>',
+        ].join('');
+    },
+    /** Sketch .sketch: 橙黄 + 钻石 */
+    sketch(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FDB300"/>',
+            '<path d="M 28 12 L 40 24 L 28 44 L 16 24 Z" fill="#ffffff"/>',
+            '<path d="M 28 12 L 16 24 L 28 24 Z" fill="#FFAE00"/>',
+            '<path d="M 28 12 L 40 24 L 28 24 Z" fill="#FFAE00" opacity="0.7"/>',
+        ].join('');
+    },
+    /** Figma .fig: 黑 + 5 圆 */
+    figma(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1E1E1E"/>',
+            '<circle cx="28" cy="14" r="6" fill="#F24E1E"/>',
+            '<circle cx="28" cy="28" r="6" fill="#A259FF"/>',
+            '<circle cx="28" cy="42" r="6" fill="#1ABCFE"/>',
+            '<circle cx="22" cy="14" r="6" fill="#0ACF83" opacity="0.85"/>',
+            '<circle cx="22" cy="28" r="6" fill="#FF7262" opacity="0.85"/>',
+        ].join('');
+    },
+    /** Adobe XD .xd: 紫 + Xd */
+    xd(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#470137"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#FF26BE" text-anchor="middle">Xd</text>',
+        ].join('');
+    },
+    /** After Effects .aep: 紫 + Ae */
+    aep(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1F1A1F"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#CF96FD" text-anchor="middle">Ae</text>',
+        ].join('');
+    },
+    /** Flash .fla: 红 + F */
+    fla(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#A30000"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#FFCCCC" text-anchor="middle">F</text>',
+        ].join('');
+    },
+    /** Blender .blend: 蓝 + 圆环 */
+    blend(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#265787"/>',
+            '<circle cx="28" cy="28" r="14" fill="none" stroke="#F5792A" stroke-width="3.5"/>',
+            '<circle cx="28" cy="28" r="6" fill="#F5792A"/>',
+        ].join('');
+    },
+    /** FBX: 蓝 + 立方体 */
+    fbx(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3D5A80"/>',
+            '<path d="M 28 12 L 42 19 L 42 37 L 28 44 L 14 37 L 14 19 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>',
+            '<line x1="28" y1="12" x2="28" y2="44" stroke="#ffffff" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** OBJ 3D 模型: 灰 + 三角 */
+    obj(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#4D4D4D"/>',
+            '<polygon points="28,12 42,28 14,28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>',
+            '<polygon points="28,44 14,28 42,28" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>',
+            '<line x1="28" y1="12" x2="28" y2="44" stroke="#ffffff" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** STL 3D 打印: 蓝 + 三角 */
+    stl(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1B365D"/>',
+            '<polygon points="28,12 42,40 14,40" fill="#FF6B35"/>',
+            '<line x1="14" y1="40" x2="42" y2="40" stroke="#ffffff" stroke-width="2"/>',
+        ].join('');
+    },
+    /** glTF: 浅蓝 + gLTF */
+    gltf(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5B89C9"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">gLTF</text>',
+        ].join('');
+    },
+    /** AutoCAD .dwg: 红 + CAD */
+    dwg(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#8B0000"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">CAD</text>',
+        ].join('');
+    },
+    /** AutoCAD .dxf: 蓝灰 + DX */
+    dxf(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#707070"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">DXF</text>',
+        ].join('');
+    },
+    /** Android APK: 绿 + 机器人 */
+    apk(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3DDC84"/>',
+            '<rect x="14" y="16" width="28" height="22" rx="3" fill="#ffffff"/>',
+            '<line x1="18" y1="16" x2="16" y2="10" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>',
+            '<line x1="38" y1="16" x2="40" y2="10" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>',
+            '<circle cx="22" cy="24" r="2" fill="#3DDC84"/>',
+            '<circle cx="34" cy="24" r="2" fill="#3DDC84"/>',
+            '<rect x="18" y="38" width="20" height="6" rx="1" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** iOS IPA: 灰 + A */
+    ipa(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1A1A1A"/>',
+            '<path d="M 28 14 L 18 38 L 22 38 L 24 32 L 32 32 L 34 38 L 38 38 L 28 14 M 26 28 L 30 28 L 28 22 Z" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** macOS DMG: 灰 + 光盘 */
+    dmg(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#4A4A4A"/>',
+            '<circle cx="28" cy="28" r="14" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<circle cx="28" cy="28" r="3" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Debian .deb: 红 + 螺旋 */
+    deb(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#A81D33"/>',
+            '<circle cx="28" cy="28" r="14" fill="none" stroke="#ffffff" stroke-width="2.5"/>',
+            '<path d="M 28 14 Q 38 18 38 28" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** RPM 包: 蓝 + 齿轮 */
+    rpm(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0B597B"/>',
+            '<circle cx="28" cy="28" r="10" fill="none" stroke="#ffffff" stroke-width="2.5"/>',
+            '<circle cx="28" cy="28" r="3" fill="#ffffff"/>',
+            '<rect x="26" y="14" width="4" height="3" fill="#ffffff"/>',
+            '<rect x="26" y="39" width="4" height="3" fill="#ffffff"/>',
+            '<rect x="14" y="26" width="3" height="4" fill="#ffffff"/>',
+            '<rect x="39" y="26" width="3" height="4" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** AppImage: 绿 + A */
+    appimage(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#2D8F4E"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">A</text>',
+            '<circle cx="40" cy="16" r="3" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Windows MSI: 蓝 + 盒子 */
+    msi(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0078D4"/>',
+            '<rect x="12" y="14" width="32" height="28" rx="2" fill="#ffffff"/>',
+            '<rect x="12" y="14" width="32" height="6" fill="#003366"/>',
+            '<text x="28" y="40" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0078D4" text-anchor="middle">MSI</text>',
+        ].join('');
+    },
+    /** Windows Cabinet .cab: 蓝 + 抽屉 */
+    cab(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0078D4"/>',
+            '<rect x="10" y="16" width="36" height="24" rx="2" fill="#ffffff"/>',
+            '<line x1="14" y1="22" x2="42" y2="22" stroke="#0078D4" stroke-width="1.5"/>',
+            '<rect x="26" y="32" width="4" height="3" fill="#0078D4"/>',
+        ].join('');
+    },
+    /** VirtualBox OVA: 蓝 + 立方体 */
+    ova(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1A237E"/>',
+            '<path d="M 28 12 L 42 19 L 42 37 L 28 44 L 14 37 L 14 19 Z" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<path d="M 14 19 L 28 26 L 42 19" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>',
+            '<line x1="28" y1="26" x2="28" y2="44" stroke="#ffffff" stroke-width="1.5" opacity="0.7"/>',
+        ].join('');
+    },
+    /** VMware VMDK: 绿 + VMDK */
+    vmdk(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#00754A"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">VMDK</text>',
+        ].join('');
+    },
+    /** VirtualBox VDI: 蓝 + VDI */
+    vdi(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#183A61"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">VDI</text>',
+        ].join('');
+    },
+    /** Hyper-V VHD: 蓝 + 立方体 */
+    vhd(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0078D4"/>',
+            '<path d="M 28 12 L 42 19 L 42 37 L 28 44 L 14 37 L 14 19 Z" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/>',
+        ].join('');
+    },
+    /** QEMU qcow2: 红 + Q */
+    qcow2(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#EE0000"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">Q</text>',
+        ].join('');
+    },
+    /** 通用磁盘镜像 .img: 灰 + 圆盘 */
+    img(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#4D4D4D"/>',
+            '<circle cx="28" cy="28" r="14" fill="#5C5C5C"/>',
+            '<circle cx="28" cy="28" r="3" fill="#4D4D4D"/>',
+        ].join('');
+    },
+    /** MIDI .mid/.midi: 蓝 + 键盘 */
+    midi(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1A4D8C"/>',
+            '<rect x="8" y="22" width="40" height="14" fill="#ffffff"/>',
+            '<rect x="8" y="22" width="40" height="3" fill="#333333"/>',
+            '<line x1="16" y1="25" x2="16" y2="36" stroke="#333333" stroke-width="1"/>',
+            '<line x1="22" y1="25" x2="22" y2="36" stroke="#333333" stroke-width="1"/>',
+            '<line x1="28" y1="25" x2="28" y2="36" stroke="#333333" stroke-width="1"/>',
+            '<line x1="34" y1="25" x2="34" y2="36" stroke="#333333" stroke-width="1"/>',
+            '<line x1="40" y1="25" x2="40" y2="36" stroke="#333333" stroke-width="1"/>',
+            '<rect x="14" y="22" width="2" height="4" fill="#333333"/>',
+            '<rect x="20" y="22" width="2" height="4" fill="#333333"/>',
+            '<rect x="26" y="22" width="2" height="4" fill="#333333"/>',
+            '<rect x="32" y="22" width="2" height="4" fill="#333333"/>',
+            '<rect x="38" y="22" width="2" height="4" fill="#333333"/>',
+        ].join('');
+    },
+    /** Monkey's Audio .ape: 棕 + APE */
+    ape(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#8B4513"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#FFD700" text-anchor="middle">APE</text>',
+        ].join('');
+    },
+    /** WavPack .wv: 绿 + WV */
+    wv(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3CB371"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">WV</text>',
+        ].join('');
+    },
+    /** 相机 RAW: 暗灰 + 相机 */
+    raw(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#2C2C2C"/>',
+            '<rect x="10" y="18" width="36" height="22" rx="2" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<rect x="22" y="14" width="12" height="6" rx="1" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<circle cx="28" cy="29" r="5" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<circle cx="28" cy="29" r="2" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** 数据备份 .bak: 灰 + 圆环箭头 */
+    bak(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#7B7B7B"/>',
+            '<path d="M 38 18 A 12 12 0 1 0 38 38" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>',
+            '<polygon points="36,16 42,18 38,22" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Qt 资源 .qrc: 绿 + QRC */
+    qrc(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#41CD52"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">QRC</text>',
+        ].join('');
+    },
+    /** Krita .kra: 黑 + 画笔 */
+    kra(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#231F20"/>',
+            '<path d="M 18 38 L 30 26 L 34 30 L 22 42 L 18 42 Z" fill="#ffffff"/>',
+            '<path d="M 30 26 L 36 20 L 40 24 L 34 30 Z" fill="#FFC500"/>',
+        ].join('');
+    },
+    /** GIMP .xcf: 灰 + 狐狸头 */
+    xcf(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5C5C5C"/>',
+            '<path d="M 14 16 L 22 14 L 28 22 L 34 14 L 42 16 L 38 28 L 42 38 L 28 36 L 14 38 L 18 28 Z" fill="#FF6600"/>',
+        ].join('');
+    },
+    /** EPUB .epub: 棕 + 书 */
+    epub(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#6E4D2F"/>',
+            '<path d="M 14 14 L 28 16 L 42 14 L 42 42 L 28 44 L 14 42 Z" fill="#ffffff"/>',
+            '<line x1="28" y1="16" x2="28" y2="44" stroke="#6E4D2F" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** PostScript .ps: 蓝 + PS */
+    postscript(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0F3D80"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">PS</text>',
+        ].join('');
+    },
+    /** LaTeX .tex: 绿 + 字母 */
+    tex(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3D6117"/>',
+            '<line x1="14" y1="14" x2="30" y2="14" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>',
+            '<line x1="22" y1="14" x2="22" y2="34" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>',
+            '<line x1="32" y1="14" x2="32" y2="34" stroke="#ffffff" stroke-width="2.5"/>',
+            '<line x1="32" y1="14" x2="40" y2="14" stroke="#ffffff" stroke-width="2.5"/>',
+            '<line x1="32" y1="24" x2="38" y2="24" stroke="#ffffff" stroke-width="2.5"/>',
+            '<line x1="32" y1="34" x2="40" y2="34" stroke="#ffffff" stroke-width="2.5"/>',
+        ].join('');
+    },
+    /** BibTeX .bib: 绿 + BIB */
+    bib(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3D6117"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">BIB</text>',
+        ].join('');
+    },
+    /** 通用源映射 .map: 灰 + .map */
+    sourcemap(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5C5C5C"/>',
+            '<text x="28" y="36" font-family="monospace" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">.map</text>',
+        ].join('');
+    },
+    /** Minecraft .dat/.minecraft: 棕 + 像素方块 */
+    minecraft(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5D7A14"/>',
+            '<rect x="14" y="14" width="6" height="6" fill="#7CB342"/>',
+            '<rect x="20" y="14" width="6" height="6" fill="#7CB342"/>',
+            '<rect x="14" y="20" width="6" height="6" fill="#8B4513"/>',
+            '<rect x="20" y="20" width="6" height="6" fill="#8B4513"/>',
+            '<rect x="26" y="20" width="6" height="6" fill="#7CB342"/>',
+            '<rect x="26" y="26" width="6" height="6" fill="#8B4513"/>',
+            '<rect x="32" y="26" width="6" height="6" fill="#A1887F"/>',
+            '<rect x="14" y="26" width="6" height="6" fill="#A1887F"/>',
+            '<rect x="14" y="32" width="6" height="6" fill="#5D7A14"/>',
+            '<rect x="20" y="32" width="6" height="6" fill="#5D7A14"/>',
+            '<rect x="26" y="32" width="6" height="6" fill="#5D7A14"/>',
+            '<rect x="32" y="32" width="6" height="6" fill="#5D7A14"/>',
+        ].join('');
+    },
+    /** Tmp 临时: 灰 + 时钟 */
+    tmp(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#7B7B7B"/>',
+            '<circle cx="28" cy="28" r="14" fill="none" stroke="#ffffff" stroke-width="2.5"/>',
+            '<line x1="28" y1="18" x2="28" y2="28" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>',
+            '<line x1="28" y1="28" x2="36" y2="32" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** ICO Windows 图标: 灰 + 渐变图标 */
+    ico(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5C5C5C"/>',
+            '<rect x="12" y="12" width="32" height="32" rx="3" fill="url(#ico-grad)"/>',
+            '<defs><linearGradient id="ico-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD700"/><stop offset="50%" stop-color="#FF8C00"/><stop offset="100%" stop-color="#DC143C"/></linearGradient></defs>',
+        ].join('');
+    },
+    /** GitHub Action .yml workflow: 蓝 + play */
+    ghaction(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#2088FF"/>',
+            '<path d="M 22 18 L 38 28 L 22 38 Z" fill="#ffffff"/>',
+            '<circle cx="28" cy="28" r="16" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="3 2"/>',
+        ].join('');
+    },
+    /** Git LFS .lfs: 黑 + LFS */
+    lfs(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#181717"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#F05033" text-anchor="middle">LFS</text>',
+        ].join('');
+    },
+    /** SystemVerilog .sv: 暗橙 + SV */
+    sv(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FF7043"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">SV</text>',
+        ].join('');
+    },
+    /** CUDA .cu: 绿 + CU */
+    cuda(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#76B900"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">CU</text>',
+        ].join('');
+    },
+    /** 设备树 .dts/.dtsi: 蓝 + .dts */
+    dtsi(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#00897B"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">.dts</text>',
+        ].join('');
+    },
+    /** BIOS/UEFI ROM 芯片: 深蓝 + 芯片 */
+    romchip(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0D47A1"/>',
+            '<rect x="14" y="14" width="28" height="28" rx="2" fill="#FFFFFF"/>',
+            '<rect x="11" y="18" width="3" height="2" fill="#FFFFFF"/>',
+            '<rect x="11" y="24" width="3" height="2" fill="#FFFFFF"/>',
+            '<rect x="11" y="30" width="3" height="2" fill="#FFFFFF"/>',
+            '<rect x="11" y="36" width="3" height="2" fill="#FFFFFF"/>',
+            '<rect x="42" y="18" width="3" height="2" fill="#FFFFFF"/>',
+            '<rect x="42" y="24" width="3" height="2" fill="#FFFFFF"/>',
+            '<rect x="42" y="30" width="3" height="2" fill="#FFFFFF"/>',
+            '<rect x="42" y="36" width="3" height="2" fill="#FFFFFF"/>',
+            '<circle cx="28" cy="28" r="4" fill="#0D47A1"/>',
+        ].join('');
+    },
+    /** Vagrantfile .vagrantfile: 蓝 + V */
+    vagrant(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1563FF"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">V</text>',
+        ].join('');
+    },
+    /** 通用 backup .bak: 圆环箭头(同上) */
+    /** 通用 cheatcode 之类 .cfg: 已有 config 覆盖 */
+    /** 通用 db .db 扩展: 已有 file-sqlite 覆盖(.db 在 exts) */
+    /** 通用 .pma, .ldb 之类: RocksDB */
+    /** GitHub workflow (yml) - 已有 yaml 覆盖但可作 ghaction 区分 */
+    /** Makefile .mk: 已有 shell 覆盖 */
+    /** 通用 npmrc 之类 - 已有 config 覆盖 */
+    /** Node modules 之类: 不该当独立类型 */
+    /** epub: 同上,通用 */
+    /** BIOS .rom: 已有 binary 覆盖? romchip 专门给 .rom */
+    /** CommonJS .cjs: 已有 javascript 覆盖 */
+    /** ESM .mjs/.mts/.cts: 已有 javascript/typescript 覆盖 */
+    /** Swift module .swiftmodule: 已有 swift 覆盖 */
+    /** TOML/TOML file: 已有 toml */
+    /** Git pack .pack: 同 pak */
+    /** Old file .old: 已有 bak? 不,加 old */
+    old(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#A0A0A0"/>',
+            '<rect x="14" y="12" width="28" height="36" fill="#ffffff" opacity="0.9"/>',
+            '<rect x="14" y="12" width="28" height="4" fill="#888888"/>',
+            '<line x1="18" y1="22" x2="34" y2="22" stroke="#888888" stroke-width="1.2"/>',
+            '<line x1="18" y1="28" x2="34" y2="28" stroke="#888888" stroke-width="1.2"/>',
+            '<line x1="18" y1="34" x2="30" y2="34" stroke="#888888" stroke-width="1.2"/>',
+        ].join('');
+    },
+    /** Eclipse .project/.classpath: 蓝 + E */
+    eclipse(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#2C2255"/>',
+            // E 形状
+            '<path d="M 18 14 L 18 42 M 18 14 L 34 14 M 18 28 L 30 28 M 18 42 L 34 42" stroke="#F7941E" stroke-width="3" fill="none" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** IntelliJ .iml/.idea: 紫 + IJ */
+    intellij(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FE315D"/>',
+            // IJ 字
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">IJ</text>',
+        ].join('');
+    },
+    /** Patch .patch/.diff: 灰 + ± */
+    patch(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#7B7B7B"/>',
+            '<line x1="14" y1="22" x2="22" y2="22" stroke="#ffffff" stroke-width="3"/>',
+            '<line x1="19" y1="17" x2="19" y2="27" stroke="#ffffff" stroke-width="3"/>',
+            '<line x1="34" y1="34" x2="42" y2="34" stroke="#ffffff" stroke-width="3"/>',
+            '<line x1="38" y1="29" x2="38" y2="39" stroke="#ffffff" stroke-width="3"/>',
+        ].join('');
+    },
+    /** Bitwarden / Vault .kdbx 等: 蓝 + 锁 */
+    vault(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#175DDC"/>',
+            // 锁
+            '<rect x="14" y="26" width="28" height="18" rx="2" fill="#ffffff"/>',
+            '<path d="M 20 26 L 20 20 Q 20 14 28 14 Q 36 14 36 20 L 36 26" fill="none" stroke="#ffffff" stroke-width="3"/>',
+            '<circle cx="28" cy="34" r="2" fill="#175DDC"/>',
+        ].join('');
+    },
+    /** Locale 文件: 灰 + L */
+    locale(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5C5C5C"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">L</text>',
+        ].join('');
+    },
+    /** macOS .dmg 是上面 dmg, .pkg 是 pkg */
+    pkg(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#3D3D3D"/>',
+            // 包装盒
+            '<rect x="10" y="16" width="36" height="26" rx="2" fill="#ffffff"/>',
+            '<rect x="10" y="16" width="36" height="4" fill="#5C5C5C"/>',
+            // 蝴蝶结
+            '<circle cx="28" cy="18" r="3" fill="#FF66AA"/>',
+        ].join('');
+    },
+    /** Sourcepawn .sp: 浅红 + 圆环 */
+    sp(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#C72828"/>',
+            '<circle cx="28" cy="28" r="14" fill="none" stroke="#ffffff" stroke-width="2.5"/>',
+            '<circle cx="28" cy="28" r="6" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** RocksDB .sst/.ldb: 紫 + RDB */
+    rocksdb(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#5C2D91"/>',
+            '<text x="28" y="36" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">RDB</text>',
+        ].join('');
+    },
+    /** Compose .yml/.yaml: 已有 yaml,新加 compose 区分 */
+    compose(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1E88E5"/>',
+            '<path d="M 28 12 L 42 19 L 42 37 L 28 44 L 14 37 L 14 19 Z" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="28" y1="12" x2="28" y2="44" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="14" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="42" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** Unreal Engine plugin .uplugin: 黑 + 插件 */
+    uplugin(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#0D0D0D"/>',
+            // 插头形状
+            '<path d="M 18 14 L 38 14 L 38 38 L 18 38 L 18 32 L 14 32 L 14 26 L 18 26 L 18 22 L 14 22 L 14 16 L 18 16 Z" fill="#FFD700"/>',
+        ].join('');
+    },
+    /** GameMaker .gml/.yy: 蓝 + 圆 */
+    gamemaker(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#003C7A"/>',
+            // GM 圆
+            '<circle cx="28" cy="28" r="16" fill="none" stroke="#FFCC00" stroke-width="2.5"/>',
+            '<circle cx="28" cy="28" r="6" fill="#FFCC00"/>',
+        ].join('');
+    },
+    /** Unreal 蓝图 .uasset: 同 uasset */
+    /** Apple PList .plist: 已有(plist) */
+    /** Steam Cloud .css/.acf: 蓝 + S */
+    steam(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1B2838"/>',
+            // 圆形 logo
+            '<circle cx="28" cy="28" r="14" fill="none" stroke="#66C0F4" stroke-width="2.5"/>',
+            '<circle cx="28" cy="28" r="6" fill="#66C0F4"/>',
+        ].join('');
+    },
+    /** Steam Workshop .workshop: 蓝 + 齿轮 */
+    workshop(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1B2838"/>',
+            '<circle cx="28" cy="28" r="12" fill="none" stroke="#66C0F4" stroke-width="2"/>',
+            '<circle cx="28" cy="28" r="4" fill="#66C0F4"/>',
+        ].join('');
+    },
+    /** Subtitle .srt/.ass/.vtt: 蓝 + 字幕 */
+    subtitle(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#1F1F1F"/>',
+            // 字幕条
+            '<rect x="6" y="34" width="44" height="14" fill="#000000" opacity="0.75"/>',
+            '<text x="28" y="44" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">SUB</text>',
+        ].join('');
+    },
+    /** Postgres: 蓝 + 象 */
+    postgres(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#336791"/>',
+            // 简化大象
+            '<ellipse cx="28" cy="28" rx="14" ry="10" fill="#ffffff"/>',
+            '<circle cx="22" cy="24" r="1.5" fill="#336791"/>',
+            '<path d="M 32 30 Q 36 30 36 26 Q 36 22 33 22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** MySQL: 蓝 + 海豚 */
+    mysql(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#00758F"/>',
+            // 海豚轮廓
+            '<path d="M 14 28 Q 14 18 22 16 Q 30 14 36 18 Q 40 22 38 28 Q 36 32 30 34 L 24 36 Q 18 36 14 32 Z" fill="#F29111"/>',
+            '<circle cx="34" cy="22" r="1.5" fill="#000000"/>',
+        ].join('');
+    },
+    /** Redis: 红 + 立方体 */
+    redis(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#A41E11"/>',
+            '<path d="M 28 12 L 42 19 L 42 37 L 28 44 L 14 37 L 14 19 Z" fill="none" stroke="#ffffff" stroke-width="2"/>',
+            '<line x1="28" y1="12" x2="28" y2="44" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="14" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="42" y1="19" x2="28" y2="27" stroke="#ffffff" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** MongoDB: 绿 + 叶子 */
+    mongodb(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#00684A"/>',
+            // 叶子
+            '<path d="M 28 12 Q 18 16 18 28 Q 18 36 28 42 Q 38 36 38 28 Q 38 16 28 12 Z" fill="#FFFFFF" opacity="0.9"/>',
+            '<path d="M 28 12 L 28 42" stroke="#00684A" stroke-width="1.5" stroke-linecap="round"/>',
+        ].join('');
+    },
+    /** Elasticsearch: 黄 + E */
+    elasticsearch(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FEC514"/>',
+            '<text x="28" y="40" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#000000" text-anchor="middle">E</text>',
+        ].join('');
+    },
+    /** Kafka: 黑 + 圆 + 波浪 */
+    kafka(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#231F20"/>',
+            // 三个圆
+            '<circle cx="18" cy="28" r="5" fill="#ffffff"/>',
+            '<circle cx="28" cy="22" r="5" fill="#ffffff"/>',
+            '<circle cx="38" cy="28" r="5" fill="#ffffff"/>',
+            // 连接线
+            '<line x1="22" y1="26" x2="24" y2="24" stroke="#ffffff" stroke-width="1.5"/>',
+            '<line x1="32" y1="24" x2="34" y2="26" stroke="#ffffff" stroke-width="1.5"/>',
+        ].join('');
+    },
+    /** TensorFlow: 橙 + T */
+    tensorflow(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#FF6F00"/>',
+            '<text x="28" y="38" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">TF</text>',
+        ].join('');
+    },
+    /** PyTorch: 红 + 火焰 */
+    pytorch(fill, glyph) {
+        return [
+            '<rect x="4" y="4" width="48" height="48" rx="6" fill="#EE4C2C"/>',
+            // 火焰
+            '<path d="M 28 12 Q 22 18 22 24 Q 22 30 26 34 Q 22 32 20 28 Q 18 32 22 38 Q 28 42 34 38 Q 38 32 36 26 Q 36 18 28 12 Z" fill="#ffffff"/>',
+        ].join('');
+    },
+    /** Datasets.csv/.tsv: 已有 csv 覆盖 */
+    /** CommonJS Modules 已有 javascript */
     /** Twig: 绿 + 树叶 */
     twig(fill, glyph) {
         return [

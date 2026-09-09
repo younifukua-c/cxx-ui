@@ -15,7 +15,7 @@
     "heif": "image",
     "tiff": "image",
     "tif": "image",
-    "ico": "image",
+    "ico": "ico",
     "svg": "svg",
     "mp4": "video",
     "mov": "video",
@@ -48,8 +48,8 @@
     "jar": "jar",
     "war": "jar",
     "ear": "jar",
-    "apk": "jar",
-    "aab": "jar",
+    "apk": "apk",
+    "aab": "apk",
     "pdf": "pdf",
     "doc": "doc",
     "docx": "doc",
@@ -75,7 +75,7 @@
     "fods": "ods",
     "ppt": "slide",
     "pptx": "slide",
-    "pot": "slide",
+    "pot": "locale",
     "potx": "slide",
     "pps": "slide",
     "ppsx": "slide",
@@ -176,9 +176,9 @@
     "cbl": "cobol",
     "tcl": "tcl",
     "v": "verilog",
-    "sv": "verilog",
+    "sv": "sv",
     "vh": "verilog",
-    "svh": "verilog",
+    "svh": "sv",
     "sql": "sql",
     "sqlite": "sqlite",
     "sqlite3": "sqlite",
@@ -240,8 +240,8 @@
     "plist": "plist",
     "vim": "vim",
     "el": "emacs",
-    "diff": "diff",
-    "patch": "diff",
+    "diff": "patch",
+    "patch": "patch",
     "cmake": "cmake",
     "cargo": "cargo",
     "cargo.toml": "cargo",
@@ -269,12 +269,12 @@
     "mdx": "markdown",
     "markdown": "markdown",
     "txt": "text",
-    "log": "text",
+    "log": "rocksdb",
     "rst": "rst",
     "adoc": "asciidoc",
     "asciidoc": "asciidoc",
-    "exe": "binary",
-    "dll": "binary",
+    "exe": "exe",
+    "dll": "exe",
     "so": "binary",
     "dylib": "binary",
     "bin": "binary",
@@ -316,6 +316,198 @@
     "spc": "plsql",
     "pcss": "postcss",
     "postcss": "postcss",
+    "msi": "exe",
+    "cab": "cab",
+    "app": "exe",
+    "drv": "exe",
+    "sys": "exe",
+    "lnk": "lnk",
+    "url": "lnk",
+    "vm": "vm",
+    "d.ts": "dts",
+    "wasm": "wasm",
+    "wat": "wasm",
+    "fish": "fish",
+    "jsonl": "jsonl",
+    "ndjson": "jsonl",
+    "gyp": "gyp",
+    "gypi": "gyp",
+    "pak": "pak",
+    "pack": "pak",
+    "unity": "unity",
+    "asset": "unity",
+    "prefab": "unity",
+    "mat": "unity",
+    "controller": "unity",
+    "shader": "unity",
+    "physicmaterial": "unity",
+    "unitypackage": "unitypackage",
+    "uasset": "uasset",
+    "umap": "uasset",
+    "uexp": "uasset",
+    "ubulk": "uasset",
+    "uplugin": "uplugin",
+    "vpk": "vpk",
+    "vtf": "vpk",
+    "vmt": "vpk",
+    "ncf": "vpk",
+    "bsp": "wad",
+    "nav": "bsp",
+    "ain": "bsp",
+    "wad": "wad",
+    "pk3": "wad",
+    "map": "sourcemap",
+    "iso": "rom",
+    "img": "img",
+    "nrg": "iso",
+    "mdf": "iso",
+    "cue": "iso",
+    "cdr": "iso",
+    "torrent": "torrent",
+    "psd": "psd",
+    "psb": "psd",
+    "ai": "ai",
+    "indd": "indd",
+    "indl": "indd",
+    "sketch": "sketch",
+    "fig": "fig",
+    "xd": "xd",
+    "aep": "aep",
+    "aepx": "aep",
+    "fla": "fla",
+    "blend": "blend",
+    "fbx": "fbx",
+    "obj": "obj",
+    "stl": "stl",
+    "gltf": "gltf",
+    "glb": "gltf",
+    "dwg": "dwg",
+    "dxf": "dxf",
+    "apks": "apk",
+    "xapk": "apk",
+    "ipa": "ipa",
+    "dmg": "dmg",
+    "pkg": "pkg",
+    "mpkg": "pkg",
+    "deb": "deb",
+    "udeb": "deb",
+    "rpm": "rpm",
+    "appimage": "appimage",
+    "AppImage": "appimage",
+    "msp": "msi",
+    "msm": "msi",
+    "ova": "ova",
+    "ovf": "ova",
+    "vmdk": "vmdk",
+    "vdi": "vdi",
+    "vhd": "vhd",
+    "vhdx": "vhd",
+    "qcow2": "qcow2",
+    "qcow": "qcow2",
+    "mid": "midi",
+    "midi": "midi",
+    "kar": "midi",
+    "ape": "ape",
+    "wv": "wv",
+    "raw": "raw",
+    "cr2": "raw",
+    "cr3": "raw",
+    "nef": "raw",
+    "arw": "raw",
+    "dng": "raw",
+    "raf": "raw",
+    "orf": "raw",
+    "rw2": "raw",
+    "bak": "bak",
+    "old": "old",
+    "orig": "bak",
+    "qrc": "qrc",
+    "kra": "kra",
+    "xcf": "xcf",
+    "epub": "epub",
+    "mobi": "epub",
+    "azw": "epub",
+    "azw3": "epub",
+    "ps": "ps",
+    "eps": "ps",
+    "tex": "tex",
+    "bib": "bib",
+    "bibtex": "bib",
+    "minecraft": "minecraft",
+    "mcworld": "minecraft",
+    "mcpack": "minecraft",
+    "mcmeta": "minecraft",
+    "dat": "minecraft",
+    "gba": "rom",
+    "nds": "rom",
+    "3ds": "rom",
+    "gb": "rom",
+    "gbc": "rom",
+    "nes": "rom",
+    "sfc": "rom",
+    "n64": "rom",
+    "tmp": "tmp",
+    "temp": "tmp",
+    "bak2": "tmp",
+    "old2": "tmp",
+    "icon": "ico",
+    "lfs": "lfs",
+    "cu": "cuda",
+    "cuh": "cuda",
+    "dts": "dtsi",
+    "dtsi": "dtsi",
+    "rom": "romchip",
+    "bios": "romchip",
+    "uefi": "romchip",
+    "vagrantfile": "vagrant",
+    "box": "vagrant",
+    "project": "eclipse",
+    "classpath": "eclipse",
+    "prefs": "eclipse",
+    "iml": "intellij",
+    "iws": "intellij",
+    "ipr": "intellij",
+    "kdbx": "vault",
+    "kdb": "vault",
+    "1pif": "vault",
+    "agilekeychain": "vault",
+    "po": "locale",
+    "mo": "locale",
+    "sp": "sp",
+    "sst": "rocksdb",
+    "ldb": "rocksdb",
+    "githubaction": "ghaction",
+    "gml": "gamemaker",
+    "yy": "gamemaker",
+    "yyp": "gamemaker",
+    "acf": "steam",
+    "vdf": "steam",
+    "srt": "subtitle",
+    "ass": "subtitle",
+    "ssa": "subtitle",
+    "vtt": "subtitle",
+    "sub": "subtitle",
+    "pgsql": "postgres",
+    "psql": "postgres",
+    "mysql": "mysql",
+    "frm": "mysql",
+    "myd": "mysql",
+    "myi": "mysql",
+    "rdb": "redis",
+    "redis": "redis",
+    "bson": "mongodb",
+    "es": "elasticsearch",
+    "log.0": "kafka",
+    "log.1": "kafka",
+    "log.2": "kafka",
+    "pb": "tensorflow",
+    "tflite": "tensorflow",
+    "pt": "pytorch",
+    "pth": "pytorch",
+    "pkl": "pytorch",
+    "docker-compose.yml": "compose",
+    "compose.yml": "compose",
+    "compose.yaml": "compose",
     "__filename_docker": "docker",
     "__filename_shell": "shell",
     "__filename_ruby": "ruby",
@@ -1788,6 +1980,953 @@
       "exts": [
         "pcss",
         "postcss"
+      ]
+    },
+    {
+      "type": "exe",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "exe",
+        "msi",
+        "cab",
+        "app",
+        "dll",
+        "drv",
+        "sys"
+      ]
+    },
+    {
+      "type": "lnk",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "lnk",
+        "url"
+      ]
+    },
+    {
+      "type": "vm",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "vm"
+      ]
+    },
+    {
+      "type": "dts",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "d.ts"
+      ]
+    },
+    {
+      "type": "wasm",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "wasm",
+        "wat"
+      ]
+    },
+    {
+      "type": "fish",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "fish"
+      ]
+    },
+    {
+      "type": "jsonl",
+      "label": null,
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "jsonl",
+        "ndjson"
+      ]
+    },
+    {
+      "type": "gyp",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "gyp",
+        "gypi"
+      ]
+    },
+    {
+      "type": "pak",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "pak",
+        "pack"
+      ]
+    },
+    {
+      "type": "unity",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "unity",
+        "asset",
+        "prefab",
+        "mat",
+        "controller",
+        "shader",
+        "physicmaterial"
+      ]
+    },
+    {
+      "type": "unitypackage",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "unitypackage"
+      ]
+    },
+    {
+      "type": "uasset",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "uasset",
+        "umap",
+        "uexp",
+        "ubulk",
+        "uplugin"
+      ]
+    },
+    {
+      "type": "vpk",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "vpk",
+        "vtf",
+        "vmt",
+        "ncf"
+      ]
+    },
+    {
+      "type": "bsp",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "bsp",
+        "nav",
+        "ain"
+      ]
+    },
+    {
+      "type": "wad",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "wad",
+        "pk3",
+        "bsp",
+        "map"
+      ]
+    },
+    {
+      "type": "iso",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "iso",
+        "img",
+        "nrg",
+        "mdf",
+        "cue",
+        "iso",
+        "cdr"
+      ]
+    },
+    {
+      "type": "torrent",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "torrent"
+      ]
+    },
+    {
+      "type": "psd",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "psd",
+        "psb"
+      ]
+    },
+    {
+      "type": "ai",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "ai"
+      ]
+    },
+    {
+      "type": "indd",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "indd",
+        "indl"
+      ]
+    },
+    {
+      "type": "sketch",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "sketch"
+      ]
+    },
+    {
+      "type": "fig",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "fig"
+      ]
+    },
+    {
+      "type": "xd",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "xd"
+      ]
+    },
+    {
+      "type": "aep",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "aep",
+        "aepx"
+      ]
+    },
+    {
+      "type": "fla",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "fla"
+      ]
+    },
+    {
+      "type": "blend",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "blend"
+      ]
+    },
+    {
+      "type": "fbx",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "fbx"
+      ]
+    },
+    {
+      "type": "obj",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "obj"
+      ]
+    },
+    {
+      "type": "stl",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "stl"
+      ]
+    },
+    {
+      "type": "gltf",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "gltf",
+        "glb"
+      ]
+    },
+    {
+      "type": "dwg",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "dwg"
+      ]
+    },
+    {
+      "type": "dxf",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "dxf"
+      ]
+    },
+    {
+      "type": "apk",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "apk",
+        "aab",
+        "apks",
+        "xapk"
+      ]
+    },
+    {
+      "type": "ipa",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "ipa"
+      ]
+    },
+    {
+      "type": "dmg",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "dmg"
+      ]
+    },
+    {
+      "type": "pkg",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "pkg",
+        "mpkg"
+      ]
+    },
+    {
+      "type": "deb",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "deb",
+        "udeb"
+      ]
+    },
+    {
+      "type": "rpm",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "rpm"
+      ]
+    },
+    {
+      "type": "appimage",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "appimage",
+        "AppImage"
+      ]
+    },
+    {
+      "type": "msi",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "msp",
+        "msm"
+      ]
+    },
+    {
+      "type": "cab",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "cab"
+      ]
+    },
+    {
+      "type": "ova",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "ova",
+        "ovf"
+      ]
+    },
+    {
+      "type": "vmdk",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "vmdk"
+      ]
+    },
+    {
+      "type": "vdi",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "vdi"
+      ]
+    },
+    {
+      "type": "vhd",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "vhd",
+        "vhdx"
+      ]
+    },
+    {
+      "type": "qcow2",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "qcow2",
+        "qcow"
+      ]
+    },
+    {
+      "type": "img",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "img"
+      ]
+    },
+    {
+      "type": "midi",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "mid",
+        "midi",
+        "kar"
+      ]
+    },
+    {
+      "type": "ape",
+      "label": null,
+      "shape": null,
+      "palette": "brown",
+      "exts": [
+        "ape"
+      ]
+    },
+    {
+      "type": "wv",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "wv"
+      ]
+    },
+    {
+      "type": "raw",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "raw",
+        "cr2",
+        "cr3",
+        "nef",
+        "arw",
+        "dng",
+        "raf",
+        "orf",
+        "rw2"
+      ]
+    },
+    {
+      "type": "bak",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "bak",
+        "old",
+        "orig"
+      ]
+    },
+    {
+      "type": "qrc",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "qrc"
+      ]
+    },
+    {
+      "type": "kra",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "kra"
+      ]
+    },
+    {
+      "type": "xcf",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "xcf"
+      ]
+    },
+    {
+      "type": "epub",
+      "label": null,
+      "shape": null,
+      "palette": "brown",
+      "exts": [
+        "epub",
+        "mobi",
+        "azw",
+        "azw3"
+      ]
+    },
+    {
+      "type": "ps",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "ps",
+        "eps"
+      ]
+    },
+    {
+      "type": "tex",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "tex"
+      ]
+    },
+    {
+      "type": "bib",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "bib",
+        "bibtex"
+      ]
+    },
+    {
+      "type": "sourcemap",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "map"
+      ]
+    },
+    {
+      "type": "minecraft",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "minecraft",
+        "mcworld",
+        "mcpack",
+        "mcmeta",
+        "dat"
+      ]
+    },
+    {
+      "type": "rom",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "gba",
+        "nds",
+        "3ds",
+        "gb",
+        "gbc",
+        "nes",
+        "sfc",
+        "n64",
+        "iso"
+      ]
+    },
+    {
+      "type": "tmp",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "tmp",
+        "temp",
+        "bak2",
+        "old2"
+      ]
+    },
+    {
+      "type": "ico",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "ico",
+        "icon"
+      ]
+    },
+    {
+      "type": "lfs",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "lfs"
+      ]
+    },
+    {
+      "type": "sv",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "sv",
+        "svh"
+      ]
+    },
+    {
+      "type": "cuda",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "cu",
+        "cuh"
+      ]
+    },
+    {
+      "type": "dtsi",
+      "label": null,
+      "shape": null,
+      "palette": "teal",
+      "exts": [
+        "dts",
+        "dtsi"
+      ]
+    },
+    {
+      "type": "romchip",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "rom",
+        "bios",
+        "uefi"
+      ]
+    },
+    {
+      "type": "vagrant",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "vagrantfile",
+        "box"
+      ]
+    },
+    {
+      "type": "old",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "old"
+      ]
+    },
+    {
+      "type": "eclipse",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "project",
+        "classpath",
+        "prefs"
+      ]
+    },
+    {
+      "type": "intellij",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "iml",
+        "iws",
+        "ipr"
+      ]
+    },
+    {
+      "type": "patch",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "patch",
+        "diff"
+      ]
+    },
+    {
+      "type": "vault",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "kdbx",
+        "kdb",
+        "1pif",
+        "agilekeychain"
+      ]
+    },
+    {
+      "type": "locale",
+      "label": null,
+      "shape": null,
+      "palette": "gray",
+      "exts": [
+        "po",
+        "mo",
+        "pot"
+      ]
+    },
+    {
+      "type": "sp",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "sp"
+      ]
+    },
+    {
+      "type": "rocksdb",
+      "label": null,
+      "shape": null,
+      "palette": "purple",
+      "exts": [
+        "sst",
+        "ldb",
+        "log"
+      ]
+    },
+    {
+      "type": "ghaction",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "githubaction"
+      ]
+    },
+    {
+      "type": "uplugin",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "uplugin"
+      ]
+    },
+    {
+      "type": "gamemaker",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "gml",
+        "yy",
+        "yyp"
+      ]
+    },
+    {
+      "type": "steam",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "acf",
+        "vdf"
+      ]
+    },
+    {
+      "type": "subtitle",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "srt",
+        "ass",
+        "ssa",
+        "vtt",
+        "sub"
+      ]
+    },
+    {
+      "type": "postgres",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "pgsql",
+        "psql"
+      ]
+    },
+    {
+      "type": "mysql",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "mysql",
+        "frm",
+        "myd",
+        "myi"
+      ]
+    },
+    {
+      "type": "redis",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "rdb",
+        "redis"
+      ]
+    },
+    {
+      "type": "mongodb",
+      "label": null,
+      "shape": null,
+      "palette": "green",
+      "exts": [
+        "bson"
+      ]
+    },
+    {
+      "type": "elasticsearch",
+      "label": null,
+      "shape": null,
+      "palette": "yellow",
+      "exts": [
+        "es"
+      ]
+    },
+    {
+      "type": "kafka",
+      "label": null,
+      "shape": null,
+      "palette": "black",
+      "exts": [
+        "log.0",
+        "log.1",
+        "log.2"
+      ]
+    },
+    {
+      "type": "tensorflow",
+      "label": null,
+      "shape": null,
+      "palette": "orange",
+      "exts": [
+        "pb",
+        "tflite"
+      ]
+    },
+    {
+      "type": "pytorch",
+      "label": null,
+      "shape": null,
+      "palette": "red",
+      "exts": [
+        "pt",
+        "pth",
+        "pkl"
+      ]
+    },
+    {
+      "type": "compose",
+      "label": null,
+      "shape": null,
+      "palette": "blue",
+      "exts": [
+        "docker-compose.yml",
+        "compose.yml",
+        "compose.yaml"
       ]
     },
     {
