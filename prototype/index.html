@@ -282,13 +282,28 @@ function currentSet() {
 
 function render() {
     const filter = document.getElementById('filter').value.trim().toLowerCase();
-    const set = currentSet();
-    const matched = set.filter(icon => {
-        if (!filter) return true;
-        const hay = (icon.name + ' ' + icon.kind + ' ' + (icon.num || '')).toLowerCase();
-        return hay.includes(filter);
-    });
-    document.getElementById('summary').textContent = `${matched.length} / ${set.length} 个图标`;
+    /* 有关键词:跨 tab 搜全部,自动切到能展示的 tab,让用户不用手动切。
+       优先展示通用(数量少,一眼看完),否则保持当前 tab。 */
+    if (filter) {
+        const allMatched = allIcons.filter(icon => {
+            const hay = (icon.name + ' ' + icon.kind + ' ' + (icon.num || '')).toLowerCase();
+            return hay.includes(filter);
+        });
+        if (allMatched.length > 0) {
+            const onlyGeneric = allMatched.every(i => i.kind === 'generic');
+            const onlyFileType = allMatched.every(i => i.kind === 'file-type');
+            const targetTab = onlyGeneric ? 'generic' : onlyFileType ? 'file-type' : activeTab;
+            if (targetTab !== activeTab) switchTab(targetTab);
+            return renderInTab(allMatched, allIcons.length);
+        }
+        return renderInTab([], allIcons.length);
+    }
+    /* 无关键词:只看当前 tab */
+    return renderInTab(currentSet(), currentSet().length);
+}
+
+function renderInTab(matched, total) {
+    document.getElementById('summary').textContent = `${matched.length} / ${total} 个图标`;
     document.getElementById('empty').hidden = matched.length > 0;
     const grid = document.getElementById('grid');
     grid.innerHTML = matched.map(icon => cardHTML(icon)).join('');
@@ -302,6 +317,19 @@ function render() {
             }
         });
     });
+}
+
+function switchTab(tab) {
+    document.querySelectorAll('#tab-toggle button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+    });
+    const btn = document.querySelector(`#tab-toggle button[data-tab="${tab}"]`);
+    if (btn) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+    }
+    activeTab = tab;
 }
 
 function cardHTML(icon) {
@@ -343,13 +371,7 @@ document.getElementById('filter').addEventListener('input', render);
 
 document.querySelectorAll('#tab-toggle button').forEach(btn => {
     btn.addEventListener('click', () => {
-        document.querySelectorAll('#tab-toggle button').forEach(b => {
-            b.classList.remove('active');
-            b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-        activeTab = btn.dataset.tab;
+        switchTab(btn.dataset.tab);
         render();
     });
 });
