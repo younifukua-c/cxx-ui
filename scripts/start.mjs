@@ -42,25 +42,34 @@ const MIME_TYPES = Object.freeze({
     '.md':   'text/markdown; charset=utf-8',
 });
 
-/** 读取 icons/ 目录,归并成清单。两种命名都支持:
- *  - NN-name.svg(通用图标,带 2 位编号,固定集合)
- *  - file-{type}.svg(文件类型图标,无序号,无限集合)
- * 返回统一结构 { kind, num, name, files }。 */
+/** 读取 icons/ 目录(根 + file-types/ 子目录),归并成清单。两种命名都支持:
+ *  - NN-name.svg(通用图标,带 2 位编号,固定集合,在 icons/ 根)
+ *  - file-{type}.svg(文件类型图标,无序号,无限集合,在 icons/file-types/)
+ * 返回统一结构 { kind, num, name, dir, files }。dir 是该图标所在子目录(相对 icons/),
+ * 用于前端拼 URL(根目录 = '',file-types/ = 'file-types/')。 */
 function listIcons() {
     if (!fs.existsSync(ICONS_DIR)) return [];
     const groups = new Map();
-    for (const entry of fs.readdirSync(ICONS_DIR, { withFileTypes: true })) {
-        if (!entry.isFile() || !entry.name.endsWith('.svg')) continue;
-        const base = entry.name.replace(/-(?:hover|active|disabled)(?=\.svg$)/, '').replace(/\.svg$/, '');
-        const generic = /^(\d{2})-([a-z0-9]+(?:-[a-z0-9]+)*)$/i.exec(base);
-        const fileType = /^file-([a-z0-9]+(?:-[a-z0-9]+)*)$/i.exec(base);
-        if (!generic && !fileType) continue;
-        const key = generic ? generic[0] : fileType[0];
-        const num = generic ? generic[1] : 'ft';
-        const kind = generic ? 'generic' : 'file-type';
-        if (!groups.has(key)) groups.set(key, { kind, num, name: key, files: [] });
-        groups.get(key).files.push(entry.name);
+    function walk(dir, subdir) {
+        for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+            if (entry.isDirectory()) {
+                // 只扫 file-types/ 一层子目录,不递归
+                if (!subdir) walk(path.join(dir, entry.name), entry.name);
+                continue;
+            }
+            if (!entry.isFile() || !entry.name.endsWith('.svg')) continue;
+            const base = entry.name.replace(/-(?:hover|active|disabled)(?=\.svg$)/, '').replace(/\.svg$/, '');
+            const generic = /^(\d{2})-([a-z0-9]+(?:-[a-z0-9]+)*)$/i.exec(base);
+            const fileType = /^file-([a-z0-9]+(?:-[a-z0-9]+)*)$/i.exec(base);
+            if (!generic && !fileType) continue;
+            const key = generic ? generic[0] : fileType[0];
+            const num = generic ? generic[1] : 'ft';
+            const kind = generic ? 'generic' : 'file-type';
+            if (!groups.has(key)) groups.set(key, { kind, num, name: key, dir: subdir || '', files: [] });
+            groups.get(key).files.push(entry.name);
+        }
     }
+    walk(ICONS_DIR, '');
     return [...groups.values()]
         .filter(g => g.files.some(f => !f.includes('-hover') && !f.includes('-active') && !f.includes('-disabled')))
         .sort((a, b) => {
