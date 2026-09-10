@@ -1,0 +1,13 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>搜索跨 tab 验证</title></head>
+<body style="margin:0;background:#1e1e1e;color:#d4d4d4;font:13px/1.5 sans-serif;padding:24px">
+<h2 style="color:#858585;font-size:12px">在"扩展名"tab 搜 01-settings(应自动切到"通用"tab)</h2>
+<iframe id="f" src="/" style="width:100%;height:500px;border:0"></iframe>
+<script>
+setTimeout(() => {
+    const doc = document.getElementById('f').contentDocument;
+    doc.getElementById('filter').value = '01-settings';
+    doc.getElementById('filter').dispatchEvent(new Event('input'));
+}, 1500);
+</script>
+</body></html>
