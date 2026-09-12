@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/">
 <title>cxx-ui 图标库原型</title>
 <style>
 /* cxx-ui 原型页样式,跟 cxx-repodock 暗色主题保持一致。
@@ -224,8 +225,8 @@ footer code {
     <p class="desc">扩展名图标 238 类 + 通用图标 60 个,每个 4 状态(default / hover / active / disabled),56×56 viewBox。</p>
     <div class="controls">
         <div class="tab-toggle" id="tab-toggle" role="tablist" aria-label="图标分类切换">
-            <button data-tab="file-type" type="button" class="active" role="tab" aria-selected="true">扩展名<span class="count" id="tab-count-file-type">0</span></button>
-            <button data-tab="generic" type="button" role="tab" aria-selected="false">通用<span class="count" id="tab-count-generic">0</span></button>
+            <button data-tab="file-type" type="button" role="tab" aria-selected="false">扩展名<span class="count" id="tab-count-file-type">0</span></button>
+            <button data-tab="generic" type="button" class="active" role="tab" aria-selected="true">通用<span class="count" id="tab-count-generic">0</span></button>
         </div>
         <div class="search">
             <input id="filter" type="search" placeholder="搜索文件名或编号(例如 java、09、settings)">
@@ -256,7 +257,7 @@ footer code {
 const STATES = ['default', 'hover', 'active', 'disabled'];
 const STATE_LABELS = { default: '默认', hover: '悬停', active: '按下', disabled: '禁用' };
 let allIcons = [];
-let activeTab = 'file-type';
+let activeTab = 'generic';
 let activeSize = 'medium';
 const SIZE_PX = { small: 18, medium: 24, large: 32 };
 
