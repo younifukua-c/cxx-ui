@@ -187,7 +187,11 @@
 - 33-pinned, 34-pin
 - 35-workbench, 36-refresh
 - 37-cancel, 38-workspace
-- 40-compare, 41-more, 43-workdisk
+- 40-compare, 41-more, 42-checkout-remote, 43-workdisk
+- 51-compress(蓝/绿/白三色变体), 52-copy, 53-file-inspector, 54-menu-collapse, 55-info-collapse
+- 56-file-edit, 57-commit-bold, 58-editor-expand, 59-editor-collapse
+- 60-current-branch, 61-expand, 62-collapse, 63-ignore
+- **64-open-page**(新开页面,琥珀 #FAB005,跟 06-open-repo 同色) — 2026-09-12 新加
 
 ### ✅ Bold 系列(粗 + 号变体)
 - 44-refresh-circle(粗版刷新,绿)
