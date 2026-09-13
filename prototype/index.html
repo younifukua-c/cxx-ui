@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/">
 <title>cxx-ui 图标库原型</title>
 <style>
 /* cxx-ui 原型页样式,跟 cxx-repodock 暗色主题保持一致。
@@ -99,13 +100,13 @@ header .desc {
     font-size: 12px;
     font-variant-numeric: tabular-nums;
 }
-.state-toggle {
+.tab-toggle, .state-toggle {
     display: inline-flex;
     background: var(--bg-2);
     border-radius: 4px;
     padding: 2px;
 }
-.state-toggle button {
+.tab-toggle button, .state-toggle button {
     padding: 4px 10px;
     border: 0;
     background: transparent;
@@ -114,10 +115,16 @@ header .desc {
     border-radius: 3px;
     cursor: pointer;
 }
-.state-toggle button.active {
+.tab-toggle button.active, .state-toggle button.active {
     background: var(--bg-3);
     color: var(--fg-0);
 }
+.tab-toggle .count {
+    margin-left: 4px;
+    color: var(--fg-2);
+    font-size: 11px;
+}
+.tab-toggle button.active .count { color: var(--fg-1); }
 main {
     padding: 20px 32px 60px;
     max-width: 1400px;
@@ -215,13 +222,17 @@ footer code {
 <body>
 <header>
     <h1>cxx-ui 图标库</h1>
-    <p class="desc">每个图标 4 状态(default / hover / active / disabled),56×56 viewBox,与 cxx-repodock 风格统一。</p>
+    <p class="desc">扩展名图标 238 类 + 通用图标 60 个,每个 4 状态(default / hover / active / disabled),56×56 viewBox。</p>
     <div class="controls">
+        <div class="tab-toggle" id="tab-toggle" role="tablist" aria-label="图标分类切换">
+            <button data-tab="file-type" type="button" role="tab" aria-selected="false">扩展名<span class="count" id="tab-count-file-type">0</span></button>
+            <button data-tab="generic" type="button" class="active" role="tab" aria-selected="true">通用<span class="count" id="tab-count-generic">0</span></button>
+        </div>
         <div class="search">
             <input id="filter" type="search" placeholder="搜索文件名或编号(例如 java、09、settings)">
         </div>
         <div class="summary" id="summary">0 个图标</div>
-        <div class="state-toggle" id="state-toggle" role="tablist">
+        <div class="state-toggle" id="state-toggle" role="tablist" aria-label="图标尺寸">
             <button data-size="small" type="button">小</button>
             <button data-size="medium" type="button" class="active">中</button>
             <button data-size="large" type="button">大</button>
@@ -237,10 +248,16 @@ footer code {
 </footer>
 
 <script>
-/* 原型页逻辑:从 /icons/ 目录加载清单(由 start.mjs 提供),按编号/文件名过滤,点击文件名复制。 */
+/* 原型页逻辑:
+   - 拉 /api/icons 拿全部图标清单(由 start.mjs 从 icons/ 根 + icons/file-types/ 扫出)
+   - 两个 tab 切换:扩展名(默认) / 通用
+   - 搜索按文件名 + 编号过滤
+   - 尺寸 3 档(小/中/大)
+   - 点击文件名复制完整 .svg 名 */
 const STATES = ['default', 'hover', 'active', 'disabled'];
 const STATE_LABELS = { default: '默认', hover: '悬停', active: '按下', disabled: '禁用' };
 let allIcons = [];
+let activeTab = 'generic';
 let activeSize = 'medium';
 const SIZE_PX = { small: 18, medium: 24, large: 32 };
 
@@ -252,17 +269,42 @@ async function loadIcons() {
     }
     const payload = await res.json();
     allIcons = payload.icons || [];
+    // 每个 tab 的数量写到按钮上,让用户不用切换就知道两个集合大小
+    const counts = { 'file-type': 0, generic: 0 };
+    for (const icon of allIcons) counts[icon.kind] = (counts[icon.kind] || 0) + 1;
+    document.getElementById('tab-count-file-type').textContent = counts['file-type'] || 0;
+    document.getElementById('tab-count-generic').textContent = counts.generic || 0;
     render();
+}
+
+function currentSet() {
+    return allIcons.filter(icon => icon.kind === activeTab);
 }
 
 function render() {
     const filter = document.getElementById('filter').value.trim().toLowerCase();
-    const matched = allIcons.filter(icon => {
-        if (!filter) return true;
-        const hay = (icon.name + ' ' + icon.kind).toLowerCase();
-        return hay.includes(filter);
-    });
-    document.getElementById('summary').textContent = `${matched.length} / ${allIcons.length} 个图标`;
+    /* 有关键词:跨 tab 搜全部,自动切到能展示的 tab,让用户不用手动切。
+       优先展示通用(数量少,一眼看完),否则保持当前 tab。 */
+    if (filter) {
+        const allMatched = allIcons.filter(icon => {
+            const hay = (icon.name + ' ' + icon.kind + ' ' + (icon.num || '')).toLowerCase();
+            return hay.includes(filter);
+        });
+        if (allMatched.length > 0) {
+            const onlyGeneric = allMatched.every(i => i.kind === 'generic');
+            const onlyFileType = allMatched.every(i => i.kind === 'file-type');
+            const targetTab = onlyGeneric ? 'generic' : onlyFileType ? 'file-type' : activeTab;
+            if (targetTab !== activeTab) switchTab(targetTab);
+            return renderInTab(allMatched, allIcons.length);
+        }
+        return renderInTab([], allIcons.length);
+    }
+    /* 无关键词:只看当前 tab */
+    return renderInTab(currentSet(), currentSet().length);
+}
+
+function renderInTab(matched, total) {
+    document.getElementById('summary').textContent = `${matched.length} / ${total} 个图标`;
     document.getElementById('empty').hidden = matched.length > 0;
     const grid = document.getElementById('grid');
     grid.innerHTML = matched.map(icon => cardHTML(icon)).join('');
@@ -278,23 +320,40 @@ function render() {
     });
 }
 
+function switchTab(tab) {
+    document.querySelectorAll('#tab-toggle button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+    });
+    const btn = document.querySelector(`#tab-toggle button[data-tab="${tab}"]`);
+    if (btn) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+    }
+    activeTab = tab;
+}
+
 function cardHTML(icon) {
     const px = SIZE_PX[activeSize];
+    /* icon.dir 是子目录前缀(根= '', file-types/ = 'file-types/'),拼到 URL 前 */
+    const prefix = icon.dir ? `icons/${icon.dir}/` : 'icons/';
     const statesHTML = STATES.map(state => {
         const src = state === 'default'
-            ? `icons/${icon.name}.svg`
-            : `icons/${icon.name}-${state}.svg`;
+            ? `${prefix}${icon.name}.svg`
+            : `${prefix}${icon.name}-${state}.svg`;
         return `<div class="card-state">
             <img src="${src}" alt="${icon.name}-${state}" loading="lazy" style="--icon-size: ${px}px;">
             <span class="label">${STATE_LABELS[state]}</span>
         </div>`;
     }).join('');
+    const numLabel = icon.kind === 'file-type' ? '类型' : icon.num;
+    const kindLabel = icon.kind === 'file-type' ? '文件类型' : '通用';
     return `<article class="card">
         <div class="card-states">${statesHTML}</div>
-        <div class="card-name" data-num="${icon.kind === 'file-type' ? '类型' : icon.num}" data-name="${icon.name}.svg">${icon.name}.svg</div>
+        <div class="card-name" data-num="${numLabel}" data-name="${icon.name}.svg">${icon.name}.svg</div>
         <div class="card-meta">
-            <a href="icons/${icon.name}.svg" target="_blank" rel="noopener">查看源文件</a>
-            <span>${icon.kind === 'file-type' ? '文件类型' : '通用'} · 4 状态</span>
+            <a href="${prefix}${icon.name}.svg" target="_blank" rel="noopener">查看源文件</a>
+            <span>${kindLabel} · 4 状态</span>
         </div>
     </article>`;
 }
@@ -310,6 +369,14 @@ function flashCopied(el) {
 }
 
 document.getElementById('filter').addEventListener('input', render);
+
+document.querySelectorAll('#tab-toggle button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        switchTab(btn.dataset.tab);
+        render();
+    });
+});
+
 document.querySelectorAll('#state-toggle button').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('#state-toggle button').forEach(b => b.classList.remove('active'));

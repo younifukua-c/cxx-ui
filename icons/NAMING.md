@@ -187,7 +187,21 @@
 - 33-pinned, 34-pin
 - 35-workbench, 36-refresh
 - 37-cancel, 38-workspace
-- 40-compare, 41-more, 43-workdisk
+- 40-compare, 41-more, 42-checkout-remote, 43-workdisk
+- 51-compress(蓝/绿/白三色变体), 52-copy, 53-file-inspector, 54-menu-collapse, 55-info-collapse
+- 56-file-edit, 57-commit-bold, 58-editor-expand, 59-editor-collapse
+- 60-current-branch, 61-expand, 62-collapse
+- **63-dismiss**(忽略/驳回,圆圈 + 粗斜线,白系) — 2026-09-12 从 63-ignore 改名 + 改设计
+- **64-open-page**(新开页面,主页面 + 副页面双窗口,白系 4 档) — 2026-09-12 新加 + 重画
+- **65-editor**(文件编辑器,窗口 + 菜单栏 + 2 条内容线 + 放大镜(右下),白系 4 档) — 2026-09-12 新加
+- **66-open-with**(打开方式配置,2x2 应用网格,1 个实心选中,白系 4 档) — 2026-09-12 新加
+- **67-cherry**(樱桃,2 个红果实 + 绿茎 + 绿叶,红色系 4 档) — 2026-09-13 新加
+- **68-list**(文件清单,单页 + 3 条横线列表项,白系 4 档) — 2026-09-13 新加
+- **69-editor-book**(文件编辑器,翻开的书 + 笔在写字,白系 4 档) — 2026-09-13 新加(65-editor 旧版保留)
+- **70-editor-book-closed**(书合起来,合上的书 + 顶部封皮标签 + 写字痕迹,白系 4 档) — 2026-09-13 新加(跟 69 一组,表示"写字→合书")
+- **71-diff**(差异,文件 + 内部 + - 标记,白系 4 档) — 2026-09-13 新加(分支改动文件 3 按钮之一)
+- **72-source-file**(源文件,文件 + 右下角绿色对勾表示"当前",白系 4 档) — 2026-09-13 新加(分支改动文件 3 按钮之一)
+- **73-original**(修改前,文件 + 左上角琥珀色倒带箭头,白系 4 档) — 2026-09-13 新加(分支改动文件 3 按钮之一)
 
 ### ✅ Bold 系列(粗 + 号变体)
 - 44-refresh-circle(粗版刷新,绿)

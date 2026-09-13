@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 新开页面:主页面(空心,左下)+ 副页面(空心,右上,代表"新开窗口") -->
+  <rect x="4" y="22" width="24" height="26" rx="2" fill="none" stroke="#E9ECEF" stroke-width="4"/>
+  <line x1="10" y1="32" x2="22" y2="32" stroke="#E9ECEF" stroke-width="3" stroke-linecap="round"/>
+  <rect x="28" y="4" width="24" height="22" rx="2" fill="none" stroke="#E9ECEF" stroke-width="4"/>
+  <line x1="34" y1="14" x2="46" y2="14" stroke="#E9ECEF" stroke-width="3" stroke-linecap="round"/>
+</svg>

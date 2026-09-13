@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 展开:3 条粗线平行(像 ≡ 汉堡,展开成多行) -->
+  <g stroke="#E9ECEF" stroke-width="5" stroke-linecap="round">
+    <line x1="12" y1="16" x2="44" y2="16"/>
+    <line x1="12" y1="28" x2="44" y2="28"/>
+    <line x1="12" y1="40" x2="44" y2="40"/>
+  </g>
+</svg>

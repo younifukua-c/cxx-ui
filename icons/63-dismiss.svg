@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 忽略:圆圈(目标)+ 粗斜线穿过(划掉) -->
+  <circle cx="28" cy="28" r="18" fill="none" stroke="#E9ECEF" stroke-width="4"/>
+  <line x1="15" y1="15" x2="41" y2="41" stroke="#E9ECEF" stroke-width="5" stroke-linecap="round"/>
+</svg>

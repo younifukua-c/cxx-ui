@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 樱桃:2 个果实(实心红)+ 茎(汇合到中央)+ 叶子 + 高光点 -->
+  <circle cx="18" cy="38" r="11" fill="#FA5252"/>
+  <circle cx="38" cy="38" r="11" fill="#FA5252"/>
+  <!-- 茎(两个果实顶部汇合到中央) -->
+  <path d="M 18 28 Q 20 18 28 14" fill="none" stroke="#2F9E44" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 38 28 Q 36 18 28 14" fill="none" stroke="#2F9E44" stroke-width="3" stroke-linecap="round"/>
+  <!-- 叶子 -->
+  <path d="M 28 14 Q 36 4 44 8 Q 40 14 28 14 Z" fill="#51CF66"/>
+  <!-- 高光点(果实上) -->
+  <circle cx="14" cy="34" r="2" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="34" cy="34" r="2" fill="#FFFFFF" opacity="0.5"/>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 复制:源矩形(右下)+ 副本矩形(左上,半透明)+ 弯曲箭头从源指向副本(经典"复制一份"语义) -->
+  <g transform="translate(28, 28)" fill="#E9ECEF">
+    <!-- 源矩形(右下,实) -->
+    <rect x="-2" y="2" width="22" height="28" rx="3" fill="none" stroke="#E9ECEF" stroke-width="2.5"/>
+    <!-- 副本矩形(左上,实) -->
+    <rect x="-20" y="-14" width="22" height="22" rx="3" fill="#E9ECEF" opacity="0.55"/>
+    <!-- 弯曲箭头:从源中心 → 副本 -->
+    <path d="M 8 -2 Q 16 -10 4 -14" fill="none" stroke="#E9ECEF" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- 箭头头部(指向副本) -->
+    <path d="M 4 -14 L 8 -12 L 6 -10 Z"/>
+  </g>
+</svg>
