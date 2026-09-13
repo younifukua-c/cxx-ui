@@ -192,7 +192,8 @@
 - 56-file-edit, 57-commit-bold, 58-editor-expand, 59-editor-collapse
 - 60-current-branch, 61-expand, 62-collapse
 - **63-dismiss**(忽略/驳回,圆圈 + 粗斜线,白系) — 2026-09-12 从 63-ignore 改名 + 改设计
-- **64-open-page**(新开页面,白系 4 档) — 2026-09-12 新加
+- **64-open-page**(新开页面,主页面 + 副页面双窗口,白系 4 档) — 2026-09-12 新加 + 重画
+- **65-editor**(文件编辑器,窗口 + 菜单栏 + 3 条内容线,白系 4 档) — 2026-09-12 新加
 
 ### ✅ Bold 系列(粗 + 号变体)
 - 44-refresh-circle(粗版刷新,绿)
