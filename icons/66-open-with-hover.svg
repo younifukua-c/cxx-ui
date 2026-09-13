@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
-  <rect x="8" y="4" width="24" height="22" rx="2" fill="none" stroke="#FFFFFF" stroke-width="4"/>
-  <line x1="12" y1="13" x2="26" y2="13" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-  <line x1="12" y1="20" x2="22" y2="20" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-  <rect x="4" y="32" width="48" height="20" rx="2" fill="none" stroke="#FFFFFF" stroke-width="4"/>
-  <rect x="10" y="38" width="8" height="8" fill="#FFFFFF"/>
-  <line x1="22" y1="42" x2="46" y2="42" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <rect x="8" y="8" width="18" height="18" rx="2" fill="#FFFFFF"/>
+  <rect x="30" y="8" width="18" height="18" rx="2" fill="none" stroke="#FFFFFF" stroke-width="3.5"/>
+  <rect x="8" y="30" width="18" height="18" rx="2" fill="none" stroke="#FFFFFF" stroke-width="3.5"/>
+  <rect x="30" y="30" width="18" height="18" rx="2" fill="none" stroke="#FFFFFF" stroke-width="3.5"/>
 </svg>
