@@ -7,7 +7,7 @@
     <line x1="-10" y1="-1" x2="6" y2="-1" stroke="#1e1e1e" stroke-width="1.5" opacity="0.3"/>
     <line x1="-10" y1="4" x2="6" y2="4" stroke="#1e1e1e" stroke-width="1.5" opacity="0.3"/>
     <line x1="-10" y1="9" x2="2" y2="9" stroke="#1e1e1e" stroke-width="1.5" opacity="0.3"/>
-    <circle cx="14" cy="14" r="3.5" fill="#495057"/>
-    <path d="M 12 14 L 13.5 15.5 L 16 12.5" stroke="#1e1e1e" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+    <circle cx="-12" cy="-13" r="4" fill="#495057" stroke="#1e1e1e" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="-12" cy="-13" r="1.5" fill="#1e1e1e" opacity="0.6"/>
   </g>
 </svg>
