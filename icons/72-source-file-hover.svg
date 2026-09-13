@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
   <g transform="translate(28, 28)">
-    <rect x="-18" y="-15" width="36" height="30" rx="1" fill="#FFFFFF" stroke="#1e1e1e" stroke-width="1.5"/>
-    <line x1="-6" y1="-15" x2="-6" y2="15" stroke="#1e1e1e" stroke-width="0.8" opacity="0.4"/>
-    <line x1="6" y1="-15" x2="6" y2="15" stroke="#1e1e1e" stroke-width="0.8" opacity="0.4"/>
-    <line x1="-18" y1="-5" x2="18" y2="-5" stroke="#1e1e1e" stroke-width="0.8" opacity="0.4"/>
-    <line x1="-18" y1="5" x2="18" y2="5" stroke="#1e1e1e" stroke-width="0.8" opacity="0.4"/>
-    <circle cx="0" cy="0" r="2.5" fill="#FF6B6B"/>
+    <path d="M -8 -10 L 8 -10 L 18 12 L -18 12 Z" fill="#FFFFFF" stroke="#1e1e1e" stroke-width="1.5"/>
+    <line x1="-8" y1="-10" x2="8" y2="-10" stroke="#1e1e1e" stroke-width="2"/>
+    <rect x="-5" y="-13" width="10" height="4" rx="1" fill="#FF6B6B"/>
   </g>
 </svg>
