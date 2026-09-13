@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
-  <!-- 打开方式配置:文档(空心,左上)+ 1 条内容线 + 齿轮(右下,简化 4 齿) -->
-  <rect x="6" y="8" width="30" height="38" rx="2" fill="none" stroke="#E9ECEF" stroke-width="4"/>
-  <line x1="12" y1="20" x2="30" y2="20" stroke="#E9ECEF" stroke-width="3" stroke-linecap="round"/>
-  <line x1="12" y1="30" x2="26" y2="30" stroke="#E9ECEF" stroke-width="3" stroke-linecap="round"/>
-  <g transform="translate(42, 42)">
-    <circle r="6" fill="none" stroke="#E9ECEF" stroke-width="3"/>
-    <rect x="-2" y="-11" width="4" height="4" fill="#E9ECEF"/>
-    <rect x="-2" y="7" width="4" height="4" fill="#E9ECEF"/>
-    <rect x="-11" y="-2" width="4" height="4" fill="#E9ECEF"/>
-    <rect x="7" y="-2" width="4" height="4" fill="#E9ECEF"/>
-  </g>
+  <!-- 打开方式配置:文档(空心,上,带 2 条内容线)+ 单选列表框(下,1 个明显选中) -->
+  <rect x="8" y="4" width="24" height="22" rx="2" fill="none" stroke="#E9ECEF" stroke-width="4"/>
+  <line x1="12" y1="13" x2="26" y2="13" stroke="#E9ECEF" stroke-width="3" stroke-linecap="round"/>
+  <line x1="12" y1="20" x2="22" y2="20" stroke="#E9ECEF" stroke-width="3" stroke-linecap="round"/>
+  <rect x="4" y="32" width="48" height="20" rx="2" fill="none" stroke="#E9ECEF" stroke-width="4"/>
+  <rect x="10" y="38" width="8" height="8" fill="#E9ECEF"/>
+  <line x1="22" y1="42" x2="46" y2="42" stroke="#E9ECEF" stroke-width="3" stroke-linecap="round"/>
 </svg>
