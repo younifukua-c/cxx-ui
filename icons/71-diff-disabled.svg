@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
   <g transform="translate(28, 28)">
-    <circle cx="-6" cy="4" r="11" fill="#495057"/>
-    <circle cx="-6" cy="4" r="11" fill="none" stroke="#1e1e1e" stroke-width="1" opacity="0.2"/>
-    <polygon points="6,-12 20,-2 6,8" fill="#495057"/>
+    <circle cx="-7" cy="4" r="11" fill="#495057" stroke="#1e1e1e" stroke-width="1.5" opacity="0.6"/>
+    <polygon points="5,-13 19,-3 5,7" fill="#495057"/>
   </g>
 </svg>
