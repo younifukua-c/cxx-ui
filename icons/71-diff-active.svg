@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
   <g transform="translate(28, 28)">
-    <path d="M -15 -17 L 4 -17 L 11 -10 L 11 17 L -15 17 Z" fill="#ADB5BD"/>
-    <path d="M 4 -17 L 4 -10 L 11 -10 Z" fill="#6C757D"/>
-    <rect x="-12" y="-7" width="14" height="3" rx="1" fill="#37B24D"/>
-    <line x1="-8" y1="-5.5" x2="-4" y2="-5.5" stroke="#1e1e1e" stroke-width="1.2"/>
-    <line x1="-6" y1="-7.5" x2="-6" y2="-3.5" stroke="#1e1e1e" stroke-width="1.2"/>
-    <line x1="-12" y1="-1" x2="6" y2="-1" stroke="#1e1e1e" stroke-width="1.5" opacity="0.5"/>
-    <rect x="-12" y="4" width="14" height="3" rx="1" fill="#FA5252"/>
-    <line x1="-8" y1="5.5" x2="-4" y2="5.5" stroke="#1e1e1e" stroke-width="1.2"/>
-    <line x1="-12" y1="10" x2="6" y2="10" stroke="#1e1e1e" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="-6" cy="4" r="11" fill="#ADB5BD"/>
+    <circle cx="-6" cy="4" r="11" fill="none" stroke="#1e1e1e" stroke-width="1" opacity="0.3"/>
+    <polygon points="6,-12 20,-2 6,8" fill="#F08C00"/>
   </g>
 </svg>
