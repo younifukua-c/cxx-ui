@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
   <g transform="translate(28, 28)">
-    <path d="M -15 -15 L 8 -15 L 15 -8 L 15 15 L -15 15 Z" fill="#FFE066" stroke="#1e1e1e" stroke-width="1.5"/>
-    <path d="M 8 -15 L 15 -8 L 8 -8 Z" fill="#FAB005"/>
+    <circle cx="0" cy="0" r="14" fill="#FAB005" stroke="#1e1e1e" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="11" fill="none" stroke="#1e1e1e" stroke-width="1" opacity="0.4"/>
+    <polygon points="0,-8 2.4,-2.5 8.5,-2.5 3.5,1.5 5.5,7 0,4 -5.5,7 -3.5,1.5 -8.5,-2.5 -2.4,-2.5" fill="#1e1e1e"/>
   </g>
 </svg>
