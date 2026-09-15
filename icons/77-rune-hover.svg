@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 符文石碑:圆角矩形底,中央刻一个北欧风 rune 字符(简化 ᚦ 形:竖干 + 右上斜枝 + 中横 + 左下斜枝) -->
+  <rect x="14" y="8" width="28" height="40" rx="3" fill="none" stroke="#E9ECEF" stroke-width="2"/>
+  <line x1="28" y1="18" x2="28" y2="38" stroke="#E9ECEF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="28" y1="22" x2="34" y2="18" stroke="#E9ECEF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="22" y1="28" x2="34" y2="28" stroke="#E9ECEF" stroke-width="2" stroke-linecap="round"/>
+  <line x1="28" y1="38" x2="22" y2="34" stroke="#E9ECEF" stroke-width="2" stroke-linecap="round"/>
+</svg>

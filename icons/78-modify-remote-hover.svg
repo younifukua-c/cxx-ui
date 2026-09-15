@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
-  <!-- 源头/来源:大云朵(跟 78-modify-remote 同色同形) -->
+  <!-- 修改远程:大云朵 + S 形风筝线(C 三阶贝塞尔,两道弯,像风中飘动) -->
+  <!-- 云朵 -->
   <path d="M 10 30 A 9 9 0 0 1 16 18 A 13 13 0 0 1 38 18 A 10 10 0 0 1 48 30 Z"
         fill="none" stroke="#339AF0" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- 风筝线(S 形两道弯) -->
+  <path d="M 28 30 C 14 38 26 50 20 48" fill="none" stroke="#339AF0" stroke-width="2" stroke-linecap="round"/>
 </svg>

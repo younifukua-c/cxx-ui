@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
-  <line x1="8" y1="50" x2="22" y2="14" stroke="#1971C2" stroke-width="5" stroke-linecap="round"/>
-  <line x1="22" y1="14" x2="36" y2="50" stroke="#1971C2" stroke-width="5" stroke-linecap="round"/>
-  <line x1="14" y1="36" x2="30" y2="36" stroke="#1971C2" stroke-width="4" stroke-linecap="round"/>
-  <line x1="44" y1="10" x2="44" y2="22" stroke="#1971C2" stroke-width="4" stroke-linecap="round"/>
-  <line x1="38" y1="16" x2="50" y2="16" stroke="#1971C2" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="22" cy="14" r="3.5" fill="#1971C2"/>
-  <circle cx="8" cy="50" r="3.5" fill="#1971C2"/>
-  <circle cx="36" cy="50" r="3.5" fill="#1971C2"/>
+  <!-- 重命名:字母 A → B,直接表达"旧名字 → 新名字"的语义 -->
+  <!-- A:左斜 + 右斜 + 中横 -->
+  <line x1="4" y1="44" x2="12" y2="12" stroke="#1971C2" stroke-width="3" stroke-linecap="round"/>
+  <line x1="12" y1="12" x2="20" y2="44" stroke="#1971C2" stroke-width="3" stroke-linecap="round"/>
+  <line x1="7" y1="32" x2="17" y2="32" stroke="#1971C2" stroke-width="3" stroke-linecap="round"/>
+  <!-- 箭头 -->
+  <line x1="23" y1="28" x2="33" y2="28" stroke="#1971C2" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="35,28 30,24 30,32" fill="#1971C2"/>
+  <!-- B:竖干 + 上下两个半圆弧(凸向右) -->
+  <line x1="40" y1="14" x2="40" y2="42" stroke="#1971C2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 40 14 Q 50 14, 50 21 Q 50 28, 40 28" fill="none" stroke="#1971C2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 40 28 Q 52 28, 52 35 Q 52 42, 40 42" fill="none" stroke="#1971C2" stroke-width="3" stroke-linecap="round"/>
 </svg>
-

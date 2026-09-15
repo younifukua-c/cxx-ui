@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 经典铅笔:hover,笔身浅橙,金属箍稍亮 -->
+  <polygon points="12,50 14,40 22,48" fill="#CED4DA"/>
+  <polygon points="14,40 30,24 38,32 22,48" fill="#FFA94D"/>
+  <polygon points="30,24 34,20 42,28 38,32" fill="#DEE2E6"/>
+  <line x1="30" y1="24" x2="38" y2="32" stroke="#6C757D" stroke-width="3"/>
+</svg>
