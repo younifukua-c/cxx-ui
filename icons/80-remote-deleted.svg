@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" width="56" height="56">
+  <!-- 远程已删除:云朵(跟 78-modify-remote 同样的云)+ 中间红叉(X 形,代表删除/无效) -->
+  <!-- 云朵 -->
+  <path d="M 10 30 A 9 9 0 0 1 16 18 A 13 13 0 0 1 38 18 A 10 10 0 0 1 48 30 Z"
+        fill="none" stroke="#228BE6" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- 红叉(两条对角线) -->
+  <line x1="22" y1="22" x2="34" y2="34" stroke="#FA5252" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="34" y1="22" x2="22" y2="34" stroke="#FA5252" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
